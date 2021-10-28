@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+  PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+  "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+  
+  <mapper namespace="com.kh.spring.member.model.repository.MemberRepository"> <!-- namespace는 프록시객체명이 된다. -->
+  
+  	<select id="selectPasswordByUserId" resultType="java.lang.String"> <!-- id는 프록시객체의 메서드가 된다. -->
+  		select password from member where user_id = #{userId}
+  	</select>
+  	
+  	
+  	
+  	
+  
+  
+  </mapper>
