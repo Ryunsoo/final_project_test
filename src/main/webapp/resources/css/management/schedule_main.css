@@ -1,0 +1,201 @@
+@charset "UTF-8";
+/* .main{
+	min-width: 1000px;
+	overflow: scroll;
+} */
+
+.main-content{
+	display: flex;
+	position: relative;
+	min-width: 1200px;
+}
+
+.select_menu{
+	position: absolute;
+	display: none;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(255, 255, 255, 0.6);
+	z-index: 8;
+}
+
+.select_menu>div{
+	display: flex;
+	position: relative;
+	height: 50%;
+}
+
+.top_menu{
+	justify-content: center;
+	padding-bottom: 30px;
+}
+
+.top_btn{
+	align-self: flex-end;
+	
+}
+
+.top_menu_desc{
+	background-color: lightblue;
+}
+
+
+.bottom_menu{
+	justify-content: center;
+	padding-top: 30px;
+}
+
+.bottom_btn_left{
+	margin-right: 40px;
+}
+
+.bottom_btn_right{
+	margin-left: 40px;
+}
+
+.menu_btn{
+	display: flex;
+	height: 20%;
+	background-color: white;
+	border-radius: 7px;
+	border-color: grey;
+	border-width: 1px;
+	border-style: solid;
+}
+
+.btn_desc{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+}
+
+.top_btn>a{
+	padding-top: 10px;
+}
+
+.bottom_btn>a{
+	padding-bottom: 10px;
+}
+
+
+.desc{
+	color: #737373;
+	font-weight: 650;
+}
+
+.tit{
+	display: inline-flex;
+	justify-content: center;
+	align-items: center;
+	background-color: grey;
+	height: 60%;
+	width: 60%;
+	border-radius: 100px;
+	color: #c9d7e8;
+	font-weight: bold;
+}
+
+.top_tit{
+	transform: translateY(50%);
+}
+
+.bottom_left_tit{
+	transform: translate(20%, -50%);
+}
+
+.bottom_right_tit{
+	transform: translate(-20%, -50%);
+}
+
+.btn_desc:hover{
+	background-color: #cccccc;
+}
+
+.btn_desc:hover .tit{
+	color: #8db0f2;
+}
+
+
+.wrap_calendar{
+	height: 100%;
+	width: 60%;
+}
+
+.wrap_form{
+	display: flex;
+	position: relative;
+	flex-wrap: wrap;
+	justify-content: center;
+	margin-top: 25px;
+	height: 100%;
+	width: 40%;
+}
+
+.form_title{
+	display: flex;
+	height: 35px;
+	width: 70%;
+	margin-bottom: 20px;
+	align-items: center;
+	justify-content: center;
+	color: rgba(255,255,255,0.8);
+	font-weight: 600;
+	font-size: 18px;
+	background-color: #5cb85c;
+	border-radius: 100px;
+}
+
+.schedule_list{
+	width: 85%;
+}
+
+.schedule_list>table{
+	font-size: 15px;
+	line-height: 3;
+	width: 100%;
+	border-style: hidden;
+	box-shadow: 0 0 0 1px grey;
+	border-collapse: collapse;
+	border-radius: 9px;
+}
+
+.schedule_table th{
+	font-size: 17px;
+	text-align: center;
+}
+
+.schedule_table td{
+	border: none;
+	display: flex;
+	align-items: center;
+	padding: 0 10px 0 10px;
+}
+
+.schedule_table td>div{
+	display: inline-block;
+	width: 25px;
+	height: 25px;
+	border-radius: 100px;
+	background-color: orange;
+	margin: 5px 1vw 5px 0.5vw;
+}
+
+.schedule_table input{
+	height: 30px;
+	border-width: 1px;
+	border-color: #8c8c8c;
+	border-radius: 5px;
+}
+
+.action_icons{
+	visibility: hidden;
+	width: 100px;
+	position: absolute;
+	right: 7.5%;
+	top: 100%;
+	display: flex;
+	justify-content: space-around;
+	font-size: 23px;
+	color: #3287B2;
+	font-weight: bold;
+}
