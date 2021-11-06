@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Login</title>
+<style type="text/css">
+/* div {
+	box-shadow: 0 0 2px black;
+} */
+body {
+	width: 100%;
+	height: 100%;
+	min-width: 1130px;
+	display: flex;
+	justify-content: center;
+}
+
+/* .topBlank */
+
+/* 왼쪽 박스 기준 */
+.leftBox {
+	float: left;
+	width: 330px;
+}
+
+.MainLogoHelp {
+	margin: 2%;
+}
+
+.imageLogo1, .imageLogo2, .imageLogo3, .imageLogo4 {
+	margin: 1%;
+}
+
+/* 오른쪽 박스 기준 */
+.rightBox {
+	float: left;
+	width: 750px;
+	background-color: lightblue;
+	height: 720px;
+}
+
+/* .loginTitle{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background-color: white;
+}
+ */
+.loginTopBlank {
+	height: 120px;
+}
+
+.loginleftBlank {
+	float: left;
+	height: 450px;
+	width: 70px;
+}
+
+.loginMainTitle {
+	float: left;
+	height: 450px;
+	width: 610px;
+	border-radius: 30px;
+}
+
+.form-signin-heading {
+	text-align: center;
+}
+
+.loginRightBlank {
+	float: left;
+	height: 450px;
+	width: 70px;
+}
+
+.loginBottomBlank {
+	float: left;
+	height: 107px;
+	width: 750px;
+}
+
+/*  */
+@import "bourbon";
+
+.wrapper {
+	/* margin-top: 80px; */
+	margin-bottom: 80px;
+}
+
+.form-signin {
+	box-shadow: 5px 5px 5px #F9D182;
+	border-radius: 20px;
+	height: 500px;
+	max-width: 700px;
+	padding: 0px 105px 35px;
+	margin: 0 auto;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-control {
+	outline-color: lightgray;
+	border-radius: 5px;
+	position: relative;
+	font-size: 20px;
+	width: 380px;
+	height: 15px;
+	padding: 10px;
+	@
+	include
+	box-sizing(border-box);
+	&:
+	focus
+	{
+	z-index
+	:
+	2;
+	}
+}
+
+/*  */
+/* Login Button CSS */
+.btn-1 {
+	border-radius: 5px;
+	position: relative;
+	font-size: 20px;
+	padding: 10px;
+	width: 403px;
+	height: 45px;
+	background: #000;
+	color: #fff;
+	transition: all 0.3s ease;
+}
+
+/* kakao login */
+.btn-2 {
+	border-radius: 5px;
+	position: relative;
+	font-size: 20px;
+	padding: 10px;
+	width: 403px;
+	height: 45px;
+	background: #FFD400;
+	color: #000000;
+	transition: all 0.3s ease;
+}
+
+/* naver login */
+.btn-3 {
+	border-radius: 5px;
+	position: relative;
+	font-size: 20px;
+	padding: 10px;
+	width: 403px;
+	height: 45px;
+	background: #009900;
+	color: #fff;
+	transition: all 0.3s ease;
+}
+
+/* 회원 가입 버튼 */
+.txt_find {
+	float: right;
+}
+
+.link_find1 {
+	font-weight: 700;
+	float: right;
+	color: #FF5500;
+}
+
+.link_find2 {
+	color: #808080;
+	font-weight: 500;
+}
+
+.link_find3 {
+	color: #808080;
+	font-weight: 500;
+	float: right;
+}
+
+/* 제목 타이틀 */
+.hr-sect {
+	padding-top: 15px;
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	color: rgba(0, 0, 0, 0.35);
+	font-size: 20px;
+	margin: 8px 0px;
+}
+
+.hr-sect::before, .hr-sect::after {
+	content: "";
+	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.35);
+	height: 1px;
+	font-size: 20px;
+	line-height: 0px;
+	margin: 0px 16px;
+}
+</style>
+
+
+</head>
+<body>
+
+	<div class="topBar">
+		<div class="leftBox">
+			<div class="MainLogoHelp">
+				<img src="../../../resources/image/자취해협.png" width="300px">
+			</div>
+
+			<div></div>
+
+			<div class="imageLogo1">
+				<img src="../../../resources/image/해협신청.png" width="230px"
+					align="left" class="image1">
+			</div>
+
+			<div class="imageLogo2">
+				<img src="../../../resources/image/공동구매.png" width="230px"
+					align="right" class="image2">
+			</div>
+
+			<div>
+				<img src="../../../resources/image/클립보드.png" width="230px"
+					align="left" class="image3">
+			</div>
+
+			<div>
+				<img src="../../../resources/image/커뮤니티.png" width="230px"
+					align="right" class="image4">
+			</div>
+		</div>
+
+		<div class="rightBox">
+			<div class="loginTitle">
+				<div class="loginTopBlank"></div>
+
+				<div class="loginleftBlank"></div>
+
+				<div class="loginMainTitle">
+					<div class="wrapper">
+						<form class="form-signin">
+
+							<div class="hr-sect"> 자 취 해 협&nbsp 로 그 인 </div>
+							<br> <input type="text" class="form-control" name="username"
+								placeholder="ID" required="" autofocus="" /><br>
+							<br> <input type="password" class="form-control"
+								name="password" placeholder="Password" required="" /><br>
+							<br> <label class="checkbox">
+								<button class="custom-btn btn-1">LOGIN</button>
+								<br> <span class="txt_find"> <a class="link_find1">회원가입</a><br>
+
+									<a class="link_find2">아이디 /&nbsp</a> <a class="link_find3">비밀번호
+										찾기</a>
+									</span>
+								<br>
+							<br>
+							<br>
+								<div class="hr-sect">간편 로그인</div>
+								<br>
+								<button class="custom-btn btn-2">카카오로 로그인</button>
+								<br>
+							<br>
+								<button class="custom-btn btn-3">네이버로 로그인</button>
+								<br>
+						</form>
+					</div>
+				</div>
+
+
+				<div class="loginRightBlank"></div>
+
+				<div class="loginBottomBlank"></div>
+
+			</div>
+		</div>
+	</div>
+
+
+
+
+
+</body>
+</html>

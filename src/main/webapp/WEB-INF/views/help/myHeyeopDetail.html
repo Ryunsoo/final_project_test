@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>myHeyeopDetail</title>
+<style type="text/css">
+html, body {
+	width: 100%;
+	height: 1500px;
+	min-width: 1130px;
+	display: flex;
+	justify-content: center;
+	min-width: 1130px;
+}
+
+.wrap {
+	width: 1130px;
+	height: 100%;
+}
+
+.navbar {
+	width: 1130px;
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	flex-shrink: 0;
+}
+
+.nav_group {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.nav_info {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 75px;
+	font-size: 17px;
+}
+
+.userName {
+	margin-right: 6px;
+	font-weight: bolder;
+}
+
+.nim {
+	margin-right: 10px;
+	font-size: 13px;
+	align-self: center;
+	margin-top: 4px;
+	font-weight: bolder;
+}
+
+.medal {
+	margin-right: 20px;
+	align-self: center;
+	color: #e6bc14;
+}
+
+.mypage {
+	margin-right: 20px;
+	font-weight: bolder;
+}
+
+.logout {
+	font-weight: bolder;
+	color: #e67e00
+}
+
+.nav_title {
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.help {
+	color: rgb(41, 128, 185);
+}
+
+/*로고*/
+.logo {
+	width: 200px;
+	align-self: center;
+}
+
+/* body */
+.page_name {
+	margin: 50px 0 30px 0;
+	font-size: 23px;
+	color: rgb(170, 133, 20);
+	font-weight: bolder;
+	display: flex;
+}
+
+.my_info {
+	margin-left: 30px; 
+	height: 150px;
+	width: 1000px;
+}
+
+.my_name {
+	margin: 0 10px 10px 0;
+	font-size: 19px;
+}
+
+.my_name a {
+	font-weight: bolder;
+}
+
+.left_info {
+	width: 450px;
+	height: 100px;
+	float: left;
+}
+
+.right_info {
+	width: 450px;
+	height: 100px;
+	float: right;
+}
+
+.info_title{
+	margin-right: 60px;
+	font-weight: bolder;
+	display: inline-flex;
+	width: 50px;
+}
+
+.info_body{
+	display: inline-flex;
+}
+
+.info_btn{
+	display: inline-flex;
+	float: right;
+}
+
+.info_btn button {
+	width: 70px;
+	height: 25px;
+	border-radius: 5px;
+	background-color: rgb(213,213,213);
+}
+
+.info_line{
+	height: 2px;
+	background-color: rgba(213,213,213,0.7); 
+	margin: 10px 0 10px 0;
+}
+
+.req_list{
+	width: 1100px;
+	height: 200px;
+	margin: 0 0 0 20px;
+}
+
+.req_list table{
+	width: 1010px;
+	text-align: center;
+}
+
+.req_list th, .req_list td{
+	border-bottom: 1px solid;
+	border-bottom-color:rgb(213,213,213);
+	height: 35px;
+	 
+}
+
+.list_btn{
+	width: 70px;
+	height: 25px;
+	border-radius: 5px;
+	background-color: rgb(213,213,213);
+}
+
+.breakdown{
+	width: 1030px;
+	height: 800px;
+	margin-bottom: 30px;
+}
+
+.bk_btn1{
+	display: inline-flex;
+	background-color: rgb(190,190,190);
+	border: 1px thin;
+	width: 100px;
+	height: 30px;
+	justify-content: center;
+	font-weight: bolder;
+	font-size: 18px;
+	color: white;
+}
+
+.bk_btn2{
+	display: inline-flex;
+	background-color: rgb(190,190,190);
+	border: 1px thin;
+	width: 100px;
+	height: 30px;
+	justify-content: center;
+	font-weight: bolder;
+	font-size: 18px;
+}
+
+.bk_body{
+	width: 1030px;
+	height: 700px;
+	border: 1px solid;
+	border-color: rgb(213,213,213);
+}
+
+.left_page {
+	width: 450px;
+	height: 650px;
+	padding: 20px;
+	float: left;
+}
+
+.right_page {
+	width: 450px;
+	height: 650px;
+	padding: 20px;
+	float: right;
+}
+
+.req_img {
+	margin: 70px 0 30px 30px;
+	width: 400px;
+	height: 250px;
+	border-radius: 20px;
+}
+
+.req_img img {
+	width: 400px;
+	height: 250px;
+	border-radius: 20px;
+}
+
+.reg_img2 img {
+	margin: 30px 0 30px 30px;
+	width: 150px;
+	height: 150px;
+	border-radius: 20px;
+	float: left;
+}
+
+.reg_img3 img {
+	margin: 30px;
+	width: 150px;
+	height: 150px;
+	border-radius: 20px;
+	float: right;
+}
+
+.text-area {
+	height: 70px;
+	margin-bottom: 30px;
+}
+
+.text-title {
+	color: rgb(242, 150, 97);
+	font-weight: bolder;
+	margin-bottom: 10px;
+}
+
+.text-input input {
+	width: 350px;
+	height: 35px;
+	border-radius: 5px;
+	border-color: rgb(213, 213, 213);
+}
+
+.text-input textarea {
+	width: 350px;
+	height: 100px;
+	border-radius: 5px;
+	border: 2px solid;
+	border-color: rgb(213, 213, 213);
+}
+</style>
+</head>
+<body>
+
+	<div class="wrap">
+
+		<!-- header -->
+		<header id="header">
+			<nav class="navbar">
+				<div class="logo">
+					<img src="./sample/image/logo2.png" class="logo">
+				</div>
+				<div class="nav_group">
+					<div class="nav_info">
+						<div class="userName">해협</div>
+						<div class="nim">님</div>
+						<div class="medal">
+							<i class="fas fa-medal"></i>
+						</div>
+						<div class="mypage">마이페이지</div>
+						<div class="logout">LOGOUT</div>
+					</div>
+					<div class="nav_title">
+						<div class="help">해협신청</div>
+						<div class="together">공구해협</div>
+						<div class="manage">관리해협</div>
+						<div class="talk">소통해협</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<div class="page_name">MY해협</div>
+		<div class="my_info">
+			<div class="my_name">
+				이호준 <a>님</a>(DIA)
+			</div>
+			<div class="left_info">
+				<div class="tell">
+					<div class="info_title">연락처</div>
+					<div class="info_body">01099991111</div>
+					<div class="info_btn">
+						<button>수정</button>
+					</div>
+				</div>
+				<div class="info_line"></div>
+				<div class="address">
+					<div class="info_title">주소</div>
+					<div class="info_body">서울시 강남구 KH정보교욱원</div>
+					<div class="info_btn">
+						<button>수정</button>
+					</div>
+				</div>
+			</div>
+			<div class="right_info">
+				<div class="email">
+					<div class="info_title">이메일</div>
+					<div class="info_body">pclass@kh.com</div>
+					<div class="info_btn">
+						<button>수정</button>
+					</div>
+				</div>
+				<div class="info_line"></div>
+				<div class="region">
+					<div class="info_title">지역</div>
+					<div class="info_body">서울 강남</div>
+					<div class="info_btn">
+						<button>수정</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<div class="req_list">
+			<table>
+				<tr>
+					<th>말머리</th>
+					<th>지역</th>
+					<th>신청일</th>
+					<th>받은 견적</th>
+					<th>서비스업체</th>
+					<th>결제방식</th>
+					<th></th>
+				</tr>
+				<tr>
+					<td>[수리 | 보수] 가전</td>
+					<td>서울 강남</td>
+					<td>2021/10/16</td>
+					<td>2</td>
+					<td></td>
+					<td>캐시</td>
+					<td>
+					<button class="list_btn">취소</button>
+					<button class="list_btn">완료</button>
+					</td>
+				</tr>
+				<tr>
+					<td>[수리 | 보수] 싱크대</td>
+					<td>서울 강남</td>
+					<td>2021/10/14</td>
+					<td>5</td>
+					<td>싱크내게맡겨</td>
+					<td>캐시</td>
+					<td><button class="list_btn">후기</button></td>
+				</tr>
+				<tr>
+					<td>[인테리어] 가구조립</td>
+					<td>서울 강남</td>
+					<td>2021/10/09</td>
+					<td>4</td>
+					<td></td>
+					<td>만나서</td>
+					<td><button class="list_btn">후기</button></td>
+				</tr>
+			</table>
+		</div>
+
+		<div class="breakdown">
+			<button class="bk_btn1" onclick="location.href='./myHeyeopDetail.html'">상세내역</button>
+			<button class="bk_btn2" onclick="location.href='./myHeyeopEstimate.html'">견적내역</button>
+			<div class="bk_body">
+				<div class="left_page">
+					<div class="req_img">
+						<img src="./sample/image/신청서-세면대.png">
+					</div>
+					<div class="reg_img2">
+						<img src="./sample/image/신청서-세면대.png">
+					</div>
+					<div class="reg_img3">
+						<img src="./sample/image/신청서-세면대.png">
+					</div>
+				</div>
+				<div class="right_page">
+					<div class="text-area">
+						<div class="text-title">*성 함</div>
+						<div class="text-input">
+							<input type="text" disabled="disabled" placeholder="이호준">
+						</div>
+					</div>
+					<div class="text-area">
+						<div class="text-title">*연락처</div>
+						<div class="text-input">
+							<input type="text" disabled="disabled" placeholder="01099991111">
+						</div>
+					</div>
+					<div class="text-area">
+						<div class="text-title">*주 소</div>
+						<div class="text-input">
+							<input type="text" disabled="disabled" placeholder="구구구구구현현혆녀">
+						</div>
+					</div>
+					<div class="text-area">
+						<div class="text-title">*방문시간</div>
+						<div class="text-input">
+							<input type="text" disabled="disabled"
+								placeholder="2021-12-02 오전 00:00">
+						</div>
+					</div>
+					<div class="text-area">
+						<div class="text-title">*희망금액</div>
+						<div class="text-input">
+							<input type="text" disabled="disabled" placeholder="100,000,000">
+						</div>
+					</div>
+					<div class="text-area">
+						<div class="text-title">*요청사항</div>
+						<div class="text-input">
+							<textarea style="resize: none;" disabled="disabled"
+								placeholder="~"></textarea>
+						</div>
+					</div>
+				</div>
+
+			</div>
+
+		</div>
+
+
+
+
+
+
+
+
+
+	</div>
+
+
+</body>
+</html>

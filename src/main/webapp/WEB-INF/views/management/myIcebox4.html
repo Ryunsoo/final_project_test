@@ -1,0 +1,833 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>IceBox4</title>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script src="js/jquery.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="resources/css/jquery-ui.min.css">
+<style type="text/css">
+/* nav,div,ul,li,a,span {
+	border: solid thin lightgray;
+	display: flex;
+}    */
+
+.hidden {
+	display: none;
+}
+
+#bg {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgb(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    min-width: 1130px;
+    display: flex;
+    justify-content: center;
+}
+
+.wrap {
+    width: 1130px;
+    height: 100%;
+}
+
+.navbar {
+	width: 1130px;
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	flex-shrink: 0;
+}
+
+.nav_group{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.nav_info{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 75px;
+	font-size: 17px;
+}
+
+.userName{
+	margin-right: 6px;
+	font-weight: bolder;
+}
+
+.nim{
+	margin-right: 10px;
+	font-size: 13px;
+	align-self: center;
+	margin-top: 3.5px;
+	font-weight: bolder;
+}
+
+.medal{
+	margin-right: 20px;
+	align-self: center;
+	color: #e6bc14;
+}
+
+.mypage{
+	margin-right: 20px;
+	font-weight: bolder;
+	cursor: pointer;
+}
+
+.logout{
+	font-weight: bolder;
+	color: #e67e00;
+	cursor: pointer;
+	/* text-shadow: 0.5px 0.5px 0.5px; */
+}
+
+.nav_title{
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.manage{
+	color: rgb(41, 128, 185);
+	text-shadow: 0.1px 0.1px 0.1px;
+	cursor: pointer;
+}
+
+.help,.together,.talk{
+	cursor: pointer;
+}
+
+.mypage:hover,.logout:hover,.manage:hover,.help:hover,.together:hover,.talk:hover{
+	text-shadow: 5px 5px 5px lightgray;
+}
+
+/*로고*/
+.logo {
+    width:230px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.main{
+	display: flex;
+}
+
+.btn{
+	display: flex;
+	flex-direction: column;
+	margin-top: 85px;
+	flex-shrink: 0;
+	position: absolute;
+}
+
+.icebox_btn{
+	border: none;
+	width: 180px;
+	height: 90px;
+	background-color: rgba(52, 73, 94, 0.33);
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	font-size: 23px;
+	color: white;
+	font-weight: bold;
+	box-shadow: 3px 3px 3px #333;
+	text-shadow: 2px 2px 2px #333;
+	cursor: pointer;
+}
+
+.icebox_btn:hover{
+	color: #fff;
+  	background-color: #cca552;
+  	border-color: #bf9b4d;
+}
+
+.house_btn{
+	border: none;
+	width: 150px;
+	height: 80px;
+	background-color: rgba(52, 73, 94, 0.98);
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	margin-top: 30px;
+	box-shadow: 3px 3px 3px #333;
+	text-shadow: 2px 2px 2px #333;
+	cursor: pointer;
+}
+
+.house_btn:hover{
+	color: #fff;
+  	background-color: #cca552;
+  	border-color: #bf9b4d;
+}
+
+.icebox{
+	margin-left: 10px;
+}
+
+.postIt{
+	width: 140px;
+	height: 140px;
+	position: absolute;
+	background-color: rgb(217, 232, 103);
+	margin-top: 320px;
+	margin-left: 360px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	box-shadow: 3px 3px 3px #333;
+}
+
+.click{
+	margin-top: 50px;
+}
+
+.postIt:hover{
+	color: white;
+    background-color: rgb(87, 153, 167);
+	border-color: rgb(87, 153, 167);
+	box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5);
+}
+
+
+.tape{
+	width: 27px;
+	height: 60px;
+	position: absolute;
+	background-color: red;
+	margin-left: 425px;
+	margin-top: 290px;
+	transform:rotate(20deg);
+}
+
+.bell{
+	position: absolute;
+	font-size: 60px;
+	color: #e6bc14;
+	margin-left: 1000px;
+	margin-top: 30px;
+	z-index: 2;
+	cursor: pointer;
+}
+
+.bell_cnt{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	color: white;
+	background-color: red;
+	border-radius: 100%;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+
+.bell_cnt:hover{
+	color: white;
+    background-color: rgb(87, 153, 167);
+	border-color: rgb(87, 153, 167);
+	box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5);
+}
+
+.main2{
+	width: 700px;
+	height: 1170px;
+	background-color: rgb(44, 62, 80, 0.9);
+	position: absolute;
+	margin-left: 250px;
+	margin-top: 80px;
+}
+
+.tape2{
+	width: 48px;
+	height: 100px;
+	position: absolute;
+	background-color: green;
+	margin-left: 580px;
+	margin-top: 20px;
+	transform:rotate(20deg);
+}
+
+.paper{
+	width: 600px;
+	height: 250px;
+	background-color: white;
+	margin-left: 50px;
+	margin-top: 15px;
+	border-top-left-radius: 20px;
+	border-top-right-radius: 20px;
+	display: flex;
+	flex-direction: column;
+	overflow: auto;
+}
+
+
+.txt{
+	font-weight: bold;
+	font-size: 18px;
+	margin-left: 10px;
+}
+
+
+.cancel{
+	color: rgb(192, 57, 43);
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: 13px;
+	margin-bottom: 4px;
+	cursor: pointer;
+}
+
+.txt_wrap{
+	display: flex;
+	margin-top: 25px;
+	border-bottom: solid medium lightgray;
+	width:500px;
+	align-self: center;
+}
+
+.bell2{
+	position: absolute;
+	font-size: 60px;
+	color: #e6bc14;
+}
+
+.cart_icon{
+	color: green;
+	margin-top: 30px;
+	margin-left: 35px;
+	display: flex;
+}
+
+.cart_icon>i{
+	font-size: 45px;
+	margin-top: 8px;
+}
+
+.cart_list{
+	font-size: 28px;
+	margin-top: 14px;
+	margin-left: 15px;
+	color: white;
+	font-weight: bold;
+}
+
+.line{
+	width: 600px;
+	height:5px;
+	background-color: white;
+	margin: auto;
+	border-radius:20px; 
+	margin-top: 20px;
+}
+
+
+.list_title{
+	display: flex;
+	margin-left: 30px;
+	margin-top: 30px;
+	font-size: 23px;
+	font-weight: bold;
+	color: white;
+}
+
+.back{
+	display: flex;
+	margin-left: 580px;
+	margin-top: 35px;
+}
+
+.back>i{
+	color: rgb(26 132 71);
+	font-size: 45px;
+	cursor: pointer;
+}
+
+.input_wrap{
+	width: 600px;
+	height: 160px;
+	background-color: white;
+	margin-left: 50px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+.input_wrap2{
+	width: 600px;
+	height: 100px;
+	background-color: white;
+	margin-left: 50px;
+	border-bottom-left-radius: 20px;
+	border-bottom-right-radius: 20px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+}
+
+.input_wrap>div>i{
+	font-size: 53px;
+	color: rgb(26 132 71);
+	margin-left: 20px;
+	cursor: pointer;
+}
+
+.input{
+	width: 400px;
+	height: 50px;
+	border-radius: 10px;
+	border: solid thin lightgray;
+	margin-bottom: 10px;
+}
+
+.date{
+	width: 100px;
+	height: 50px;
+	border-radius: 10px;
+	border: solid thin lightgray;
+	margin-left: 10px;
+	cursor: pointer;
+}
+
+.time{
+	width: 105px;
+	height:55px;
+	border-radius: 10px;
+	border: solid thin lightgray;
+	margin-left: 10px;
+	color: gray;
+	position: relative;
+}
+
+.tell{
+	width: 170px;
+	height: 50px;
+	border-radius: 10px;
+	border: solid thin lightgray;
+}
+
+
+#popup{
+	width: 440px;
+	height: 540px;
+	position: absolute;
+	background-color: rgb(250, 250, 210);
+	margin-top: 100px;
+	margin-left: 560px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+	box-shadow: 3px 3px 3px #333;
+	overflow: auto;
+	z-index: 2;
+}
+
+.bell_title{
+	display: flex;
+	margin-left: 30px;
+	margin-top: 25px;
+	font-size: 22px;
+	padding-bottom: 10px;
+}
+
+.no_read{
+	margin-left: 7px;
+	font-size: 18px;
+	margin-top: 3px;
+}
+
+.cnt{
+	margin-left: 10px;
+	font-size: 18px;
+	margin-top: 3px;
+	color: rgb(41, 128, 185);
+}
+
+.total_cnt{
+	font-size: 18px;
+	margin-top: 3px;
+}
+
+.bell_txt_wrap{
+	display: flex;
+	flex-direction: column;
+	border-bottom: solid thin darkgray;
+	width:380px;
+	margin: auto;
+	margin-bottom: 20px;
+	margin-top: 20px;
+}
+
+.bell_txt{
+	font-weight: bold;
+	font-size: 18px;
+	margin-left: 10px;
+	margin-bottom: 7px;
+	display: flex;
+}
+
+.bell_title_wrap{
+	display: flex;
+}
+
+.bell_cancel{
+	margin-top: 20px;
+	margin-left: 150px;
+	font-size: 30px;
+	cursor: pointer;
+}
+
+.bell_cancel:hover{
+	color: red;
+}
+
+
+.cart{
+	position: absolute;
+	font-size: 60px;
+	margin-left: 990px;
+	margin-top: 120px;
+	cursor: pointer;
+}
+
+.cart_cnt{
+	width: 30px;
+	height: 30px;
+	position: absolute;
+	color: white;
+	background-color: green;
+	border-radius: 100%;
+	font-size: 20px;
+	text-align: center;
+	margin-top: 20px;
+	margin-right: 10px;
+}
+
+.cart_cnt:hover{
+	color: white;
+    background-color: rgb(87, 153, 167);
+	border-color: rgb(87, 153, 167);
+	box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5);
+}
+
+.checkbox{
+	width: 20px;
+	height: 20px;
+}
+
+.submit{
+	border: none;
+	width: 250px;
+	height: 60px;
+	border-radius: 15px;
+	font-weight: bold;
+	font-size: 20px;
+	color: white;
+	color: rgb(26 132 71);
+	margin-bottom: 15px;
+	cursor: pointer;
+	box-shadow: 5px 5px 5px #333
+}
+
+.flex{
+	display: flex;
+}
+
+.down>i{
+	color: gray;
+	position: absolute;
+	right: 302px;
+	top: 540px;
+	font-size: 13px;
+}
+
+</style>
+</head>
+<body>
+<div id="bg" class="hidden"></div>
+	<div class="wrap">
+		<header id="header">
+			<nav class="navbar">
+				<div class="logo">
+					<img src="resources/img/logo.png" class="logo">
+				</div>
+				<div class="nav_group">
+					<div class="nav_info">
+						<div class="userName">해협</div>
+						<div class="nim">님</div>
+						<div class="medal">
+							<i class="fas fa-medal"></i>
+						</div>
+						<div class="mypage">마이페이지</div>
+						<div class="logout">LOGOUT</div>
+					</div>
+					<div class="nav_title">
+						<div class="help">해협신청</div>
+						<div class="together">공구해협</div>
+						<div class="manage">관리해협</div>
+						<div class="talk">소통해협</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<div class="main">
+			<div class="btn">
+				<button class="icebox_btn" onclick="javascript:location.href='myIcebox.html'">나의 냉장고</button>
+				<button class="house_btn" onclick="javascript:location.href='myIcebox5.html'">나의 가계부</button>
+			</div>
+
+			<div class="icebox">
+				<img src="resources/img/icebox.png">
+			</div>
+
+			<div class="postIt">
+				<div class="click">CLICK!</div>
+			</div>
+			<div class="tape"></div>
+			<div class="bell" id="go">
+				<div class="bell_cnt">3</div>
+				<i class="fas fa-bell"></i>
+			</div>
+				
+			<div class="cart" onclick="javascript:location.href='myIcebox4.html'">
+				<div class="cart_cnt">3</div>
+				<i class="fas fa-shopping-cart"></i>
+			</div>
+			<div class="main2">
+					
+				<div class="cart_icon">
+					<i class="fas fa-shopping-cart"></i>
+					<div class="cart_list">구매 리스트</div>
+				</div>
+				<div class="line"></div>
+				<div class ="list_title">구매 예정 목록</div>
+				<div class="paper">
+					<div class="txt_wrap">
+						<div class="txt">- 삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+					<div class="txt_wrap">
+						<div class="txt">- 삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+					<div class="txt_wrap">
+						<div class="txt">- 삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+					<div class="txt_wrap">
+						<div class="txt">- 삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+					<div class="txt_wrap">
+						<div class="txt">- 삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+					<div class="txt_wrap">
+						<div class="txt">- 삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+					<div class="txt_wrap">
+						<div class="txt">- 삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+					<div class="txt_wrap">
+						<div class="txt">- 삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+					
+				</div>
+			
+				<div class="input_wrap">
+					<div class="flex">
+						<input type="text" class="input" id="item" placeholder="&nbsp&nbsp항목을 추가해주세요." required>
+						<i class="fas fa-plus-square"></i>
+					</div>
+					<div class="flex">
+						<input type="text" class="tell" placeholder="&nbsp&nbsp전화번호를 입력하세요">
+						<input type="text" class="date" id="date1" placeholder="&nbsp&nbsp발송 날짜 " autocomplete="off">
+						
+						<select class="time">
+							<option selected disabled>&nbsp&nbsp발송 시간</option>
+							<option>&nbsp&nbsp10:00</option>
+							<option>&nbsp&nbsp11:00</option>
+							<option>&nbsp&nbsp12:00</option>
+						</select>
+						<div class="down"><i class="fas fa-angle-down"></i></div>
+						<i class="fas fa-envelope-square" style="margin-top: 2px; margin-right: 2px;"></i>
+					</div>
+				</div>
+				
+				
+				<div class ="list_title">최근 소진 목록</div>
+				<div class="paper">
+					<div class="txt_wrap">
+						<input type="checkbox" class="checkbox"><div class="txt">삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+					<div class="txt_wrap">
+						<input type="checkbox" class="checkbox"><div class="txt">삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+					<div class="txt_wrap">
+						<input type="checkbox" class="checkbox"><div class="txt">삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+					<div class="txt_wrap">
+						<input type="checkbox" class="checkbox"><div class="txt">삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+					<div class="txt_wrap">
+						<input type="checkbox" class="checkbox"><div class="txt">삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+					<div class="txt_wrap">
+						<input type="checkbox" class="checkbox"><div class="txt">삼겹살</div>
+						<div class="cancel"><i class="fas fa-times-circle"></i></div>
+					</div>
+				</div>
+				<div class="input_wrap2">
+					<button class="submit">구매 예정 목록에 추가</button>
+				</div>
+				<div class="back" onclick="javascript:location.href='myIcebox2.html'">
+					<i class="fas fa-reply"></i>
+				</div>
+				
+				
+			</div>
+			<div class="tape2"></div>
+			
+			
+			<div class="hidden" id="popup">
+				<div class="bell_title_wrap">
+					<div class="bell_title">
+						<div>알림</div>
+						<div class="no_read">(읽지않음</div>
+						<div class="cnt">9</div>
+						<div class="total_cnt">/15)</div>
+					</div>
+					<div class="bell_cancel" id="exit"><i class="fas fa-times-circle"></i></div>
+				</div>
+				
+				<div class="bell_txt_wrap">
+					<div class="bell_txt">- 삼겹살의 유통기한이 <div style="color:rgb(192, 57, 43); ">&nbsp3일</div>&nbsp남았습니다.</div>
+				</div>
+				<div class="bell_txt_wrap">
+					<div class="bell_txt">- 삼겹살의 유통기한이 <div style="color:rgb(192, 57, 43); ">&nbsp3일</div>&nbsp남았습니다.</div>
+				</div>
+				<div class="bell_txt_wrap">
+					<div class="bell_txt">- 삼겹살의 유통기한이 <div style="color:rgb(192, 57, 43); ">&nbsp3일</div>&nbsp남았습니다.</div>
+				</div>
+				<div class="bell_txt_wrap">
+					<div class="bell_txt">- 삼겹살의 유통기한이 <div style="color:rgb(192, 57, 43); ">&nbsp3일</div>&nbsp남았습니다.</div>
+				</div>
+				<div class="bell_txt_wrap">
+					<div class="bell_txt">- 삼겹살의 유통기한이 <div style="color:rgb(192, 57, 43); ">&nbsp3일</div>&nbsp남았습니다.</div>
+				</div>
+				<div class="bell_txt_wrap">
+					<div class="bell_txt">- 삼겹살의 유통기한이 <div style="color:rgb(192, 57, 43); ">&nbsp3일</div>&nbsp남았습니다.</div>
+				</div>
+				<div class="bell_txt_wrap">
+					<div class="bell_txt">- 삼겹살의 유통기한이 <div style="color:rgb(192, 57, 43); ">&nbsp3일</div>&nbsp남았습니다.</div>
+				</div>
+				<div class="bell_txt_wrap">
+					<div class="bell_txt">- 삼겹살의 유통기한이 <div style="color:rgb(192, 57, 43); ">&nbsp3일</div>&nbsp남았습니다.</div>
+				</div>
+				<div class="bell_txt_wrap">
+					<div class="bell_txt">- 삼겹살의 유통기한이 <div style="color:rgb(192, 57, 43); ">&nbsp3일</div>&nbsp남았습니다.</div>
+				</div>
+				<div class="bell_txt_wrap">
+					<div class="bell_txt">- 삼겹살의 유통기한이 <div style="color:rgb(192, 57, 43); ">&nbsp3일</div>&nbsp남았습니다.</div>
+				</div>
+				<div class="bell_txt_wrap">
+					<div class="bell_txt">- 삼겹살의 유통기한이 <div style="color:rgb(192, 57, 43); ">&nbsp3일</div>&nbsp남았습니다.</div>
+				</div>
+				<div class="bell_txt_wrap">
+					<div class="bell_txt">- 삼겹살의 유통기한이 <div style="color:rgb(192, 57, 43); ">&nbsp3일</div>&nbsp남았습니다.</div>
+				</div>
+			
+				
+			
+			</div>
+		</div>
+		
+		
+
+
+	</div>
+	<script>
+		$(function() {
+			$("#date1").datepicker(
+					{
+						dateFormat : "yy-mm-dd",
+						dayNamesMin : [ "일", "월", "화", "수", "목", "금", "토" ],
+						monthNames : [ "1월", "2월", "3월", "4월", "5월", "6월",
+								"7월", "8월", "9월", "10월", "11월", "12월" ],
+						monthNamesShort : [ "1월", "2월", "3월", "4월", "5월", "6월",
+								"7월", "8월", "9월", "10월", "11월", "12월" ],
+						defaultDate : "+1w",
+						numberOfMonths : 1,
+						changeMonth : true,
+						showMonthAfterYear : true,
+						changeYear : true,
+						minDate : +1, //캘린더 범위에서 시작 날짜
+						maxDate : "+2M +5D"
+
+					});
+		});
+		$(function() {
+			$("#date2").datepicker(
+					{
+						dateFormat : "yy-mm-dd",
+						dayNamesMin : [ "일", "월", "화", "수", "목", "금", "토" ],
+						monthNames : [ "1월", "2월", "3월", "4월", "5월", "6월",
+								"7월", "8월", "9월", "10월", "11월", "12월" ],
+						monthNamesShort : [ "1월", "2월", "3월", "4월", "5월", "6월",
+								"7월", "8월", "9월", "10월", "11월", "12월" ],
+						defaultDate : "+1w",
+						numberOfMonths : 1,
+						changeMonth : true,
+						showMonthAfterYear : true,
+						changeYear : true,
+						minDate : +1, //캘린더 범위에서 시작 날짜
+						maxDate : "+2M +5D"
+
+					});
+		});
+	
+        const go = document.querySelector("#go");
+        const bg = document.querySelector("#bg");
+        const popup = document.querySelector("#popup");
+        const exit = document.querySelector("#exit");
+
+        go.addEventListener("click",function(){
+            bg.classList.remove("hidden");
+            popup.classList.remove("hidden");
+        });
+        exit.addEventListener("click",function(){
+            bg.classList.add("hidden");
+            popup.classList.add("hidden");
+        });
+    </script>
+</body>
+</html>

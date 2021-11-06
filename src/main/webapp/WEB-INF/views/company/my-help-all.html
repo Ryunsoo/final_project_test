@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style type="text/css">
+body, html{
+	/* heigth: 690px; */
+	position: relative;
+	min-height: 690px;
+	weight: 1130px;
+	min-width: 1130px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Han Sans, 본고딕';
+}
+
+div{
+	/* border: 1px solid grey; */
+	/* box-shadow: 1px 1px 5px 0px #444; */
+}
+
+a {
+  text-decoration: none;
+}
+  
+a:hover, a:focus {
+    color: #3b98c8;
+}
+
+button{
+	cursor: pointer;
+}
+
+.header{
+	display: flex;
+	height: 130px;
+	width: 1100px;
+}
+
+.logo{
+	height: 100%;
+	width: 260px;
+	margin: 0 50px 0 50px;
+	background-image: url("../../../resources/image/main-logo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.user_menu{
+	display: flex;
+	height: 20px;
+	width: 740px;
+	justify-content: flex-end;
+	margin: 0 5px 0 0;
+}
+
+.switch_user .text{
+	color: #a6a6a6;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.switch_user .icon{
+	color: #3498db;
+}
+
+.user_name{
+	margin: 0 0 0 5px;
+	color: #404040;
+	font-weight: bold;
+}
+
+.nim{
+	color: #404040;
+	font-weight: bold;
+	margin: 0 0 0 5px;
+	font-size: 14px;
+	display: flex;
+	align-items: flex-end;
+}
+
+.medal{
+	margin: 0 5px 0 5px;
+	color: #e6bc14;
+}
+
+.mypage{
+	margin: 0 5px 0 5px;
+}
+
+.mypage>a{
+	color: #404040;
+	font-weight: bold;
+}
+
+.logout{
+	margin: 0 20px 0 5px;
+}
+
+.logout>a{
+	color: #e67e00;
+	font-weight: bold;
+}
+
+.main{
+	display: flex;
+	height: 850px;
+	width: 1130px;
+}
+
+.aside{
+	height: 100%;
+	width: 230px;
+}
+
+.help_list{
+	border: none;
+	padding-left: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 80px 0 20px 0; 
+	height: 60px;
+	width: 130px;
+	font-size: 25px;
+	color: white;
+	font-weight: bold;
+	box-shadow: 0px 10px 10px #808080;
+	text-shadow: 2px 2px 5px #808080;
+	border-bottom-right-radius: 15px;
+	border-top-right-radius: 15px;
+	background-color: rgba(52, 73, 94, 0.98);
+}
+
+.help_list:hover{
+    box-shadow: inset 0 0 5px 1px #243342;
+}
+
+.my_help{
+	border: none;
+	padding-left: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 30px 0 0 0;
+	height: 80px;
+	width: 170px;
+	font-size: 28px;
+	color: white;
+	font-weight: bold;
+	box-shadow: 0px 10px 10px #808080;
+	text-shadow: 2px 2px 5px #808080;
+	border-bottom-right-radius: 20px;
+	border-top-right-radius: 20px;
+	background-color: rgba(52, 73, 94, 0.33);
+}
+
+.my_help:hover{
+    box-shadow: inset 0 0 5px 1px #808080;
+}
+
+.section{
+	display: flex;
+	justify-content: flex-start;
+	height: 100%;
+	width: 900px;
+}
+
+.wrapper{
+	width: 860px;
+}
+
+.select_wrapper{
+	display: flex;
+	height: 48px;
+	margin-top: 85px;
+	justify-content: space-around;
+}
+
+.sub_menu{
+	align-self: flex-end;
+	display: flex;
+	justify-content: space-between;
+	height: 33px;
+	width: 338px;
+}
+
+.sub_menu>div{
+	width: 80px;
+}
+
+.sub_menu>div>button{
+	border: none;
+	height: 100%;
+	width: 100%;
+	font-weight: bold;
+	font-size: 15px;
+	border-top-left-radius: 15px;
+	border-top-right-radius: 15px;
+	color: white;
+	background-color: rgba(52, 73, 94, 0.98);
+	box-shadow: 4px -1px 5px 1px #999999;
+}
+
+.sub_menu>div>.selected{
+	color: #1b2631;
+	background-color: #e6e6e6;
+	text-shadow: 2px 2px 3px #999999;
+}
+
+.sub_menu>div>button:hover{
+	box-shadow: inset 0 0 5px 1px #808080;
+}
+
+.search_date{
+	height: 33px;
+	padding: 0 0 15px 20px;
+	display: flex;
+	justify-content: space-around;
+}
+
+.search_date input{
+	height: 100%;
+	width: 135px;
+	border-radius: 14px;
+	border-style: solid;
+	border-color: #b3b3b3;
+	color: #999999;
+	font-weight: bold;
+}
+
+.search_date input::placeholder{
+	text-align: center;
+}
+
+.search_date input:focus{
+	outline-color: #999999;
+}
+
+.search_date span{
+	color: #b3b3b3;
+	margin: 0 8px 0 8px;
+}
+
+.search>button{
+	height: 110%;
+	width: 70px;
+	margin-left: 15px;
+	border-radius: 10px;
+	border: none;
+	/* Lumen 템플릿 주황색 : rgb(255, 133, 27) / #ff851b */
+	background-color: #ffad66;
+	color: white;
+	font-weight: bold;
+	box-shadow: 0 0 5px 1px #808080;
+	text-shadow: 2px 2px 3px #595959;
+}
+
+.search>button:hover{
+	box-shadow: inset 0 0 5px 1px #808080;
+}
+
+.wrap_list{
+	height: 680px;
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: space-around; 
+	border-color: #bfbfbf;
+	border-width: 2.5px;
+	border-style: solid;
+	border-radius: 30px;
+	background-color: white;
+}
+
+.list{
+	width: 780px;
+	height: 560px;
+}
+
+table{
+	width: 100%;
+	border-collapse: collapse;
+}
+
+tr{
+	border-bottom: 1px solid grey;
+	text-align: center;
+	font-family: '나눔바른고딕';
+	font-weight: bold;
+}
+
+tbody>tr:hover{
+	background-color: #e6e6e6;
+	cursor: pointer;
+}
+
+tr>th{
+	font-size: 18px;
+	line-height: 3;
+	color: rgb(52, 73, 94);
+}
+
+tr>td{
+	font-size: 14px;
+	line-height: 3.3;
+}
+
+tr>td>button{
+	height: 25px;
+	position: relative;
+	transform: translateY(7%);
+	color: white;
+	font-weight: bold;
+	border: none;
+	border-radius: 8px;
+	box-shadow: 2px 2px 5px 1px #b3b3b3;
+}
+
+tr>td>.finish{
+	background-color: #2abb69;
+	margin-right: 2px;
+}
+
+tr>td>.cancel{
+	background-color: #e95949;
+	margin-left: 2px;
+}
+
+tr>td>.finish:hover{
+	box-shadow: inset 0 0 5px 1px #18683a;
+}
+
+tr>td>.cancel:hover{
+	box-shadow: inset 0 0 5px 1px #71180e;
+}
+
+
+tr>td>i{
+	font-size: 33px;
+	position: relative;
+	transform: translateY(23%);
+}
+
+.page{
+	width: 300px;
+	height: 50px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+.page>i{
+	font-size: 25px;
+	color: #cccccc;
+}
+
+.page>i:hover{
+	color: #b3b3b3;
+	cursor: pointer;
+}
+
+.page>div{
+	display: flex;
+	width: 130px;
+	justify-content: space-around;
+}
+
+.page>div>span:hover{
+	color: #bfbfbf;
+	cursor: pointer;
+}
+
+.back{
+	position: absolute;
+	width: 100%;
+	height: 800px;
+	background-color: #f2f2f2;
+	bottom: 0;
+	z-index: -1
+}
+
+.chatting{
+	position: fixed;
+	height: 80px;
+	width: 80px;
+	background-image: url("../../../resources/image/chatting.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	transform: translate(550%, 700%);
+	border-radius: 100px;
+	box-shadow: 2px 2px 5px 1px #666666;
+	z-index: 99;
+}
+
+.chatting:hover{
+	background-color: #e3d79c;
+	cursor: pointer;
+}
+
+.footer{
+	height: 250px;
+	width: 1130px;
+	display: flex;
+	background-image: url("../../../resources/image/footer.png");
+	background-repeat: no-repeat;
+	background-size: 1130px 250px;
+	background-position: center;
+}
+
+.footer pre{
+	display: block;
+	color: white;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: '맑은 고딕';
+	margin: 0 15px 0 15px;
+	line-height: 1.5
+}
+
+.footer_logo{
+	margin: 80px 5px 0 50px;
+}
+
+.footer_text{
+	margin: 80px 0 0 5px;
+}
+
+.footer_title{
+	margin: 10px 0 30px 0;
+}
+
+.footer_content{
+	display: flex;
+	margin-top: 20px;
+}
+
+.logo-icon{
+	height: 40px;
+	width: 40px;
+}
+
+</style>
+</head>
+<body>
+	<!-- 외원정보 / 마이페이지 & 로그아웃 버튼 / 로고 -->
+	<!-- <header> -->
+	<div class='header'>
+		<div class='logo'></div>
+		<div class='user_menu'>
+			<div class='switch_user'>
+				<a href='#'><span class='text'>개인회원으로 전환</span> <span class='icon'><i class="fas fa-sync-alt"></i></span></a>
+			</div>
+			<div class='user_name'>해협</div><div class='nim'>님</div><div class='medal'><i class="fas fa-medal"></i></div>
+			<div class='mypage'><a href='#'>마이페이지</a></div>
+			<div class='logout'><a href='#'>LOGOUT</a></div>
+		</div>
+	</div>
+	<!-- </header> -->
+	
+	<!-- 검색 / 날짜 및 금액 검색 -->
+	<!-- <main> -->
+	<div class='main'>
+	
+		<!-- 사이트 메뉴(조회해협 & MY 해협) -->
+		<!-- <aside> -->
+		<div class='aside'>
+			<button class="help_list">조회 해협</button>
+			<button class="my_help">MY 해협</button>
+		</div>
+		<!-- </aside> -->
+		<div class='section'>
+			<div class='wrapper'>
+				<div class='select_wrapper'>
+					<div class='sub_menu'>
+						<!-- 현재 선택된 메뉴에 selected class를 추가해주면 자동으로 css 바뀝니다!! -->
+						<div><button class='selected'>전체내역</button></div>
+						<div><button>진행내역</button></div>
+						<div><button>취소내역</button></div>
+						<div><button>완료내역</button></div>
+					</div>
+					<div class='search_date'>
+						<div class='date'>
+							<input type="date"><span> - </span><input type="date">
+						</div>
+						<div class='search'>
+							<button>조회</button>
+						</div>
+					</div>
+				</div>
+				
+				<div class='wrap_list'>
+					<div class='list'>
+						<table>
+							<thead>
+								<tr>
+									<th>신청 분야</th>
+									<th>지역</th>
+									<th>방문날짜</th>
+									<th>처리구분</th>
+									<th>상세보기</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr><td>[수리 | 보수]   가전</td><td>서울시 강남구 역삼동</td><td>2021/10/16</td><td>대기중</td><td class='td-icon'><i class="fas fa-file-alt"></i></td></tr>
+								<tr><td>[수리 | 보수]   가전</td><td>서울시 강남구 역삼동</td><td>2021/10/16</td><td>대기중</td><td class='td-icon'><i class="fas fa-file-alt"></i></td></tr>
+								<tr><td>[수리 | 보수]   가전</td><td>서울시 강남구 역삼동</td><td>2021/10/16</td><td><button class='finish'>완료</button><button class='cancel'>취소</button></td><td class='td-icon'><i class="fas fa-file-alt"></i></td></tr>
+								<tr><td>[수리 | 보수]   가전</td><td>서울시 강남구 역삼동</td><td>2021/10/16</td><td>완료</td><td class='td-icon'><i class="far fa-file-alt"></i></td></tr>
+								<tr><td>[수리 | 보수]   가전</td><td>서울시 강남구 역삼동</td><td>2021/10/16</td><td>취소</td><td class='td-icon'><i class="far fa-file-alt"></i></td></tr>
+								<tr><td>[수리 | 보수]   가전</td><td>서울시 강남구 역삼동</td><td>2021/10/16</td><td>완료</td><td class='td-icon'><i class="far fa-file-alt"></i></td></tr>
+								<tr><td>[수리 | 보수]   가전</td><td>서울시 강남구 역삼동</td><td>2021/10/16</td><td><button class='finish'>완료</button><button class='cancel'>취소</button></td><td class='td-icon'><i class="far fa-file-alt"></i></td></tr>
+								<tr><td>[수리 | 보수]   가전</td><td>서울시 강남구 역삼동</td><td>2021/10/16</td><td><button class='finish'>완료</button><button class='cancel'>취소</button></td><td class='td-icon'><i class="fas fa-clipboard-list"></i></td></tr>
+								<tr><td>[수리 | 보수]   가전</td><td>서울시 강남구 역삼동</td><td>2021/10/16</td><td>취소</td><td class='td-icon'><i class="fas fa-clipboard-list"></i></td></tr>
+								<tr><td>[수리 | 보수]   가전</td><td>서울시 강남구 역삼동</td><td>2021/10/16</td><td>취소</td><td class='td-icon'><i class="fas fa-clipboard-list"></i></td></tr>
+							</tbody>
+						</table>
+					</div>
+					<div class='page'>
+						<i class="fas fa-caret-left"></i>
+						<div><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></div>
+						<i class="fas fa-caret-right"></i>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	<div class='back'></div>
+	<div class='chatting'></div>
+		
+	<!-- 자취해협 정보 footer -->
+	<!-- <footer> -->
+	<div class='footer'>
+		<div class='footer_logo'><img src="../../../resources/image/logo-icon.png" class='logo-icon'></div>
+		
+		<div class='footer_text'>
+			<div class='footer_title'><pre>project  자취해협  |  team  help!</pre></div>
+			
+			<div class='footer_content'>
+			<pre>Gwon Gu Hyun   |   kwon41147406@gmail.com
+Kim Hyun Soo   |   oooklyt@naver.com
+Hwang Ryun Soo   |   babyfox225@gmail.com
+Lee Kyung Min   |   alssgo70051@naver.com</pre>
+			<pre>Lee Joo Hyun   |   carinae4717@gmail.com
+Lee Ho Jun   |   lhj132824@naver.com
+Ko Hyuck Joon   |   akhj123akhj@naver.com
+Choi Min Seok   |   dktlfem3333@gmail.com</pre>
+			</div>
+		</div>
+	</div>
+	<!-- </footer> -->
+</body>
+<script type="text/javascript">
+
+
+
+
+
+
+</script>
+</html>

@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+
+<style type="text/css">
+	
+body, html{
+   /* heigth: 690px; */
+   position: relative;
+   min-height: 690px;
+   weight: 1130px;
+   min-width: 1130px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   font-family: 'Han Sans, 본고딕';
+}
+
+
+#outermost-wrapper{
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	height: 100%;
+	width: 100%;
+	border: solid;
+}
+
+
+
+
+/* 우측 상단 상태(회원이름, 등급, 로그아웃, 마이페이지 */
+
+#login-status-wrapper{
+	display:flex;
+	justify-content: flex-end;
+	font-weight: bold;
+}
+
+#login-status{
+	width: 350px;
+}
+
+#login-status> #user-name{
+	color: #d35400;
+}
+
+#login-status> #user-grade{
+	color: #f1c40f;
+}
+
+#login-status> #logout-button{
+	color: #e67e22;
+}
+
+#login-status> #mypage-button{
+	color: #34495e;
+}
+
+
+
+
+
+
+/* logo & 메뉴 wrapper */
+#logo-and-menu-wrapper {
+	display: flex;
+}
+
+/* 로고 */
+#logo-image{
+	width: 300px;
+}
+
+/* 헤더 메뉴 */
+#header-menu{
+	display: flex;
+    width: 830px;
+    margin-top: 60px;
+    justify-content: space-around;
+    align-items: center;
+    font-weight: bold;
+    font-size: 20px;
+    height: 25px;
+    
+}
+#header-menu>div{
+	width: 25%;
+	text-align: center;
+	transition: all 0.2s;
+	cursor: pointer;
+}
+/* 메뉴 호버이벤트 */
+#header-menu>div:hover{
+	color: #3498db;
+	text-align: center;
+}
+
+
+
+	
+	
+</style>
+
+
+
+</head>
+
+
+
+
+
+
+<body>
+
+
+<!-- 최외각 Wrapper -->
+<div id="outermost-wrapper">
+
+
+	<!-- 헤더 시작-->
+	<div class="header">
+	
+		<!-- 우측 상단 상태(회원이름, 등급, 로그아웃, 마이페이지 -->
+		<div id="login-status-wrapper">
+			<div id="login-status">
+				<span id="user-name">권구현</span>
+				&nbsp(
+				<span id="user-grade">GOLD</span>
+				)&nbsp&nbsp회원
+				&nbsp
+				<span id="logout-button">LOGOUT</span>
+				&nbsp
+				<span id="mypage-button">마이페이지</span>
+			</div>
+		</div>
+		
+		
+		<!-- 로고 & 메뉴 wrapper -->
+		<div id="logo-and-menu-wrapper">
+			<!-- 로고 -->
+			<div id="logo">
+				<a href="/">
+					<img id="logo-image" src = "./resources/image/logo.png">
+				</a>
+			</div>
+			
+			<!-- 헤더 메뉴창 -->
+			<div id="header-menu">
+				<div onclick="location.href='/'">해협신청</div>
+				<div onclick="location.href='/'">공구해협</div>
+				<div onclick="location.href='/'">관리해협</div>
+				<div onclick="location.href='/'">소통해협</div>
+			</div>
+		</div>
+		
+	</div>
+	<!-- 헤더 끝 -->
+	
+
+
+
+
+
+</div>
+
+
+
+
+
+
+
+</body>
+</html>

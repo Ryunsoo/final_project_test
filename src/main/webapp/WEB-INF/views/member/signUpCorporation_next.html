@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sign-up_corporation_next</title>
+<style type="text/css">
+/* div {
+	box-shadow: 0 0 2px black;
+} */
+
+body {
+	width: 100%;
+	height: 100%;
+	min-width: 1130px;
+	display: flex;
+	justify-content: center;
+}
+
+/* .topBlank */
+
+/* 왼쪽 박스 기준 */
+.leftBox {
+	float: left;
+	width: 330px;
+}
+
+.MainLogoHelp {
+	margin: 2%;
+}
+
+.imageLogo1, .imageLogo2, .imageLogo3, .imageLogo4 {
+	margin: 1%;
+}
+
+/* 오른쪽 박스 기준 */
+.rightBox {
+	float: left;
+	width: 750px;
+	background-color: lightblue;
+	height: 780px;
+}
+
+.loginTopBlank {
+	height: 70px;
+}
+
+.loginleftBlank {
+	float: left;
+	height: 450px;
+	width: 70px;
+}
+
+.loginMainTitle {
+	float: left;
+	height: 450px;
+	width: 610px;
+	border-radius: 30px;
+}
+
+.signUpProgressBar{
+	background-color:#FDD017;
+	margin-left:17%;
+	width: 65%;
+	animation: progressbar 2s ease-out;
+}
+
+.form-signin-heading {
+	text-align: center;
+}
+
+.loginRightBlank {
+	float: left;
+	height: 450px;
+	width: 70px;
+}
+
+.loginBottomBlank {
+	float: left;
+	height: 107px;
+	width: 750px;
+}
+
+/*  */
+@import "bourbon";
+
+.wrapper {
+	/* margin-top: 80px; */
+	margin-bottom: 80px;
+}
+
+.form-signin {
+	box-shadow: 5px 5px 5px #F9D182;
+	border-radius: 20px;
+	height: 620px;
+	max-width: 530px;
+	padding: 20px 70px 35px;
+	margin: 0 auto;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-control_id {
+	margin:15px;
+	float: left;
+	outline-color: lightgray;
+	border-radius: 5px;
+	position: relative;
+	font-size: 13px;
+	width: 280px;
+	height: 15px;
+	padding: 10px;
+	outline-color: lightgray;
+	@include
+	box-sizing(border-box);
+	&:focus{
+	z-index:2;
+	}
+}
+
+.form-control_adress{
+	margin:15px;
+	float: left;
+	outline-color: lightgray;
+	border-radius: 5px;
+	position: relative;
+	font-size: 13px;
+	width: 230px;
+	height: 15px;
+	padding: 10px;
+	outline-color: lightgray;
+	@include
+	box-sizing(border-box);
+	&:focus{
+	z-index:2;
+	}
+}
+
+.form-control_detail_adress{
+	/* margin:15px; */
+	margin-bottom:15px;
+	margin-left:15px;
+	margin-right:15px;
+	float: left;
+	outline-color: lightgray;
+	border-radius: 5px;
+	position: relative;
+	font-size: 13px;
+	width: 230px;
+	height: 15px;
+	padding: 10px;
+	outline-color: lightgray;
+	@include
+	box-sizing(border-box);
+	&:focus{
+	z-index:2;
+	}
+}
+
+.form-control_adress_check{
+	/* margin:15px; */
+	margin-right:15px;
+	margin-top:15px;
+	margin-bottom:15px;
+	float: left;
+	outline-color: lightgray;
+	border-radius: 5px;
+	position: relative;
+	font-size: 13px;
+	width: 85px;
+	height: 15px;
+	padding: 10px;
+	outline-color: lightgray;
+	@include
+	box-sizing(border-box);
+	&:focus{
+	z-index:2;
+	}
+}
+
+.form-control_all {
+	margin:15px;
+	float: left;
+	outline-color: lightgray;
+	border-radius: 5px;
+	position: relative;
+	font-size: 13px;
+	width: 400px;
+	height: 15px;
+	padding: 10px;
+	outline-color: lightgray;
+	@include
+	box-sizing(border-box);
+	&:focus{
+	z-index:2;
+	}
+}
+
+/* Join_us 버튼 css */
+.btn-1 {
+	margin-bottom:22px;
+	margin-left:5px;
+	margin-right:22px;
+	margin-top:22px;
+	border-radius: 5px;
+	position: relative;
+	font-size: 20px;
+	padding: 10px;
+	width: 520px;
+	height: 45px;
+	background: #000;
+	color: #fff;
+	transition: all 0.3s ease;
+}
+
+/* 제목 타이틀 */
+.hr-sect {
+	padding-top: 15px;
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	color: rgba(0, 0, 0, 0.35);
+	font-size: 20px;
+	margin: 8px 0px;
+}
+
+.hr-sect::before, .hr-sect::after {
+	content: "";
+	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.35);
+	height: 1px;
+	font-size: 20px;
+	line-height: 0px;
+	margin: 0px 16px;
+}
+
+
+
+.idMargin,
+.nameMargin,
+.tellMargin{
+	height:90px;
+	margin: 5px;
+}
+
+.adressMargin{
+	height:150px;
+	margin: 5px;
+}
+
+.passwordMargin{
+	height:160px;
+	margin: 5px;
+}
+
+.passwordfloat{
+	margin-right: 130px;
+	float: left;
+}
+
+.level{
+	float: left;
+}
+
+.button_next{
+	float:right;
+	border-radius: 12px;
+	background-color: #0C090A;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button_check{
+	float:right;
+	border-radius: 12px;
+	background-color: #E5E4E2;
+    border: none;
+    color: 0C090A;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button_adress_check{
+	float:left;
+	border-radius: 12px;
+	background-color: #E5E4E2;
+    border: none;
+    color: 0C090A;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 15px 2px;
+    cursor: pointer;
+}
+
+.button_check{
+	margin-top: 15px;
+	margin-right:85px;
+	float: right;
+}
+
+.click_image{
+	margin-top: 20px;
+	margin-left: 30px;
+}
+
+.before_left{
+	margin-top:50px;
+	float: left;
+}
+
+.next_right{
+	margin-top:50px;
+	float: right;
+}
+</style>
+
+
+</head>
+<body>
+
+	<div class="topBar">
+		<div class="leftBox">
+			<div class="MainLogoHelp">
+				<img src="../../../resources/image/자취해협.png" width="300px">
+			</div>
+
+			<div></div>
+
+			<div class="imageLogo1">
+				<img src="../../../resources/image/해협신청.png" width="230px"
+					align="left" class="image1">
+			</div>
+
+			<div class="imageLogo2">
+				<img src="../../../resources/image/공동구매.png" width="230px"
+					align="right" class="image2">
+			</div>
+
+			<div>
+				<img src="../../../resources/image/클립보드.png" width="230px"
+					align="left" class="image3">
+			</div>
+
+			<div>
+				<img src="../../../resources/image/커뮤니티.png" width="230px"
+					align="right" class="image4">
+			</div>
+		</div>
+
+		<div class="rightBox">
+			<div class="loginTitle">
+				<div class="loginTopBlank"></div>
+					<div>
+						<form class="form-signin">
+							<progress class="signUpProgressBar" value='66' max='100'></progress><br>
+							<label style="float: right; margin-right: 70px; margin-top: 5px;">66%</label><br>
+						<div class="hr-sect">전 문 &nbsp해 협</div><br>
+						
+						<div class="idMargin">
+							<label>* 이메일</label><br> 								
+								<input type="text" class="form-control_all" name="username" placeholder="이메일을 입력하세요." 
+									required="" autofocus="" /><br><br>
+						</div>
+						
+						<div class="idMargin">
+							<label>* 업체명</label><br> 
+								<input type="text" class="form-control_id" name="username" 
+								placeholder="업체명을 작성해주세요" required="" autofocus="" />
+								
+								<div class="check">
+									<button class="button_check">중복확인</button>
+								</div>
+						</div>
+						
+						<div class="adressMargin">
+							<label>* 주소</label><br> 
+								<input type="text" class="form-control_adress" name="username" 
+								placeholder="기본 주소를 입력해주세요." required="" autofocus="" />
+								
+								<input type="text" class="form-control_adress_check" name="username" 
+								placeholder="우편번호	" required="" autofocus="" />
+								
+								<div class="check">
+									<button class="button_adress_check">주소 찾기</button>
+								</div>
+								
+								<input type="text" class="form-control_detail_adress" name="username" 
+								placeholder="상세 주소를 입력해주세요." required="" autofocus="" />
+						</div>
+						
+						<div>
+							<!-- <button class="custom-btn btn-1">J O I N &nbsp U S</button> -->
+						</div>
+						
+						
+						<div class="before_left">
+							<button class="button_next">< 이전</button>
+						</div>
+						
+						<div class="next_right">
+							<button class="button_next">다음 ></button>
+						</div>
+						
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

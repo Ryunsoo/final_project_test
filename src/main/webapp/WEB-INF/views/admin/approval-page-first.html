@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style type="text/css">
+body, html{
+	/* heigth: 690px; */
+	position: relative;
+	min-height: 690px;
+	weight: 1130px;
+	min-width: 1130px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Han Sans, 본고딕';
+}
+
+div{
+	/* border: 1px solid grey; */
+	/* box-shadow: 1px 1px 5px 0px #444; */
+}
+
+a {
+  text-decoration: none;
+}
+  
+a:hover, a:focus {
+    color: #3b98c8;
+}
+
+button{
+	cursor: pointer;
+}
+
+.header{
+	display: flex;
+	height: 130px;
+	width: 1100px;
+}
+
+.logo{
+	height: 100%;
+	width: 260px;
+	margin: 0 50px 0 50px;
+	background-image: url("../../../resources/image/main-logo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.header_right{
+	width: 740px;
+}
+
+.user_menu{
+	display: flex;
+	height: 20px;
+	width: 100%;
+	justify-content: flex-end;
+	margin: 0 5px 0 0;
+}
+
+.admin_mode{
+	margin: 0 5px 0 5px;
+	color: #d35400;
+	font-weight: bold;
+}
+
+.logout{
+	margin: 0 20px 0 5px;
+}
+
+.logout>a{
+	color: #e67e00;
+	font-weight: bold;
+}
+
+
+.main_menu{
+	width: 280px;
+	height: 30px;
+	display: flex;
+	justify-content: space-between;
+	margin: 40px 0 0 0px;
+	padding-left: 50px;
+	font-size: 20px;
+	font-weight: bold;
+}
+
+.main_menu>div>a{
+	color: #262626;
+	text-shadow: 2px 2px 4px #a6a6a6;
+}
+
+.main_menu>.current_page>a{
+	color: #2980b9;
+}
+
+.main_menu>div>a:hover{
+	color: #174869;
+	font-size: 22px;
+}
+
+.main{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: center;
+	align-content: flex-start;
+	height: 830px;
+	width: 1130px;
+}
+
+.menu_title{
+	width: 970px;
+	height: 60px;
+	display: flex;
+	align-items: center;
+	margin-top: 35px;
+	font-size: 22px;
+	font-weight: bold;
+	color: #26262;
+	border-bottom: 2.5px solid #bfbfbf;
+}
+
+.content{
+	width: 950px;
+	height: 600px;
+	position: relative;
+	margin-top: 30px;
+}
+
+.content_left{
+	height: 100%;
+	width: 400px;
+	position: absolute;
+	left: 0;
+	display: flex;
+	justify-content: center;
+	align-content: flex-start;
+	flex-wrap: wrap;
+	border-radius: 10px;
+	border: 1px solid #1a1a1a;
+	background-color: white;
+	z-index: 5;
+}
+
+.reduce{
+	width: 100%;
+	height: 30px;
+	display: none;
+	justify-content: flex-end;
+	align-items: flex-end;
+	font-size: 30px;
+	color: #bfbfbf;
+	padding: 5px 5px 0 0;
+	cursor: pointer;
+}
+
+.file{
+	width: 350px;
+	height: 495px;
+	margin-top: 30px;
+}
+
+.expand{
+	width: 100%;
+	height: 60px;
+	display: flex;
+	justify-content: flex-end;
+	align-items: flex-end;
+	font-size: 50px;
+	color: #bfbfbf;
+	margin-top: 7px;
+	padding: 0 5px 5px 0;
+	cursor: pointer;
+}
+
+.content_right{
+	height: 100%;
+	width: 490px;
+	position: absolute;
+	right: 0;
+	z-index: -5;
+}
+
+.input{
+	height: 490px;
+	width: 450px;
+}
+
+.inp_title{
+	display: flex;
+	margin-top : 15px;
+	height: 30px;
+	align-items: center;
+	color: #e67e00;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: '나눔고딕 ExtraBold';
+}
+
+input{
+	width: 388px;
+	height: 40px;
+	border-radius: 8px;
+	border-style: solid;
+	border-width: 1.8px;
+	border-color: #d9d9d9;
+	color: #666666;
+	font-family: 'Han Sans, 본고딕';
+	padding-left: 10px;
+}
+
+.address{
+	width: 280px;
+}
+
+.post_num{
+	width: 90px;
+}
+
+.detail_add{
+	margin-top: 7px;
+}
+
+.next_btn{
+	height: 55px;
+	width: 115px;
+	position: absolute;
+	right: 0;
+	bottom: 0;
+	margin-right: 60px;
+	z-index: 10;
+}
+
+.next_btn>button{
+	width: 115px;
+	height: 100%;
+	font-size: 23px;
+	font-weight: bold;
+	color: white;
+	background-color: rgba(52, 73, 94, 0.98);
+	border-radius: 10px;
+}
+
+.next_btn>button:hover{
+	background-color: #3f5973;
+	box-shadow: inset 0 0 5px 1px #243342;
+}
+
+</style>
+</head>
+<body>
+	<!-- 외원정보 / 마이페이지 & 로그아웃 버튼 / 로고 -->
+	<!-- <header> -->
+	<div class='header'>
+		<div class='logo'></div>
+		<div class='header_right'>
+			<div class='user_menu'>
+				<div class='admin_mode'>관리자모드</div>
+				<div class='logout'><a href='#'>LOGOUT</a></div>
+			</div>
+			<div class='main_menu'>
+				<!-- current_page class 지정하면 css 바로 적용!! -->
+				<div class='member_approval current_page'><a href='#'>회원승인</a></div>
+				<div class='community'><a href='#'>커뮤니티</a></div>
+			</div>
+		</div>
+	</div>
+	<!-- </header> -->
+	
+	<!-- 검색 / 날짜 및 금액 검색 -->
+	<!-- <main> -->
+	<div class='main'>
+		<div class='menu_title'>승인페이지</div>
+		<div class='content'>
+			<div class='content_left'>
+				<div class='reduce'><i class="fas fa-times-circle"></i></div>
+				<div class='file'></div>
+				<div class='expand'><i class="fas fa-search-plus"></i></div>
+			</div>
+			<div class='content_right'>
+				<div class='input'>
+					<div class='inp_title'>* 아이디</div>
+					<input type="text" value='Sync123' readonly>
+					<div class='inp_title'>* 대표자명</div>
+					<input type="text" value='권구현' readonly>
+					<div class='inp_title'>* 업체명</div>
+					<input type="text" value='싱크싱크' readonly>
+					<div class='inp_title'>* 사업장 주소</div>
+					<div>
+						<input class='address' type="text" value='서울시 강남구 테헤란로 12번길 7' readonly>
+						<input class='post_num' type="text" value='12345' readonly>
+						<input class='address detail_add' type="text" value='**빌딩 5층' readonly>
+					</div>
+					<div class='inp_title'>* 전화번호</div>
+					<input type="tel" value='010-0000-0000' readonly>
+				</div>
+			</div>
+			<div class='next_btn'><button>다음 ></button></div>
+		</div>
+	</div>
+	
+</body>
+<script type="text/javascript">
+	let fileName = '../../../resources/image/pdf-exam-height.pdf';
+	//let fileName = '../../../resources/image/join-file-exam.jpeg';
+	let format = fileName.substring(fileName.lastIndexOf('.') + 1);
+	let viewer;
+	
+	$(function() {
+		if(format == 'pdf') {
+			viewer = $('<iframe></iframe>');
+		}else {
+			viewer = $('<img>')
+		}
+		viewer.attr("src", fileName)
+				.height('100%').width('100%')
+				.css("object-fit", "contain");
+		console.dir(viewer);
+		$(".file").append(viewer);	
+		
+	})
+
+	$('.expand>i').click(function() {
+		viewer.attr("src", fileName);
+		$('.content_left').height('680px').width('540px')
+		$('.file').height('608px').width('430px')
+				.css('margin-top', '0px');
+		$('.expand').css('display', 'none');
+		$('.reduce').css('display', 'flex');
+	})
+	
+	$('.reduce>i').click(function() {
+		viewer.attr("src", fileName);
+		$('.content_left').height('100%').width('400px');
+		$('.file').height('495px').width('350px')
+				.css('margin-top', '30px');
+		$('.expand').css('display', 'flex');
+		$('.reduce').css('display', 'none');
+	})
+
+
+
+</script>
+</html>

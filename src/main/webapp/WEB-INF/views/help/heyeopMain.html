@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>heyeopMain</title>
+
+<style type="text/css">
+
+html, body {
+	width: 100%;
+	height: 1700px;
+	min-width: 1130px;
+	display: flex;
+	justify-content: center;
+	min-width: 1130px;
+}
+
+.wrap {
+	width: 1130px;
+	height: 100%;
+}
+
+.navbar {
+	width: 1130px;
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	flex-shrink: 0;
+}
+
+.nav_group {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.nav_info {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 75px;
+	font-size: 17px;
+}
+
+.userName {
+	margin-right: 6px;
+	font-weight: bolder;
+}
+
+.nim {
+	margin-right: 10px;
+	font-size: 13px;
+	align-self: center;
+	margin-top: 4px;
+	font-weight: bolder;
+}
+
+.medal {
+	margin-right: 20px;
+	align-self: center;
+	color: #e6bc14;
+}
+
+.mypage {
+	margin-right: 20px;
+	font-weight: bolder;
+}
+
+.logout {
+	font-weight: bolder;
+	color: #e67e00
+}
+
+.nav_title {
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.help {
+	color: rgb(41, 128, 185);
+}
+
+/*로고*/
+.logo {
+	width: 200px;
+	align-self: center;
+}
+
+/* 바디 css */
+.category {
+	width: 1130px;
+	height: 200px;
+	margin-top: 50px;
+	margin-bottom: 100px;
+}
+
+.category_name {
+	margin-left: 20px;
+	margin-bottom: 20px;
+	font-size: 23px;
+	color: rgb(242, 150, 97);
+	font-weight: bolder;
+	display: flex;
+}
+
+.category_margin {
+	width: 50px;
+	height: 180px;
+	display: inline-flex;
+}
+
+.category_element {
+	border-radius: 30px;
+	margin-left: 50px;
+	width: 270px;
+	height: 180px;
+	display: inline-flex;
+	position: relative;
+}
+
+.category_element img {
+	border-radius: 30px;
+	width: 270px;
+}
+
+.img_name {
+	border-bottom-left-radius: 30px;
+	border-bottom-right-radius: 30px;
+	background-color: rgba(213, 213, 213, 0.7);
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 0%;
+	color: black;
+	font-weight: bolder;
+	font-size: 20px;
+	width: 100%;
+	height: 40px;
+	display: flex;
+	justify-content: center;
+	align-content: center;
+	flex-wrap: wrap;
+}
+</style>
+</head>
+<body>
+	<div class="wrap">
+
+		<!-- header -->
+		<header id="header">
+			<nav class="navbar">
+				<div class="logo">
+					<img src="./sample/image/logo2.png" class="logo">
+				</div>
+				<div class="nav_group">
+					<div class="nav_info">
+						<div class="userName">해협</div>
+						<div class="nim">님</div>
+						<div class="medal">
+							<i class="fas fa-medal"></i>
+						</div>
+						<div class="mypage">마이페이지</div>
+						<div class="logout">LOGOUT</div>
+					</div>
+					<div class="nav_title">
+						<div class="help">해협신청</div>
+						<div class="together">공구해협</div>
+						<div class="manage">관리해협</div>
+						<div class="talk">소통해협</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+		<!-- body -->
+		<div class="category">
+			<div class="category_name">수리 | 보수</div>
+			<div class="category_margin"></div>
+			<div class="category_element">
+				<img src="./sample/image/수리보수-욕실.png">
+				<div class="img_name">욕실</div>
+			</div>
+			<div class="category_element">
+				<img src="./sample/image/수리보수-싱크대.png">
+				<div class="img_name">싱크대</div>
+			</div>
+			<div class="category_element">
+				<img src="./sample/image/수리보수-가전.png">
+				<div class="img_name">가전</div>
+			</div>
+		</div>
+
+		<div class="category">
+			<div class="category_name">인테리어</div>
+			<div class="category_margin"></div>
+			<div class="category_element">
+				<img src="./sample/image/인테리어-타일.png">
+				<div class="img_name">타일</div>
+			</div>
+			<div class="category_element">
+				<img src="./sample/image/인테리어-페인트.png">
+				<div class="img_name">페인트</div>
+			</div>
+			<div class="category_element">
+				<img src="./sample/image/인테리어-도배.png">
+				<div class="img_name">도배</div>
+			</div>
+		</div>
+		<div class="category">
+			<div class="category_margin"></div>
+			<div class="category_element">
+				<img src="./sample/image/인테리어-용달.png">
+				<div class="img_name">용달</div>
+			</div>
+			<div class="category_element">
+				<img src="./sample/image/인테리어-가구조립.png">
+				<div class="img_name">가구조립</div>
+			</div>
+		</div>
+
+		<div class="category">
+			<div class="category_name">보안 | 방충</div>
+			<div class="category_margin"></div>
+			<div class="category_element">
+				<img src="./sample/image/보안-폐쇄회로.png">
+				<div class="img_name">폐쇄회로</div>
+			</div>
+			<div class="category_element">
+				<img src="./sample/image/보안-도어락.png">
+				<div class="img_name">도어락</div>
+			</div>
+			<div class="category_element">
+				<img src="./sample/image/보안-방충.png">
+				<div class="img_name">방충</div>
+			</div>
+		</div>
+
+		<div class="category">
+			<div class="category_name">생활</div>
+			<div class="category_margin"></div>
+			<div class="category_element">
+				<img src="./sample/image/생활-청소.png">
+				<div class="img_name">청소</div>
+			</div>
+			<div class="category_element">
+				<img src="./sample/image/생활-세탁.png">
+				<div class="img_name">세탁</div>
+			</div>
+			<div class="category_element">
+				<img src="./sample/image/생활-식품정기배송.png">
+				<div class="img_name">식품 정기배송</div>
+			</div>
+		</div>
+
+	</div>
+
+</body>
+</html>

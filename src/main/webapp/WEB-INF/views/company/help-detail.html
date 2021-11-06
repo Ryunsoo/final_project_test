@@ -1,0 +1,429 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<style type="text/css">
+body, html{
+	/* heigth: 690px; */
+	position: relative;
+	min-height: 690px;
+	weight: 1130px;
+	min-width: 1130px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	font-family: 'Han Sans, 본고딕';
+}
+
+div{
+	/* border: 1px solid grey; */
+	/* box-shadow: 1px 1px 5px 0px #444; */
+}
+
+a {
+  text-decoration: none;
+}
+  
+a:hover, a:focus {
+    color: #3b98c8;
+}
+
+button{
+	cursor: pointer;
+}
+
+.header{
+	display: flex;
+	height: 130px;
+	width: 1100px;
+}
+
+.logo{
+	height: 100%;
+	width: 260px;
+	margin: 0 50px 0 50px;
+	background-image: url("../../../resources/image/main-logo.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+.user_menu{
+	display: flex;
+	height: 20px;
+	width: 740px;
+	justify-content: flex-end;
+	margin: 0 5px 0 0;
+}
+
+.switch_user .text{
+	color: #a6a6a6;
+	font-weight: bold;
+	font-size: 13px;
+}
+
+.switch_user .icon{
+	color: #3498db;
+}
+
+.user_name{
+	margin: 0 0 0 5px;
+	color: #404040;
+	font-weight: bold;
+}
+
+.nim{
+	color: #404040;
+	font-weight: bold;
+	margin: 0 0 0 5px;
+	font-size: 14px;
+	display: flex;
+	align-items: flex-end;
+}
+
+.medal{
+	margin: 0 5px 0 5px;
+	color: #e6bc14;
+}
+
+.mypage{
+	margin: 0 5px 0 5px;
+}
+
+.mypage>a{
+	color: #404040;
+	font-weight: bold;
+}
+
+.logout{
+	margin: 0 20px 0 5px;
+}
+
+.logout>a{
+	color: #e67e00;
+	font-weight: bold;
+}
+
+
+/* main */
+.main{
+	display: flex;
+	height: 850px;
+	width: 1130px;
+}
+
+.aside{
+	height: 100%;
+	width: 230px;
+}
+
+.help_list{
+	border: none;
+	padding-left: 8px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 80px 0 20px 0;
+	height: 80px;
+	width: 170px;
+	font-size: 28px;
+	color: white;
+	font-weight: bold;
+	box-shadow: 0px 10px 10px #808080;
+	text-shadow: 2px 2px 5px #808080;
+	border-bottom-right-radius: 20px;
+	border-top-right-radius: 20px;
+	background-color: rgba(52, 73, 94, 0.33);
+}
+
+.help_list:hover{
+    box-shadow: inset 0 0 5px 1px #808080;
+}
+
+.my_help{
+	border: none;
+	padding-left: 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	margin: 30px 0 0 0; 
+	height: 60px;
+	width: 130px;
+	font-size: 25px;
+	color: white;
+	font-weight: bold;
+	box-shadow: 0px 10px 10px #808080;
+	text-shadow: 2px 2px 5px #808080;
+	border-bottom-right-radius: 15px;
+	border-top-right-radius: 15px;
+	background-color: rgba(52, 73, 94, 0.98);
+}
+
+.my_help:hover{
+	box-shadow: inset 0 0 5px 1px #243342;
+}
+
+.section{
+	display: flex;
+	justify-content: flex-start;
+	height: 100%;
+	width: 900px;
+}
+
+.wrapper{
+	width: 820px;
+}
+
+.menu_title{
+	margin: 70px 0 15px 0;
+	height: 50px;
+	padding-left: 20px;
+	display: flex;
+	align-items: center;
+	font-size: 28px;
+	font-weight: bold;
+	color: rgb(52, 73, 94);
+}
+
+.content_wrapper{
+	display: flex;
+	justify-content: space-between;
+	height: 480px;
+}
+
+.inp_title{
+	display: flex;
+	margin-top : 20px;
+	height: 30px;
+	align-items: center;
+	color: #e67e00;
+	font-size: 15px;
+	font-weight: bold;
+	font-family: '나눔고딕 ExtraBold';
+}
+
+.content_left{
+	height: 100%;
+	width: 395px;
+}
+
+.help_img{
+	height: 260px;
+	width: 395px;
+	border-radius: 15px;
+	background-image: url("../../../resources/image/help-exam.jpeg");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: center;
+}
+
+textarea{
+	resize: none;
+	height: 162px;
+	width: 378px;
+	border-radius: 15px;
+	border-style: solid;
+	border-width: 1.8px;
+	border-color: #d9d9d9;
+	color: #666666;
+	font-family: 'Han Sans, 본고딕';
+	padding: 5px 10px 5px 10px;
+}
+
+.content_right{
+	height: 100%;
+	width: 395px;
+}
+
+input{
+	width: 388px;
+	height: 40px;
+	border-radius: 8px;
+	border-style: solid;
+	border-width: 1.8px;
+	border-color: #d9d9d9;
+	color: #666666;
+	font-family: 'Han Sans, 본고딕';
+	padding-left: 10px;
+}
+
+textarea:focus, input:focus{
+	outline: none;
+}
+
+.join_btn{
+	height: 80px;
+	margin-top: 25px;
+}
+
+.join_btn>button{
+	width: 100%;
+	height: 100%;
+	font-size: 30px;
+	font-weight: bold;
+	color: white;
+	background-color: rgba(52, 73, 94, 0.98);
+	border-radius: 10px;
+}
+
+.join_btn>button:hover{
+	background-color: #3f5973;
+	box-shadow: inset 0 0 5px 1px #243342;
+}
+
+.chatting{
+	position: fixed;
+	height: 80px;
+	width: 80px;
+	background-image: url("../../../resources/image/chatting.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	transform: translate(550%, 700%);
+	border-radius: 100px;
+	box-shadow: 2px 2px 5px 1px #666666;
+	z-index: 99;
+}
+
+.chatting:hover{
+	background-color: #e3d79c;
+	cursor: pointer;
+}
+
+.footer{
+	height: 250px;
+	width: 1130px;
+	display: flex;
+	background-image: url("../../../resources/image/footer.png");
+	background-repeat: no-repeat;
+	background-size: 1130px 250px;
+	background-position: center;
+}
+
+.footer pre{
+	display: block;
+	color: white;
+	font-weight: bold;
+	font-size: 14px;
+	font-family: '맑은 고딕';
+	margin: 0 15px 0 15px;
+	line-height: 1.5
+}
+
+.footer_logo{
+	margin: 80px 5px 0 50px;
+}
+
+.footer_text{
+	margin: 80px 0 0 5px;
+}
+
+.footer_title{
+	margin: 10px 0 30px 0;
+}
+
+.footer_content{
+	display: flex;
+	margin-top: 20px;
+}
+
+.logo-icon{
+	height: 40px;
+	width: 40px;
+}
+
+</style>
+</head>
+<body>
+	<!-- 외원정보 / 마이페이지 & 로그아웃 버튼 / 로고 -->
+	<!-- <header> -->
+	<div class='header'>
+		<div class='logo'></div>
+		<div class='user_menu'>
+			<div class='switch_user'>
+				<a href='#'><span class='text'>개인회원으로 전환</span> <span class='icon'><i class="fas fa-sync-alt"></i></span></a>
+			</div>
+			<div class='user_name'>해협</div><div class='nim'>님</div><div class='medal'><i class="fas fa-medal"></i></div>
+			<div class='mypage'><a href='#'>마이페이지</a></div>
+			<div class='logout'><a href='#'>LOGOUT</a></div>
+		</div>
+	</div>
+	<!-- </header> -->
+	
+	<!-- 검색 / 날짜 및 금액 검색 -->
+	<!-- <main> -->
+	<div class='main'>
+	
+		<!-- 사이트 메뉴(조회해협 & MY 해협) -->
+		<!-- <aside> -->
+		<div class='aside'>
+			<button class="help_list">조회 해협</button>
+			<button class="my_help">MY 해협</button>
+		</div>
+		<!-- </aside> -->
+		<div class='section'>
+			<div class='wrapper'>
+				<div class='menu_title'>해협 조회</div>
+				<div class='content_wrapper'>
+					<div class='content_left'>
+						<div class='help_img'></div>
+						<div class='inp_title'>* 요청사항</div>
+						<textarea rows="10" cols="50" readonly>
+물이 안빠져요. 고쳐주세요ㅠ
+날짜, 시간 조정 가능합니다!! 연락주세요!
+						</textarea>
+					</div>
+					<div class='content_right'>
+						<div class='inp_title'>* 성 함</div>
+						<input type="text" value='권구현' readonly>
+						<div class='inp_title'>* 연락처</div>
+						<input type="tel" value='010-0000-0000' readonly>
+						<div class='inp_title'>* 주 소</div>
+						<input type="text" value='서울시 강남구 역삼동' readonly>
+						<div class='inp_title'>* 원하는 시간</div>
+						<input type="datetime-local" value='2021-11-02T10:30' readonly>
+						<div class='inp_title'>* 희망금액</div>
+						<input type="text" value='50,000' readonly>
+					</div>
+				</div>
+				<div class='join_btn'><button>해협 참가하기</button></div>
+			</div>
+		</div>
+	</div>
+	
+	<div class='chatting'></div>
+		
+	<!-- 자취해협 정보 footer -->
+	<!-- <footer> -->
+	<div class='footer'>
+		<div class='footer_logo'><img src="../../../resources/image/logo-icon.png" class='logo-icon'></div>
+		
+		<div class='footer_text'>
+			<div class='footer_title'><pre>project  자취해협  |  team  help!</pre></div>
+			
+			<div class='footer_content'>
+			<pre>Gwon Gu Hyun   |   kwon41147406@gmail.com
+Kim Hyun Soo   |   oooklyt@naver.com
+Hwang Ryun Soo   |   babyfox225@gmail.com
+Lee Kyung Min   |   alssgo70051@naver.com</pre>
+			<pre>Lee Joo Hyun   |   carinae4717@gmail.com
+Lee Ho Jun   |   lhj132824@naver.com
+Ko Hyuck Joon   |   akhj123akhj@naver.com
+Choi Min Seok   |   dktlfem3333@gmail.com</pre>
+			</div>
+		</div>
+	</div>
+	<!-- </footer> -->
+</body>
+<script type="text/javascript">
+
+
+
+
+
+
+</script>
+</html>

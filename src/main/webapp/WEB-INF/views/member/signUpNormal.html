@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>sign-up</title>
+<style type="text/css">
+/* div {
+	box-shadow: 0 0 2px black;
+} */
+
+body {
+	width: 100%;
+	height: 100%;
+	min-width: 1130px;
+	display: flex;
+	justify-content: center;
+}
+
+/* .topBlank */
+
+/* 왼쪽 박스 기준 */
+.leftBox {
+	float: left;
+	width: 330px;
+}
+
+.MainLogoHelp {
+	margin: 2%;
+}
+
+.imageLogo1, .imageLogo2, .imageLogo3, .imageLogo4 {
+	margin: 1%;
+}
+
+/* 오른쪽 박스 기준 */
+.rightBox {
+	float: left;
+	width: 750px;
+	background-color: lightblue;
+	height: 780px;
+}
+
+.loginTopBlank {
+	height: 70px;
+}
+
+.loginleftBlank {
+	float: left;
+	height: 450px;
+	width: 70px;
+}
+
+.loginMainTitle {
+	float: left;
+	height: 450px;
+	width: 610px;
+	border-radius: 30px;
+}
+
+.signUpProgressBar{
+	background-color:#FDD017;
+	margin-left:17%;
+	width: 65%;
+	animation: progressbar 2s ease-out;
+}
+
+.form-signin-heading {
+	text-align: center;
+}
+
+.loginRightBlank {
+	float: left;
+	height: 450px;
+	width: 70px;
+}
+
+.loginBottomBlank {
+	float: left;
+	height: 107px;
+	width: 750px;
+}
+
+/*  */
+@import "bourbon";
+
+.wrapper {
+	/* margin-top: 80px; */
+	margin-bottom: 80px;
+}
+
+.form-signin {
+	box-shadow: 5px 5px 5px #F9D182;
+	border-radius: 20px;
+	height: 620px;
+	max-width: 530px;
+	padding: 20px 70px 35px;
+	margin: 0 auto;
+	background-color: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+.form-control_id {
+	margin:15px;
+	float: left;
+	outline-color: lightgray;
+	border-radius: 5px;
+	position: relative;
+	font-size: 13px;
+	width: 280px;
+	height: 15px;
+	padding: 10px;
+	outline-color: lightgray;
+	@include
+	box-sizing(border-box);
+	&:focus{
+	z-index:2;
+	}
+}
+
+.form-control_all {
+	margin:15px;
+	float: left;
+	outline-color: lightgray;
+	border-radius: 5px;
+	position: relative;
+	font-size: 13px;
+	width: 400px;
+	height: 15px;
+	padding: 10px;
+	outline-color: lightgray;
+	@include
+	box-sizing(border-box);
+	&:focus{
+	z-index:2;
+	}
+}
+
+/* 중복 확인 버튼 CSS */
+.btn-1 {
+	display: inline-block;
+	width: 200px;
+	height: 54px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 54px;
+	outline: none;
+	background-color: #59b1eb;
+	float: left;
+	margin: 10px;
+}
+
+/* 제목 타이틀 */
+.hr-sect {
+	padding-top: 15px;
+	display: flex;
+	flex-basis: 100%;
+	align-items: center;
+	color: rgba(0, 0, 0, 0.35);
+	font-size: 20px;
+	margin: 8px 0px;
+}
+
+.hr-sect::before, .hr-sect::after {
+	content: "";
+	flex-grow: 1;
+	background: rgba(0, 0, 0, 0.35);
+	height: 1px;
+	font-size: 20px;
+	line-height: 0px;
+	margin: 0px 16px;
+}
+
+.btn-1 {
+	float: right; border-radius : 15px;
+	font-size: 20px;
+	width: 100px;
+	height: 60px;
+	background: #000;
+	color: #fff;
+	transition: all 0.3s ease;
+	border-radius: 15px;
+}
+
+.idMargin,
+.nameMargin,
+.tellMargin{
+	height:90px;
+	margin: 5px;
+}
+
+.passwordMargin{
+	height:160px;
+	margin: 5px;
+}
+
+.passwordfloat{
+	margin-right: 130px;
+	float: left;
+}
+
+.level{
+	float: left;
+}
+
+.button_next{
+	float:right;
+	border-radius: 12px;
+	background-color: #0C090A;
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.button_check{
+	float:right;
+	border-radius: 12px;
+	background-color: #E5E4E2;
+    border: none;
+    color: 0C090A;
+    padding: 8px 15px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.check{
+	margin-top: 9px;
+	margin-right:85px;
+	float: right;
+}
+
+.click_image{
+	margin-top: 20px;
+	margin-left: 30px;
+}
+
+.next{
+	float: right;
+}
+</style>
+
+
+</head>
+<body>
+
+	<div class="topBar">
+		<div class="leftBox">
+			<div class="MainLogoHelp">
+				<img src="../../../resources/image/자취해협.png" width="300px">
+			</div>
+
+			<div></div>
+
+			<div class="imageLogo1">
+				<img src="../../../resources/image/해협신청.png" width="230px"
+					align="left" class="image1">
+			</div>
+
+			<div class="imageLogo2">
+				<img src="../../../resources/image/공동구매.png" width="230px"
+					align="right" class="image2">
+			</div>
+
+			<div>
+				<img src="../../../resources/image/클립보드.png" width="230px"
+					align="left" class="image3">
+			</div>
+
+			<div>
+				<img src="../../../resources/image/커뮤니티.png" width="230px"
+					align="right" class="image4">
+			</div>
+		</div>
+
+		<div class="rightBox">
+			<div class="loginTitle">
+				<div class="loginTopBlank"></div>
+					<div>
+						<form class="form-signin">
+							<progress class="signUpProgressBar" value='50' max='100'></progress><br>
+							<label style="float: right; margin-right: 70px; margin-top: 5px;">50%</label><br>
+						<div class="hr-sect">함 께 &nbsp해 협</div>
+						
+						<div class="idMargin">
+							<label>* 아이디</label><br> 
+								<input type="text" class="form-control_id" name="username" 
+								placeholder="아이디를 입력해주세요." required="" autofocus="" />
+								
+								<div class="check">
+									<button class="button_check">중복확인</button>
+								</div>
+						</div>
+						
+						<div class="passwordMargin">
+							<div class="passwordfloat">
+								<label>* 비밀번호</label>
+							</div>
+								<div class="level">
+									<label style="color: red; font-weight: 1000">낮음</label>
+									<label style="color: #FBB117; font-weight: 1000">보통</label>
+									<label style="color: #4CC417; font-weight: 1000">높음</label>
+								</div>
+									<input type="password" class="form-control_all" name="password"
+									placeholder="비밀번호(영문 + 숫자 + 특수문자 8자 이상)" required="" autofocus="" />
+									
+									<input type="password" class="form-control_all" name="password" 
+									placeholder="비밀번호 확인" required=""autofocus="" />
+						</div>
+						
+						<div class=nameMargin>
+							<label>* 이름</label><br>
+								<input type="text" class="form-control_all" name="username" placeholder="이름을 입력해주세요." required="" autofocus="" /><br><br>
+						</div>
+						
+						<div class=tellMargin>
+							<label>* 전화번호</label><br>
+								<input type="text" class="form-control_all" name="username" placeholder="010-1234-5678" required="" autofocus="" /><br>
+						</div>
+						
+						<div class="click_image">
+							<img src="../../../resources/image/Click!!.png" width="230px"
+							align="left">
+						</div>
+						
+						<div class="next">
+							<button class="button_next">다음 ></button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</body>
+</html>

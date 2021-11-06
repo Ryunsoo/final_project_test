@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>IceBox6</title>
+<link rel="stylesheet"
+	href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
+	integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
+	crossorigin="anonymous" />
+<style type="text/css">
+/* nav,div,ul,li,a,span {
+	border: solid thin lightgray;
+	display: flex;
+}    */
+.hidden {
+	display: none;
+}
+
+#bg {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgb(0, 0, 0, 0.5);
+	z-index: 1;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	min-width: 1130px;
+	display: flex;
+	justify-content: center;
+}
+
+.wrap {
+	width: 1130px;
+	height: 100%;
+}
+
+.navbar {
+	width: 1130px;
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	flex-shrink: 0;
+}
+
+.nav_group {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.nav_info {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 75px;
+	font-size: 17px;
+}
+
+.userName {
+	margin-right: 6px;
+	font-weight: bolder;
+}
+
+.nim {
+	margin-right: 10px;
+	font-size: 13px;
+	align-self: center;
+	margin-top: 3.5px;
+	font-weight: bolder;
+}
+
+.medal {
+	margin-right: 20px;
+	align-self: center;
+	color: #e6bc14;
+}
+
+.mypage {
+	margin-right: 20px;
+	font-weight: bolder;
+	cursor: pointer;
+}
+
+.logout {
+	font-weight: bolder;
+	color: #e67e00;
+	cursor: pointer;
+	/* text-shadow: 0.5px 0.5px 0.5px; */
+}
+
+.nav_title {
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.manage {
+	color: rgb(41, 128, 185);
+	text-shadow: 0.1px 0.1px 0.1px;
+	cursor: pointer;
+}
+
+.help, .together, .talk {
+	cursor: pointer;
+}
+
+.mypage:hover, .logout:hover, .manage:hover, .help:hover, .together:hover,
+	.talk:hover {
+	text-shadow: 5px 5px 5px lightgray;
+}
+
+/*로고*/
+.logo {
+	width: 230px;
+	align-self: center;
+	cursor: pointer;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+}
+
+.btn {
+	display: flex;
+	flex-direction: column;
+	margin-top: 85px;
+	flex-shrink: 0;
+	position: absolute;
+}
+
+.house_btn {
+	border: none;
+	width: 180px;
+	height: 90px;
+	background-color: rgba(52, 73, 94, 0.33);
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	font-size: 23px;
+	color: white;
+	font-weight: bold;
+	box-shadow: 3px 3px 3px #333;
+	text-shadow: 2px 2px 2px #333;
+	cursor: pointer;
+	margin-top: 30px;
+}
+
+.icebox_btn {
+	border: none;
+	width: 150px;
+	height: 80px;
+	background-color: rgba(52, 73, 94, 0.98);
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	box-shadow: 3px 3px 3px #333;
+	text-shadow: 2px 2px 2px #333;
+	cursor: pointer;
+}
+
+.icebox_btn:hover, .house_btn:hover {
+	color: #fff;
+	background-color: #cca552;
+	border-color: #bf9b4d;
+}
+
+.scheduler {
+	font-weight: bold;
+	cursor: pointer;
+	margin-top: 17px;
+	margin-left: 5px;
+	font-size: 18px;
+}
+
+.my_statistics {
+	color: rgb(41, 128, 185);
+	text-shadow: 0.2px 0.2px 0.1px;
+	font-weight: bold;
+	cursor: pointer;
+	margin-top: 8px;
+	margin-left: 7px;
+	font-size: 18px;
+}
+
+.scheduler:hover, .my_statistics:hover {
+	text-shadow: 5px 5px 5px lightgray;
+}
+
+.personal_list_wrap {
+	display: flex;
+	flex-direction: column;
+	margin-left: 200px;
+	margin-top: 40px;
+}
+
+.personal_list_title {
+	color: rgb(197, 150, 76);
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: 10px;
+}
+.fixed_list_wrap {
+	display: flex;
+	flex-direction: column;
+	margin-left: 200px;
+	margin-top: 60px;
+}
+
+.fixed_list_title {
+	color: rgb(197, 150, 76);
+	font-weight: bold;
+	font-size: 20px;
+	margin-left: 10px;
+}
+
+.personal_search_wrap {
+	display: flex;
+	width: 730px;
+	justify-content: space-between;
+	align-items: center;
+}
+
+.personal_category {
+	width: 140px;
+	height: 40px; border-radius : 10px;
+	border: solid thin lightgray;
+	margin-left: 10px;
+	color: gray;
+	margin-top: 10px;
+	cursor: pointer;
+	border-radius: 10px;
+}
+
+.line {
+	background-color: lightgray;
+	width: 2px;
+	height: 30px;
+	border-radius: 5px;
+	margin-top: 10px;
+}
+
+.year, .month {
+	font-size: 20px;
+	margin-top: 10px;
+	font-weight: bold;
+	color: #333333d9;
+	cursor: pointer;
+}
+
+.year_radio, .month_radio {
+	width: 16px;
+	height: 16px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.search_btn {
+	border: none;
+	width: 60px;
+	height: 40px;
+	background-color: rgb(41, 128, 185);
+	border-radius: 5px;
+	color: white;
+	margin-top: 10px;
+	cursor: pointer;
+}
+
+.search_btn:focus {
+	color: white;
+	background-color: rgb(87, 153, 167);
+	border-color: rgb(87, 153, 167);
+	box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5);
+}
+
+.search_btn:hover {
+	color: white;
+	background-color: rgb(87, 153, 167);
+	border-color: rgb(87, 153, 167);
+}
+
+.search_btn:checked {
+	color: white;
+	background-color: rgb(87, 153, 167);
+	border-color: rgb(87, 153, 167);
+}
+
+.personal_paper {
+	margin-top: 30px;
+	margin-left: 10px;
+	width: 850px;
+	border-top: solid medium #ccc;
+	overflow: auto;
+	height: 240px;
+}
+
+.personal_txt{
+   display: flex;
+   width:100%;
+   align-items: center;
+   justify-content: center;
+   height:35px;
+   font-weight: bold;
+   background-color: #eaeaea;
+}
+.personal_txt>label{
+   display: flex;
+   width:100%;
+   align-items: center;
+   justify-content: center;
+   height:35px;
+   font-size: 15px;
+   font-weight: bold;
+   border-bottom: 2px solid #ccc;
+}
+.personal_content{
+   display: flex;
+   width:100%;
+   align-items: center;
+   justify-content: center;
+   height:35px;
+   font-size: 13px;
+   font-weight: bold;
+}
+.personal_content>label{
+   display: flex;
+   width:100%;
+   align-items: center;
+   justify-content: center;
+   height:35px;
+   font-size: 13px;
+   font-weight: bold;
+   border-bottom: 2px solid #e2e2e2;
+   color: #6c6a6a;
+}
+
+.personal_total{
+   display: flex;
+   width: 850px;
+   margin-left: 10px;
+   align-items: center;
+   justify-content: center;
+   height:35px;
+   font-size: 16px;
+   font-weight: bold;
+   border-bottom: solid medium #ccc;
+   border-top: solid medium #ccc;
+}
+.fixed_paper {
+	margin-top: 30px;
+	margin-left: 10px;
+	width: 850px;
+	border-top: solid medium #ccc;
+	border-bottom: solid medium #ccc;
+	overflow: auto;
+}
+
+.fixed_txt{
+   display: flex;
+   width:100%;
+   align-items: center;
+   justify-content: center;
+   height:35px;
+   font-weight: bold;
+   background-color: #eaeaea;
+}
+.fixed_txt>label{
+   display: flex;
+   width:100%;
+   align-items: center;
+   justify-content: center;
+   height:35px;
+   font-size: 15px;
+   font-weight: bold;
+   border-bottom: 2px solid #ccc;
+}
+.fixed_content{
+   display: flex;
+   width:100%;
+   align-items: center;
+   justify-content: center;
+   height:35px;
+   font-size: 13px;
+   font-weight: bold;
+}
+
+.fixed_content>label{
+   display: flex;
+   width:100%;
+   align-items: center;
+   justify-content: center;
+   height:35px;
+   font-size: 13px;
+   font-weight: bold;
+   border-bottom: 2px solid #e2e2e2;
+   color: #6c6a6a;
+}
+
+.fixed_total{
+   display: flex;
+   width:100%;
+   align-items: center;
+   justify-content: center;
+   height:35px;
+   font-size: 16px;
+   font-weight: bold;
+   border-bottom: 2px solid #e2e2e2;
+   color: #6c6a6a;
+}
+
+.list_line{
+	width: 900px;
+	border-bottom: dashed thick #e2e2e2;
+	margin-top: 60px;
+	margin-left: 190px;
+}
+
+</style>
+</head>
+<body>
+	<div id="bg" class="hidden"></div>
+	<div class="wrap">
+		<header id="header">
+			<nav class="navbar">
+				<div class="logo">
+					<img src="resources/img/logo.png" class="logo">
+				</div>
+				<div class="nav_group">
+					<div class="nav_info">
+						<div class="userName">해협</div>
+						<div class="nim">님</div>
+						<div class="medal">
+							<i class="fas fa-medal"></i>
+						</div>
+						<div class="mypage">마이페이지</div>
+						<div class="logout">LOGOUT</div>
+					</div>
+					<div class="nav_title">
+						<div class="help">해협신청</div>
+						<div class="together">공구해협</div>
+						<div class="manage">관리해협</div>
+						<div class="talk">소통해협</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<div class="main">
+			<div class="btn">
+				<button class="icebox_btn"
+					onclick="javascript:location.href='myIcebox.html'">나의 냉장고
+				</button>
+				<button class="house_btn" onclick="javascript:location.href='myIcebox5.html'">나의 가계부</button>
+				<div class="scheduler" onclick="javascript:location.href='myIcebox5.html'">스케쥴러</div>
+				<div class="my_statistics" onclick="javascript:location.href='myIcebox6.html'">My 통계</div>
+			</div>
+			<div class="personal_list_wrap">
+				<div class="personal_list_title">개인 지출 내역</div>
+				<div class="personal_search_wrap">
+					<select class="personal_category">
+						<option selected disabled>&nbsp&nbsp지출 구분</option>
+						<option>&nbsp&nbsp식비</option>
+						<option>&nbsp&nbsp생활비</option>
+						<option>&nbsp&nbsp기타</option>
+					</select>
+					<div class="line"></div>
+					<label class="year"><input type="radio" class="year_radio"
+						name="choice" id="choice" value="1">연간 통계</label> <label
+						class="month"><input type="radio" class="month_radio"
+						name="choice" id="choice" value="1">월간 통계</label> <select
+						class="personal_category">
+						<option selected disabled>&nbsp&nbsp기간 (년/월) 구분</option>
+						<option>&nbsp&nbsp일</option>
+						<option>&nbsp&nbsp월</option>
+						<option>&nbsp&nbsp년</option>
+					</select>
+					<button class="search_btn">조회</button>
+				</div>
+				<div class='personal_paper' id='list'>
+					<div class='personal_txt'>
+						<label id='idx'>No</label> 
+						<label id='cate'>구분</label> 
+						<label id='content'>내용</label> 
+						<label id='money'>금액</label>
+						<label id='date'>날짜</label>
+						<label id='tatal_pay'>누적금액</label>
+					</div>
+					<div class='personal_content'>
+						<label id='idx'>1</label> 
+						<label id='cate'>식비</label> 
+						<label id='content'>치킨</label> 
+						<label id='money'>18,000</label>
+						<label id='date'>2021/11/04</label>
+						<label id='tatal_pay'>18,000</label>
+					</div>
+					<div class='personal_content'>
+						<label id='idx'>2</label> 
+						<label id='cate'>생활비</label> 
+						<label id='content'>쿠팡 (쌀 외 5종)</label> 
+						<label id='money'>18,000</label>
+						<label id='date'>2021/11/04</label>
+						<label id='tatal_pay'>18,000</label>
+					</div>
+					<div class='personal_content'>
+						<label id='idx'>3</label> 
+						<label id='cate'>생활비</label> 
+						<label id='content'>쿠팡 (쌀 외 5종)</label> 
+						<label id='money'>18,000</label>
+						<label id='date'>2021/11/04</label>
+						<label id='tatal_pay'>18,000</label>
+					</div>
+					<div class='personal_content'>
+						<label id='idx'>4</label> 
+						<label id='cate'>생활비</label> 
+						<label id='content'>쿠팡 (쌀 외 5종)</label> 
+						<label id='money'>18,000</label>
+						<label id='date'>2021/11/04</label>
+						<label id='tatal_pay'>18,000</label>
+					</div>
+					<div class='personal_content'>
+						<label id='idx'>4</label> 
+						<label id='cate'>생활비</label> 
+						<label id='content'>쿠팡 (쌀 외 5종)</label> 
+						<label id='money'>18,000</label>
+						<label id='date'>2021/11/04</label>
+						<label id='tatal_pay'>18,000</label>
+					</div>
+					<div class='personal_content'>
+						<label id='idx'>4</label> 
+						<label id='cate'>생활비</label> 
+						<label id='content'>쿠팡 (쌀 외 5종)</label> 
+						<label id='money'>18,000</label>
+						<label id='date'>2021/11/04</label>
+						<label id='tatal_pay'>18,000</label>
+					</div>
+					
+				</div>
+				<div class="personal_total">
+						조회하신 내역의 합계는<div style="color: orange;">&nbsp98,000원&nbsp</div>을 사용했습니다.
+					</div>
+			</div>
+			<div class="list_line"></div>
+			<div class="fixed_list_wrap">
+				<div class="fixed_list_title">고정 지출 내역</div>
+				<div class='fixed_paper' id='list'>
+					<div class='fixed_txt'>
+						<label id='idx'>No</label> 
+						<label id='cate'>내역</label> 
+						<label id='content'>금액</label> 
+						<label id='money'>고정주기</label>
+						<label id='date'>시작 일자</label>
+						<label id='tatal_pay'>마감일자</label>
+					</div>
+					<div class='fixed_content'>
+						<label id='idx'>1</label> 
+						<label id='cate'>월세</label> 
+						<label id='content'>400,000</label> 
+						<label id='content'>1달</label> 
+						<label id='date'>2021/11/04</label>
+						<label id='tatal_pay'>2023/11/04</label>
+					</div>
+				
+					<div class='fixed_content'>
+						<label id='idx'>1</label> 
+						<label id='cate'>월세</label> 
+						<label id='content'>400,000</label> 
+						<label id='content'>1달</label> 
+						<label id='date'>2021/11/04</label>
+						<label id='tatal_pay'>2023/11/04</label>
+					</div>
+				
+					<div class='fixed_content'>
+						<label id='idx'>1</label> 
+						<label id='cate'>월세</label> 
+						<label id='content'>400,000</label> 
+						<label id='content'>1달</label> 
+						<label id='date'>2021/11/04</label>
+						<label id='tatal_pay'>2023/11/04</label>
+					</div>
+				
+					<div class='fixed_content'>
+						<label id='idx'>1</label> 
+						<label id='cate'>월세</label> 
+						<label id='content'>400,000</label> 
+						<label id='content'>1달</label> 
+						<label id='date'>2021/11/04</label>
+						<label id='tatal_pay'>2023/11/04</label>
+					</div>
+				
+				
+					<div class="fixed_total">
+						고정지출의 합계는<div style="color: orange;">&nbsp400,000원&nbsp</div>입니다.
+					</div>
+				
+				</div>
+			</div>
+
+		</div>
+		
+		<footer style="height: 200px;">
+		
+		</footer>
+	</div>
+</body>
+<script>
+        
+        
+</script>
+</html>

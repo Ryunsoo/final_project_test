@@ -1,0 +1,649 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>IceBox5</title>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link href='resources/css/main.css' rel='stylesheet'/>
+<script src='resources/js/main.js'></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+<script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<link rel="stylesheet" href="resources/css/jquery-ui.min.css">
+<style type="text/css">
+/* nav,div,ul,li,a,span {
+	border: solid thin lightgray;
+	display: flex;
+}    */
+
+.hidden {
+	display: none;
+}
+
+#personal_hidden {
+	display: none;
+}
+/* 
+#fixed_hidden {
+	display: none;
+}  
+ */
+#bg {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgb(0, 0, 0, 0.5);
+	z-index: 2000;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    min-width: 1130px;
+    display: flex;
+    justify-content: center;
+}
+
+.wrap {
+    width: 1130px;
+    height: 100%;
+}
+
+.navbar {
+	width: 1130px;
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	flex-shrink: 0;
+}
+
+.nav_group{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.nav_info{
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 75px;
+	font-size: 17px;
+}
+
+.userName{
+	margin-right: 6px;
+	font-weight: bolder;
+}
+
+.nim{
+	margin-right: 10px;
+	font-size: 13px;
+	align-self: center;
+	margin-top: 3.5px;
+	font-weight: bolder;
+}
+
+.medal{
+	margin-right: 20px;
+	align-self: center;
+	color: #e6bc14;
+}
+
+.mypage{
+	margin-right: 20px;
+	font-weight: bolder;
+	cursor: pointer;
+}
+
+.logout{
+	font-weight: bolder;
+	color: #e67e00;
+	cursor: pointer;
+	/* text-shadow: 0.5px 0.5px 0.5px; */
+}
+
+.nav_title{
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.manage{
+	color: rgb(41, 128, 185);
+	text-shadow: 0.1px 0.1px 0.1px;
+	cursor: pointer;
+}
+
+.help,.together,.talk{
+	cursor: pointer;
+}
+
+.mypage:hover,.logout:hover,.manage:hover,.help:hover,.together:hover,.talk:hover{
+	text-shadow: 5px 5px 5px lightgray;
+}
+
+/*로고*/
+.logo {
+    width:230px;
+    align-self: center;
+    cursor: pointer;
+}
+
+.main{
+	display: flex;
+}
+
+.btn{
+	display: flex;
+	flex-direction: column;
+	margin-top: 85px;
+	flex-shrink: 0;
+	position: absolute;
+}
+
+.house_btn{
+	border: none;
+	width: 180px;
+	height: 90px;
+	background-color: rgba(52, 73, 94, 0.33);
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	font-size: 23px;
+	color: white;
+	font-weight: bold;
+	box-shadow: 3px 3px 3px #333;
+	text-shadow: 2px 2px 2px #333;
+	cursor: pointer;
+	margin-top: 30px;
+}
+
+.icebox_btn{
+	border: none;
+	width: 150px;
+	height: 80px;
+	background-color: rgba(52, 73, 94, 0.98);
+	border-top-right-radius: 20px;
+	border-bottom-right-radius: 20px;
+	font-size: 20px;
+	color: white;
+	font-weight: bold;
+	box-shadow: 3px 3px 3px #333;
+	text-shadow: 2px 2px 2px #333;
+	cursor: pointer;
+}
+
+
+.icebox_btn:hover,.house_btn:hover{
+	color: #fff;
+  	background-color: #cca552;
+  	border-color: #bf9b4d;
+}
+
+.scheduler{
+	color: rgb(41, 128, 185);
+	font-weight: bold;
+	text-shadow: 0.2px 0.2px 0.1px ;
+	cursor: pointer;
+	margin-top: 17px;
+	margin-left: 5px;
+	font-size: 18px;
+}
+
+.my_statistics{
+	font-weight: bold;
+	cursor: pointer;
+	margin-top: 8px;
+	margin-left: 7px;
+	font-size: 18px;
+}
+
+.scheduler:hover,.my_statistics:hover{
+	text-shadow: 5px 5px 5px lightgray;
+}
+
+.calendar_wrap{
+	display: flex;
+	margin-left: 200px;
+}
+
+.calendar{
+	width: 650px;
+	height:500px;
+	margin-top: 28px;
+}
+
+
+.expenses{
+	display: flex;
+	flex-direction: column;
+	font-weight: bold;
+	margin-top: 40px;
+	margin-left: 10px;
+	width: 225px;
+}
+
+.choice{
+	color: rgb(41, 128, 185);
+	text-shadow: 0.2px 0.2px 0.1px;
+	font-weight: bold;
+	font-size: 20px;
+	margin: auto;
+}
+.expenses>label{
+	color: lightblack;
+	margin-top: 10px;
+}
+
+.expenses>label>input{
+	width: 18px;
+	height: 18px;
+	margin-right: 10px;
+	cursor: pointer;
+}
+
+.personal,.fixed{
+	font-size: 18px;
+	margin-bottom: 2px;
+	display: flex;
+	justify-content: center;
+	margin-right: 21px;
+	color: lightblack;
+	cursor: pointer;
+}
+
+
+.confirm{
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 170px;
+	height: 30px;
+	background-color: rgb(41, 128, 185);
+	color: white;
+	font-weight: bold;
+	align-self: center;
+	margin-top: 10px;
+	font-size: 17px;
+}
+
+.bell{
+	position: absolute;
+	font-size: 40px;
+	color: orange;
+	margin-left: 800px;
+	margin-top: 15px;
+	z-index: 2001;
+	cursor: pointer;
+}
+
+#popup{
+	width: 300px;
+	height: 40px;
+	position: absolute;
+	background-color: rgb(241, 196, 15);
+	text-align: center;
+	font-weight: bold;
+	font-size:18px;
+	overflow: auto;
+	z-index: 2;
+	color: black;
+	right: 50px;
+	top:20px;
+	padding-top: 12px;
+	border-radius: 15px;
+	padding-left: 10px;
+	padding-right: 10px;
+}
+
+.input_wrap{
+	display: flex;
+	flex-direction: column;
+	margin-left: 7px;
+}
+
+
+.personal_input_wrap{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-top: 25px;
+	display: no
+}
+
+
+.personal_title{
+	color: rgb(41, 128, 185);
+	text-shadow: 0.2px 0.2px 0.1px ;
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.personal_category{
+	width: 225px;
+	height:40px;
+	border-radius: 10px;
+	border: solid thin lightgray;
+	margin-left: 10px;
+	color: gray;
+	margin-top: 10px;
+}
+
+.personal_btn{
+	width: 230px;
+	display: flex;
+	justify-content: space-between;
+	margin-left: 15px;
+	margin-top: 10px;
+}
+
+
+.personal_delete{
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 90px;
+	height: 32px;
+	background-color: rgb(222 68 52);
+	color: white;
+	font-weight: bold;
+	align-self: center;
+	margin-top: 10px;
+	font-size: 15px;
+}
+
+.personal_delete:hover,.fixed_delete:hover {
+	color: #fff;
+	background-color: #c2787b;
+	border-color: #b67174;
+}
+.personal_delete:focus,.fixed_delete:focus {
+	color: #fff;
+	background-color: #cf8083;
+	border-color: #c2787b;
+	box-shadow: 0 0 0 0.25rem rgba(245, 166, 169, 0.5);
+}
+.personal_delete:checked,.fixed_delete:checked {
+	color: #fff;
+	background-color: #c2787b;
+	border-color: #b67174;
+}
+
+.personal_save{
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 90px;
+	height: 32px;
+	background-color: rgb(41, 128, 185);
+	color: white;
+	font-weight: bold;
+	align-self: center;
+	margin-top: 10px;
+	font-size: 15px;
+}
+
+.personal_save:focus,.confirm:focus,.fixed_save:focus{
+  color: white;
+  background-color: rgb(87, 153, 167);
+  border-color: rgb(87, 153, 167);
+  box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5);
+}
+
+.personal_save:hover,.confirm:hover,.fixed_save:hover{
+  color: white;
+  background-color: rgb(87, 153, 167);
+  border-color: rgb(87, 153, 167);
+}
+
+.personal_save:checked,.confirm:checked,.fixed_save:checked{
+  color: white;
+  background-color: rgb(87, 153, 167);
+  border-color: rgb(87, 153, 167);
+}
+
+.fixed_input_wrap{
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+
+.fixed_title{
+	color: rgb(41, 128, 185);
+	text-shadow: 0.2px 0.2px 0.1px ;
+	font-weight: bold;
+	font-size: 20px;
+	margin-bottom: 10px;
+	margin-top: 20px;
+}
+
+.fixed_category{
+	width: 225px;
+	height:35px;
+	border-radius: 10px;
+	border: solid thin lightgray;
+	margin-left: 10px;
+	color: gray;
+	margin-top: 10px;
+}
+.input_date{
+	width: 105px;
+	height:35px;
+	border-radius: 10px;
+	border: solid thin lightgray;
+	margin-left: 10px;
+	color: gray;
+	margin-top: 10px;
+}
+
+.fixed_btn{
+	width: 230px;
+	display: flex;
+	justify-content: space-between;
+	margin-left: 15px;
+	margin-top: 3px;
+}
+
+
+.fixed_delete{
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 90px;
+	height: 32px;
+	background-color: rgb(222 68 52);
+	color: white;
+	font-weight: bold;
+	align-self: center;
+	margin-top: 10px;
+	font-size: 15px;
+}
+.fixed_save{
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+	width: 90px;
+	height: 32px;
+	background-color: rgb(41, 128, 185);
+	color: white;
+	font-weight: bold;
+	align-self: center;
+	margin-top: 10px;
+	font-size: 15px;
+}
+
+.category{
+	display: flex;
+}
+
+
+</style>
+</head>
+<body>
+<div id="bg" class="hidden"></div>
+	<div class="wrap">
+		<header id="header">
+			<nav class="navbar">
+				<div class="logo">
+					<img src="resources/img/logo.png" class="logo">
+				</div>
+				<div class="nav_group">
+					<div class="nav_info">
+						<div class="userName">해협</div><div class="nim">님</div>
+						<div class="medal"><i class="fas fa-medal"></i></div>
+						<div class="mypage">마이페이지</div>
+						<div class="logout">LOGOUT</div>
+					</div>
+					<div class="nav_title">
+						<div class="help">해협신청</div>
+						<div class="together">공구해협</div>
+						<div class="manage">관리해협</div>
+						<div class="talk">소통해협</div>
+					</div>
+				</div>
+			</nav>
+		</header>
+		<div class="main">
+			<div class="btn">
+				<button class="icebox_btn" onclick="javascript:location.href='myIcebox.html'">
+					나의 냉장고
+				</button>
+				<button class="house_btn" onclick="javascript:location.href='myIcebox5.html'">
+					나의 가계부
+				</button>
+				<div class="scheduler" onclick="javascript:location.href='myIcebox5.html'">스케쥴러</div>
+				<div class="my_statistics" onclick="javascript:location.href='myIcebox6.html'">My 통계</div>
+			</div>
+			<div class="bell" id="go">
+				<div class="hidden" id="popup">오늘은 월세를 지출하는 날 입니다!</div>
+				<i class="fas fa-bell"></i>
+				
+			</div>
+			
+			<div class="calendar_wrap">
+				<div class="calendar" id="calendar"></div>
+				<div class="input_wrap">
+					<div class="expenses">
+						<div class="choice">지출을 선택하세요</div>
+						<label class="personal"><input type="radio" id="personal" class="radio" name="choice" value="개인">개인지출</label>
+						<label class=fixed><input type="radio" id="fixed" class="radio"  name="choice" value="고정">고정지출</label>
+						<button class="confirm" onclick='choice()'>확인</button>
+					</div>
+					
+					<div class="personal_input_wrap" id="personal_hidden" style="display: none;">
+						<div class="personal_title">
+							개인 지출 입력
+						</div>
+							<select class="personal_category" style="width: 232px; height: 45px; cursor: pointer;">
+								<option selected disabled>&nbsp&nbsp항목을 선택하세요.</option>
+								<option>&nbsp&nbsp식비</option>
+								<option>&nbsp&nbsp생활비</option>
+								<option>&nbsp&nbsp기타</option>
+							</select>
+						<input type="text" class="personal_category" placeholder="&nbsp&nbsp제목을 입력하세요." required>
+						<input type="text" class="personal_category" placeholder="&nbsp&nbsp날짜를 입력하세요." required>
+						<input type="text" class="personal_category" placeholder="&nbsp&nbsp금액 입력하세요." required>
+						<div class="personal_btn">
+							<button class="personal_delete">삭제</button>
+							<button class="personal_save">저장</button>
+						</div>
+					</div>
+					<div class="fixed_input_wrap" id="fixed_hidden" style="display: none;">
+						<div class="fixed_title">
+							고정 지출 입력
+						</div>
+						<input type="text" class="fixed_category" placeholder="&nbsp&nbsp제목을 입력하세요." required>
+						<div class="category">
+							<input type="text" class="input_date" placeholder="&nbsp&nbsp기간 입력"  required >
+							<select class="input_date" style="width: 108px; height: 40px; cursor: pointer;">
+								<option selected disabled>&nbsp&nbsp기간 단위</option>
+								<option>&nbsp&nbsp일</option>
+								<option>&nbsp&nbsp월</option>
+								<option>&nbsp&nbsp년</option>
+							</select>
+						</div>
+							
+						
+						<input type="text" class="fixed_category" placeholder="&nbsp&nbsp시작날짜를 입력하세요." required>
+						<input type="text" class="fixed_category" placeholder="&nbsp&nbsp마감날짜를 입력하세요." required>
+						<input type="text" class="fixed_category" placeholder="&nbsp&nbsp금액 입력하세요." required>
+						<div class="fixed_btn">
+							<button class="fixed_delete">삭제</button>
+							<button class="fixed_save">저장</button>
+						</div>
+					</div>
+				</div>
+					
+			</div>
+		</div>
+		<footer style="height: 50px;"></footer>
+	</div>
+</body>
+<script>
+        const go = document.querySelector("#go");
+        const bg = document.querySelector("#bg");
+        const popup = document.querySelector("#popup");
+        const exit = document.querySelector("#exit");
+
+        go.addEventListener("mouseover",function(){
+            bg.classList.remove("hidden");
+            popup.classList.remove("hidden");
+        });
+        go.addEventListener("mouseout",function(){
+            bg.classList.add("hidden");
+            popup.classList.add("hidden");
+        });
+        
+        
+        function choice() {
+        	  
+        	  const choiceList = document.getElementsByName('choice');
+        	  const personal = document.querySelector("#personal").checked;
+        	  const fixed = document.querySelector("#fixed").checked;
+        	  
+        	    console.dir(personal);
+        	    	if(personal == true){
+        	    		document.getElementById("personal_hidden").style.display ="flex";
+        	    		document.getElementById("fixed_hidden").style.display ="none";
+        	    	}else{
+        	    		document.getElementById("fixed_hidden").style.display ="flex";
+        	    		document.getElementById("personal_hidden").style.display ="none";
+        	    	}
+        	    	
+        	    	
+        	    	
+        	    }
+        	  
+     var calendarEl = document.getElementById('calendar');
+   	 var calendar = new FullCalendar.Calendar(calendarEl, {
+   			
+   		  initialDate: new Date(),
+   		  
+   		  
+   		  headerToolbar: {
+   	        left: 'prevYear,prev',
+   	        right: 'next,nextYear',
+   	        center: 'title'
+   	      },
+   	      titleFormat: {
+   	    	year: 'numeric',
+   	    	month: 'long',
+   	      },
+   	      buttonText: {
+   	    	today: 'today'  
+   	      },
+   	     /*  locale:'ko', */
+   	      dayMaxEvents: true, // allow "more" link when too many events
+   		  
+   	    });
+   	    calendar.render();	
+</script>
+</html>
