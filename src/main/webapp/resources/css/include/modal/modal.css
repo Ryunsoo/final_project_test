@@ -1,0 +1,126 @@
+@charset "UTF-8";
+
+#modal{
+	position: absolute;
+	height: 100%;
+	width: 100%;
+	background-color: transparent;
+	z-index: 900;
+	display: none;
+}
+
+
+.modal{
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid gray;
+	border-radius: 15px;
+	background-color: white;
+	box-shadow: 0 0 5px 3px #999999;
+	z-index: 999;
+}
+
+.width_modal{
+	height: 300px;
+	width: 400px;
+}
+
+.height_modal{
+	height: 500px;
+	width: 400px;
+}
+
+.simple_modal{
+	height: 200px;
+	width: 350px;
+}
+
+.piggy_modal{
+	background-color: white;
+	border-radius: 15px;
+}
+
+.piggy{
+	background-image: url('../../../image/돼지저금통.png');
+	background-repeat: no-repeat;
+	background-size: 45%;
+	background-position: bottom 2px right 2px;
+	position: absolute;
+	z-index: 998;
+}
+
+.modal_tit{
+	height: 75px;
+	padding: 0 30px 0 30px;
+	display: flex;
+	align-items: center;
+	color: #333333;
+	font-weight: bold;
+	font-size: 26px;
+}
+
+
+.modal_tit_center{
+	justify-content: center;
+	
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+.modal_btn_wrap{
+	display: flex;
+	height: 65px;
+	justify-content: space-between;
+	align-items: center;
+	padding: 0 4% 0 4%;
+}
+
+.modal_btn_wrap>button{
+	height: 40px;
+	border-radius: 4px;
+	color: white;
+	font-size: 18px;
+	font-weight: bold;
+}
+
+.modal_left_btn{
+	background-color: rgb(190, 190, 190);
+}
+
+.modal_right_btn{
+	background-color: rgb(106, 176, 223);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

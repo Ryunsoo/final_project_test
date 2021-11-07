@@ -7,8 +7,9 @@
 <link href="../../../resources/css/reset.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
 <link rel="stylesheet" href="https://bootswatch.com/5/minty/bootstrap.min.css">
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/4.12.0/d3.js" integrity="sha512-SuXpPdajLF/GkLBHndpO/A05M1yY4UXJjeeYSbuXRat6E2AUmnG5CVQ0xPtI7IxfXjRmAHoOuOsCqd8yoPup+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/c3/0.7.20/c3.js" integrity="sha512-11Z4MD9csmC3vH8Vd0eIPJBQu3uEHEqeznWEt3sLBCdQx3zm9mJbBcJH8WTcyGY9EXDE81BNpjE2vLosPK8cFQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="../../..//resources/css/include/modal/modal.css">
+<script type="text/javascript" src="../../../resources/js/include/modal/init-modal.js"></script>
 <style type="text/css">
 
 html, body {
@@ -126,15 +127,6 @@ html, body {
 	top: -50px;
 }
 
-#company_user {
-	position: absolute;
-	font-size: 16px;
-	font-weight: bolder;
-	color: gray;
-	left: 85px;
-	top: -25px;
-}
-
 .myinfo {
 	width: 45%;
 	height: 80%;
@@ -145,7 +137,7 @@ html, body {
 }
 
 #name {
-	width: 80%;
+	width: 60%;
 	height: 15%;
 	display: flex;
 	align-items: center;
@@ -410,7 +402,7 @@ html, body {
 
 #plusicon {
 	font-size: 40px;
-	color: white;
+	color: black;
 }
 
 #minusicon {
@@ -451,19 +443,11 @@ html, body {
 	display: flex;
 }
 
-#box2icon_town {
+#box2icon {
 	position: absolute;
 	bottom:0;
 	left:10px;
 	font-size: 30px;
-	color: gray;
-}
-
-#box2icon_check {
-	position: absolute;
-	bottom:-10px;
-	left:20px;
-	font-size: 40px;
 	color: gray;
 }
 
@@ -478,20 +462,20 @@ html, body {
 
 #title2 {
 	position: absolute;
-	bottom:0;
+	bottom:5px;
 	left:55px;
 	font-size: 20px;
 	color: black;
 	font-weight: bolder;
 }
 
-.checklisthead {
+.neighborhead {
 	position: relative;
 	width: 55%;
 	height: 100%;
 }
 
-.checklisthead >div {
+.neighborhead >div {
 	position: absolute;
 	bottom:0;
 	left:10px;
@@ -572,7 +556,7 @@ html, body {
 #listbody2 {
 	width: 80%;
 	height: 70%;
-	background-color: #6CC3D5;      
+	background-color: #6CC3D5;
 	text-align: center;
 	border-radius: 17px;
 	display: flex;
@@ -609,85 +593,18 @@ html, body {
 	font-size: 20px;
 }
 
-.checklist {
+.neighbor {
 	width: 55%;
 	height: 100%;
 	border: 4px solid lightgray;
 	border-radius: 10px;
 	display: flex;
-	justify-content: center;;
-	align-items: center;
-}
-
-#checklist_wrap {
-	width: 90%;
-	height: 90%;
-	display: flex;
-	justify-content: space-around;
-	align-items: center;
-}
-
-#score {
-	width: 45%;
-	height: 100%;
-}
-
-#score_head {
-	height: 20%;
-	display: flex;
-}
-
-#score_star {
-	height: 20%;
-	display: flex;
-}
-
-#score_num {
-	width: 28.42px;
-	font-size: 20px;
-	color: black;
-	font-weight: bolder;
-	margin-right: 10px;
-}
-
-#score_body {
-	height: 60%;
-	display: flex;
 	justify-content: center;
+	align-items: center;
 }
 
-.score_chart {
-    width:100%;
-    height:100%; 
-    text-align: center;
-    min-width: 270px;
-    font-size: 12px;
-    color: black;
-    font-weight: bolder;
-}
-
-.c3-target > text {
-	font-size: 10px;
-	font-weight: bolder;
-	color: gray;
-}
-
-.c3-chart-arc > text {
-    display: none;
-}
-
-#specialty {
-	width: 45%;
-	height: 100%;
-}
-
-#specialty_head {
-	height: 20%;
-	display: flex;
-}
-
-#specialty_body {
-	width: 100%;
+#neighbor_list {
+	width: 90%;
 	height: 80%;
 	display: flex;
 	flex-direction: column;
@@ -695,24 +612,27 @@ html, body {
 	overflow: auto;
 }
 
-#item_wrap {
+#neighbor_wrap {
 	width: 50%;
 	height: 33%;
 	display: flex;
-	justify-content: center;
+	justify-content: space-around;
 	align-items: center;
+	flex-shrink: 0;
 }
 
-#specialty_item {
-	width: 70%;
-	height: 70%;
-	border-radius: 20px;
-	box-shadow: 3px 3px 3px lightgray;
-}
-
-#tagicon {
+#neighboricon {
 	font-size: 20px;
-	margin-right: 10px;
+}
+
+#neighborname {
+	font-size: 20px;
+	font-weight: bolder;
+	color: black;
+}
+
+#input_memo_wrap {
+	position: absolute;
 }
 
 /* 륜수님이 만든 채팅 */
@@ -734,23 +654,6 @@ html, body {
 
 .chatting:hover{
    background-color: #e3d79c;
-}
-
-.star-rating {
-	width:158px; 
-}
-
-.star-rating,.star-rating span {
-	display:inline-block; 
-	height:30px; 
-	overflow:hidden; 
-	background:url(../../../resources/image/별점.png) no-repeat; 
-}
-
-.star-rating span{
-	background-position:left bottom; 
-	line-height:0; 
-	vertical-align:top; 
 }
 
 .balloon {  
@@ -781,7 +684,7 @@ html, body {
   display: none;
   position: absolute;
   right: 95px;
-  width:330px; 
+  width:310px; 
   height:70px;
   background: gray; 
   border-radius: 10px;
@@ -804,11 +707,9 @@ html, body {
 </style>
 </head>
 <body>
+<div id='modal'></div>
+
 <div class="wrap">
-
-
-
-
 	<nav class="navbar">
     	<div class="logo">
         	<img src="../../../resources/image/main-logo.png" class="logo">
@@ -834,13 +735,11 @@ html, body {
 		<div class="box1">
 			<img src="../../../resources/image/돼지저금통.png" class="pig">
 			<div id="infoicon"><i class="fas fa-clipboard-user"></i></div>
-			<div id="company_user">업체 회원</div>
 			<div class="myinfo">
 				<div id="name">
 					<div id="nameicon"><i class="far fa-user"></i></div>
 					<div id="user_name">권구현님&nbsp(GuHyun)</div>
 					<div><button type="button" class="btn btn-info" id="namebtn">내정보&nbsp<i class="fas fa-chevron-down"></i></button></div>
-					<div><button type="button" class="btn btn-info" id="namebtn">일반전환</button></div>
 				</div>
 				<div id="grade">
 					<div id="gold">GOLD</div>
@@ -851,9 +750,9 @@ html, body {
 							등급선정 기준
 							<br>
 							<br>
-							1. 해협매칭 완료 후 거래완료 +3
+							1. 공동구매 거래 참여 후 완료시 +1
 							<br>
-							2. 서비스 후 평점에 따라 추가 점수 획득
+							2. 공동구매 거래 모집 후 완료시 +3
 							<br>
 							<br>
 							※ BRONZE:50점      SILVER:100점      GOLD:200점      DIA:300점
@@ -862,17 +761,17 @@ html, body {
 				</div>
 				<div id="infobox">
 					<div id="infobox1">
-						<div id="infobox1-1">해협</div>
+						<div id="infobox1-1">공구</div>
 						<div id="infobox1-2">
-							<div id="orange">견적</div>
-							<div id="basic">전달</div>
+							<div id="orange">모집</div>
+							<div id="basic">성공</div>
 						</div>
 						<div id="infobox1-3">2건</div>
 					</div>
 					<div id="infobox2">
-						<div id="infobox2-1">해협</div>
+						<div id="infobox2-1">공구</div>
 						<div id="infobox2-2">
-							<div id="sky">완료</div>
+							<div id="sky">참여</div>
 							<div id="basic">성공</div>
 						</div>
 						<div id="infobox2-3">5건</div>
@@ -905,9 +804,9 @@ html, body {
 								<div id="questionicon" type="button">
 									<i class="fas fa-question-circle"></i>
 									<div class="balloon2">
-										거래 중 캐시는 진행 중인 서비스가 완료되면
+										현재 진행중인 공동구매, 혹은 해협이 있어
 										<br>
-										현재 보유 캐쉬로 이전됩니다.
+										해당 금액은 송금하실 수 없습니다.
 									</div>
 								</div>
 							</div>
@@ -922,11 +821,11 @@ html, body {
 					</div>
 					<div id="accountbtn">
 						<div id="charge">
-							<div id="plusicon"><i class="far fa-plus-square"></i></div>
-							<div class="accountbtntext" id="empty">충전하기</div>
+							<div id="plusicon" type="button" onclick="createChargeModal()"><i class="far fa-plus-square"></i></div>
+							<div class="accountbtntext" id="basic">충전하기</div>
 						</div>
 						<div id="send">
-							<div id="minusicon" type="button"><i class="far fa-minus-square"></i></div>
+							<div id="minusicon" type="button" onclick="createSendModal()"><i class="far fa-minus-square"></i></div>
 							<div class="accountbtntext" id="basic">송금하기</div>
 						</div>
 					</div>
@@ -939,12 +838,12 @@ html, body {
 		<div class="box2">
 			<div class="box2_head">
 				<div class="townhead">
-					<div id="box2icon_town"><i class="fas fa-map-marker-alt"></i></div>
+					<div id="box2icon"><i class="fas fa-map-marker-alt"></i></div>
 					<div id="title1">my동네</div>
 				</div>
-				<div class="checklisthead">
-					<div id="box2icon_check"><i class="fas fa-clipboard-check"></i></div>
-					<div id="title2" type="button">체크 리스트</div>
+				<div class="neighborhead">
+					<div id="box2icon"><i class="fas fa-user-plus"></i></div>
+					<div id="title2" type="button">이웃 리스트</div>
 				</div>
 			</div>
 			<div class="box2_body">
@@ -966,58 +865,8 @@ html, body {
 						</div>	
 					</div>
 				</div>
-				<div class="checklist">
-					<div id="checklist_wrap">
-						<div id="score">
-							<div id="score_head">
-								<div id="tagicon"><i class="fas fa-tags"></i></div>
-			<!-- 나중에 버튼 다 빼기 -->
-								<div class="temp_btn" type="button" id="basic">my평점</div>
-							</div>
-							<div id="score_star">
-								<div id="score_num">0.5</div>
-								<div class="wrap-star">
-								    <div class='star-rating'>
-								        <span id="contorl_star" style ="width:10%"></span>
-								    </div>
-								</div>
-							</div>
-							<div id="score_body">
-								<div class="score_chart" id="chart"></div>
-							</div>
-						</div>
-						<div id="specialty">
-							<div id="specialty_head">
-								<div id="tagicon"><i class="fas fa-tags"></i></div>
-								<div id="basic">my전문분야</div>
-							</div>
-							<div id="specialty_body">
-								<div id="item_wrap">
-									<button type="button" id="specialty_item" class="btn btn-info">도배</button>
-								</div>
-								<div id="item_wrap">
-									<button type="button" id="specialty_item" class="btn btn-info">타일</button>
-								</div>
-								<div id="item_wrap">
-									<button type="button" id="specialty_item" class="btn btn-info">페인트</button>
-								</div>
-								<div id="item_wrap">
-									<button type="button" id="specialty_item" class="btn btn-info">욕실</button>
-								</div>
-								<div id="item_wrap">
-									<button type="button" id="specialty_item" class="btn btn-info">욕실</button>
-								</div>
-								<div id="item_wrap">
-									<button type="button" id="specialty_item" class="btn btn-info">욕실</button>
-								</div>
-								<div id="item_wrap">
-									<button type="button" id="specialty_item" class="btn btn-info">욕실</button>
-								</div>
-								<div id="item_wrap">
-									<button type="button" id="specialty_item" class="btn btn-info">욕실</button>
-								</div>
-							</div>
-						</div>
+				<div class="neighbor">
+					<div id="neighbor_list">
 					</div>
 				</div>
 			</div>	
@@ -1030,6 +879,67 @@ html, body {
 
 
 <script type="text/javascript">
+
+/* 이웃리스트 추가  */
+document.querySelector("#title2").addEventListener('click', e => {
+	/* 새로운 이웃wrap */
+	let newNeighbor = document.createElement("div");
+	newNeighbor.setAttribute("id", 'neighbor_wrap');
+	document.querySelector("#neighbor_list").appendChild(newNeighbor);
+	/* 새로운 이웃icon */
+	let newNeighborIcon = document.createElement("div");
+	newNeighborIcon.setAttribute("id", 'neighboricon');
+	newNeighborIcon.innerHTML = '<i class="fas fa-tags"></i>';
+	newNeighbor.appendChild(newNeighborIcon);
+	/* 새로운 이웃name */
+	let newNeighborName = document.createElement("div");
+	newNeighborName.setAttribute("id", 'neighborname');
+	newNeighborName.innerHTML = '구짱';
+	newNeighbor.appendChild(newNeighborName);
+	/* 새로운 이웃memo */
+	let newNeighborMemo = document.createElement("div");
+	newNeighbor.appendChild(newNeighborMemo);
+	/* memo만들기 */
+	let memo = document.createElement("button");
+	memo.setAttribute("id","memo");
+	memo.setAttribute("class","btn btn-info");
+	memo.innerHTML = '메모';
+	newNeighborMemo.appendChild(memo);
+	memo.addEventListener('click', () => {
+		inputMemoWrap.setAttribute("style","display:block");
+	})
+	/* textarea_wrap만들기 */
+	let inputMemoWrap = document.createElement("div");
+	inputMemoWrap.setAttribute("id","input_memo_wrap");
+	inputMemoWrap.setAttribute("style","display:none");
+	newNeighborMemo.appendChild(inputMemoWrap);
+	/* 새로운 이웃memo_textarea */
+	let newTextarea = document.createElement("textarea");
+	newTextarea.setAttribute("id", "input_memo");
+	newTextarea.setAttribute("cols", '30');
+	newTextarea.setAttribute("rows", '3');
+	inputMemoWrap.appendChild(newTextarea);
+	/* 새로운 이웃memo_button */
+	let newTextButton = document.createElement("button");
+	newTextButton.setAttribute("class", "btn btn-info");
+	newTextButton.setAttribute("id", 'confirm');
+	newTextButton.innerHTML = '저장';
+	inputMemoWrap.appendChild(newTextButton);
+	newTextButton.addEventListener('click', () => {
+		inputMemoWrap.setAttribute("style","display:none");
+	})
+	/* 새로운 이웃chat */
+	let newNeighborChat = document.createElement("div");
+	newNeighborChat.innerHTML = '<button type="button" id="chat" class="btn btn-warning">채팅</button>';
+	newNeighbor.appendChild(newNeighborChat);
+	/* 새로운 이웃delete */
+	let newNeighborDelete = document.createElement("div");
+	newNeighborDelete.innerHTML = '<button type="button" id="delete" class="btn btn-secondary">삭제</button>';
+	newNeighbor.appendChild(newNeighborDelete);
+	newNeighborDelete.addEventListener('click', () => {
+		newNeighbor.remove();
+	})
+})
 
 document.querySelector("#addtown").addEventListener('click', e => {
 	let idx = document.querySelectorAll('#list_wrap').length + 1;
@@ -1071,35 +981,36 @@ document.querySelector("#addtown").addEventListener('click', e => {
 	}
 })
 
-/* 재미로 만든 별점 올리기 */
-document.querySelector(".temp_btn").addEventListener('click', e => {
-	let scoreNum = parseFloat(document.querySelector("#score_num").innerHTML);
-	if(scoreNum < 5) {
-		document.querySelector("#score_num").innerHTML = scoreNum + 0.5;
-		let widthValue = parseInt(document.querySelector("#contorl_star").style.width.substring(0,2));
-		document.querySelector("#contorl_star").style.width = (widthValue + 10) + "%";
-	}
-});
+
+let createSendModal = () => {
+	let sendModal = initModal('modal', 2);
+	appendTitle(sendModal, '송금하기');
+	setButton(sendModal, '그만두기');
+	setContent(sendModal, true, true);
+	//addPiggyBackground(sendModal);
+	modalBlock();
+	
+	$('.modal_left_btn').click(function() {
+		modalNone();
+	})
+}
 
 
-var chart = c3.generate({
-    data: {
-        columns: [
-            ['신속', 30],
-            ['친절', 80],
-            ['비용', 60],
-        ],
-        type : 'pie',
-        colors: {
-        	'신속' : 'rgb(255, 167, 167)',
 
-        	'친절' : '#FFCE67',
+let createChargeModal = () => {
+	let chargeModal = initModal('modal', 3);
+	appendTitle(chargeModal, '심플모달');
+	//setButton(chargeModal, '그만두기', '충전하기');
+	setContent(chargeModal, true, false);
+	//addPiggyBackground(chargeModal);
+	modalBlock();
+	
+	$('.modal_right_btn').click(function() {
+		modalNone();
+	})
+}
 
-        	'비용' : '#6cc3d5',
-    	},
-        onclick: function (d, i) { console.log("onclick", d, i); },
-    }
-});
+
 
 </script>
 </body>

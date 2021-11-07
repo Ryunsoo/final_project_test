@@ -27,78 +27,78 @@ body, html{
 }
 
 
+.wrap {
+	width: 1130px;
+	height: 100%;
+}
 
+.navbar {
+	width: 1130px;
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	flex-shrink: 0;
+}
 
-/* 우측 상단 상태(회원이름, 등급, 로그아웃, 마이페이지 */
+.nav_group {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
 
-#login-status-wrapper{
-	display:flex;
+.nav_info {
+	display: flex;
 	justify-content: flex-end;
-	font-weight: bold;
+	margin-right: 75px;
+	font-size: 17px;
 }
 
-#login-status{
-	width: 350px;
+.userName {
+	margin-right: 6px;
+	font-weight: bolder;
 }
 
-#login-status> #user-name{
-	color: #d35400;
+.nim {
+	margin-right: 10px;
+	font-size: 13px;
+	align-self: center;
+	margin-top: 4px;
+	font-weight: bolder;
 }
 
-#login-status> #user-grade{
-	color: #f1c40f;
+.medal {
+	margin-right: 20px;
+	align-self: center;
+	color: #e6bc14;
 }
 
-#login-status> #logout-button{
-	color: #e67e22;
+.mypage {
+	margin-right: 20px;
+	font-weight: bolder;
 }
 
-#login-status> #mypage-button{
-	color: #34495e;
+.logout {
+	font-weight: bolder;
+	color: #e67e00
 }
 
-
-
-
-
-
-/* logo & 메뉴 wrapper */
-#logo-and-menu-wrapper {
+.nav_title {
 	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bolder;
 }
 
-/* 로고 */
-#logo-image{
-	width: 300px;
+.help {
+	color: rgb(41, 128, 185);
 }
 
-/* 헤더 메뉴 */
-#header-menu{
-	display: flex;
-    width: 830px;
-    margin-top: 60px;
-    justify-content: space-around;
-    align-items: center;
-    font-weight: bold;
-    color: #404040;
-    font-size: 22px;
-    height: 25px;
-    
+/*로고*/
+.logo {
+	width: 200px;
+	align-self: center;
 }
-#header-menu>div{
-	width: 25%;
-	text-align: center;
-	transition: all 0.2s;
-	cursor: pointer;
-}
-/* 메뉴 호버이벤트 */
-#header-menu>div:hover{
-	color: #3498db;
-	text-align: center;
-}
-
-
-/* 헤더 끝 */
 
 
 
@@ -110,7 +110,7 @@ body, html{
 
 .section{
 	height: 100%;
-	width: 100%;
+	width: 95%;
 }
 
 
@@ -188,10 +188,9 @@ body, html{
 #appeal-help-content {
 	height: 200px;
 	border: 2px solid;
-	border-color: #9a9a9a;
 	border-radius: 7px 7px 7px 7px; 
-	padding: 15px;   /* 테두리랑 글자 간격을 벌리기 위해 */
-	color: #404040;
+	border-color: #808080;
+	resize: none;
 }
 
 
@@ -200,35 +199,23 @@ body, html{
 /* 제품명, 제품링크, 거래위치 등등 입력, submit버튼 */
 
 .product-info-submit{
-	margin-left: 90px;
+	margin-left: 70px;
 	width: 440px;
 	line-height: 170%;  /* <br> 태그의 간격 조절 */
 }
 
 
-.input-content-wrapper> .text-input,
-.input-content-wrapper> .text-output {
+.input-content-wrapper> .text-input {
 	width: 436px;  /* border가 좌우로 2픽셀씩 잡아먹어서.. */
 	height: 39px;  /* border가 4px 잡아먹어서 실제 높이는 43px 가 됨 */
-	font-size: 17px;
+	font-size: 15px;
 	color: #868686;
 	border: 2px solid;
 	border-radius: 5px 5px 5px 5px; 
 	border-color: #9a9a9a;
-	padding: 0px;   /* input, output 간의 패딩값을 통일해서 높이를 맞춤 */
-	display: flex;
-	align-items: center;   /* 텍스트 상하 간격을 일정하게 함 */
+	padding: 0px;	/* 높이의 직관성을 높이기 위해 패딩값을 0으로 설정 */
+	
 }
-
-.text-input> p,
-.text-output> p {
-	margin-left: 10px;   /* text-io div 안의 모든 p태그 텍스트들이 왼쪽으로 10px 간격 띄움*/
-	color: #808080;
-	font-weight: bold;
-}
-
-
-
 
 /* 중간에 절반 사이즈 input wrapper */
 .half-size-content-wrapper {
@@ -236,15 +223,10 @@ body, html{
 	justify-content: space-between;
 }
 
-.half-size-content-wrapper> .input-content-wrapper> .text-input, 
-.half-size-content-wrapper> .input-content-wrapper> .text-output {
-	display: flex;
-	align-items: center;
+.half-size-content-wrapper> .input-content-wrapper> .text-input {
 	width: 200px;
 	padding: 0px;
 }
-
-
 
 
 .submit-button {
@@ -300,44 +282,31 @@ body, html{
 <!-- 최외각 Wrapper -->
 <div id="outermost-wrapper">
 
-	<!-- 헤더 시작 -->
-	<div class="header">
-	
-		<!-- 우측 상단 상태(회원이름, 등급, 로그아웃, 마이페이지 -->
-		<div id="login-status-wrapper">
-			<div id="login-status">
-				<span id="user-name">권구현</span>
-				&nbsp(
-				<span id="user-grade">GOLD</span>
-				)&nbsp&nbsp회원
-				&nbsp
-				<span id="logout-button">LOGOUT</span>
-				&nbsp
-				<span id="mypage-button">마이페이지</span>
-			</div>
-		</div>
-		
-		
-		<!-- 로고 & 메뉴 wrapper -->
-		<div id="logo-and-menu-wrapper">
-			<!-- 로고 -->
-			<div id="logo">
-				<a href="/">
-					<img id="logo-image" src = "../../../resources/image/main-logo.png">
-				</a>
-			</div>
-			
-			<!-- 헤더 메뉴창 -->
-			<div id="header-menu">
-				<div onclick="location.href='/'">해협신청</div>
-				<div onclick="location.href='/'">공구해협</div>
-				<div onclick="location.href='/'">관리해협</div>
-				<div onclick="location.href='/'">소통해협</div>
-			</div>
-		</div>
-		
-	</div>
-	<!-- 헤더 끝 -->
+	<!-- header -->
+		<header id="header">
+			<nav class="navbar">
+				<div class="logo">
+					<img src="../../../resources/image/main-logo.png" class="logo">
+				</div>
+				<div class="nav_group">
+					<div class="nav_info">
+						<div class="userName">해협</div>
+						<div class="nim">님</div>
+						<div class="medal">
+							<i class="fas fa-medal"></i>
+						</div>
+						<div class="mypage">마이페이지</div>
+						<div class="logout">LOGOUT</div>
+					</div>
+					<div class="nav_title">
+						<div class="help">해협신청</div>
+						<div class="together">공구해협</div>
+						<div class="manage">관리해협</div>
+						<div class="talk">소통해협</div>
+					</div>
+				</div>
+			</nav>
+		</header>
 	
 	
 	
@@ -350,7 +319,7 @@ body, html{
 		
 		<!-- 작성해협 제목 -->
 		<div class="title">
-			<div id="this-page-name">&nbsp&nbsp신청해협</div>
+			<div id="this-page-name">&nbsp&nbsp작성해협</div>
 			
 			<!-- 구분선 -->
 			<div id="line-wrapper">
@@ -361,16 +330,17 @@ body, html{
 		
 		
 		
-		<!-- 이미지 & 어필해협 -->
+		<!-- 이미지 & 이미지업로드 & 어필해협 -->
 		<form class="form-wrapper">
 			<div class="image-and-appeal-wrapper">
 				<div id="uploaded-image">
 					<img id="product-image" src = "../../../resources/image/product-image.png">
 				</div>
-				<div class="submit-input-title">*어필해협</div>
-				<div id="appeal-help-content">
-					"내용을 입력해주세요 ex)물 3개씩 구매하실 분만 신청해주세요 쌀: 구매개수 1개 = 1kg"
+				<div id="image-upload-section">
+					<input type="file" value="파일 선택" name="file"/>
 				</div>
+				<div class="submit-input-title">*어필해협</div>
+				<textarea id="appeal-help-content" placeholder="내용을 입력해주세요 ex)물 3개씩 구매하실 분만 신청해주세요 쌀: 구매개수 1개 = 1kg"></textarea>
 			</div>
 			
 			
@@ -380,33 +350,32 @@ body, html{
 			<br><br>
 				<div class="input-content-wrapper">
 					<div class="submit-input-title">*제품명</div>
-						<div class="text-output">
-							<p>탐사수 (2Lx12개)</p>
-						</div>
+					<input class="text-input" type="text" placeholder="  제품명과 개수를 입력하세요" name="prodname-and-qty"/>
+				</div>
+				<br>
+				
+				<div class="input-content-wrapper">
+					<div class="submit-input-title">*제품링크</div>
+					<input class="text-input" type="text" placeholder="  제품 링크를 추가해주세요." name="file"/>
 				</div>
 				<br>
 				
 				<div class="input-content-wrapper">
 					<div class="submit-input-title">*거래위치</div>
-						<div class="text-output">
-							<p>강남 kh정보교육원</p>
-						</div>
+					<input class="text-input" type="text" placeholder="  다음 API 추가" name="file"/>
 				</div>
 				<br>
+				
 				
 				<div class="half-size-content-wrapper">
 					<div class="input-content-wrapper">
 						<div class="submit-input-title">*거래시간</div>
-						<div class="text-output">
-							<p>12월 7일 오후 3:20</p>
-						</div>
+						<input class="text-input" type="text" placeholder="  시간을 입력하세요" name="file"/>
 					</div>
 					
 					<div class="input-content-wrapper">
 						<div class="submit-input-title">*마감시간</div>
-						<div class="text-output">
-							<p>12월 7일 오후 3:40</p>
-						</div>
+						<input class="text-input" type="text" placeholder="  시간을 입력하세요" name="file"/>
 					</div>
 				</div>
 				<br>
@@ -414,33 +383,19 @@ body, html{
 				
 				<div class="input-content-wrapper">
 					<div class="submit-input-title">*금액</div>
-					<div class="text-output">
-							<p>565원</p>
-					</div>
+					<input class="text-input" type="text" placeholder="  금액을 입력하세요" name="file"/>
 				</div>
 				<br>
 				
 				<div class="half-size-content-wrapper">
 					<div class="input-content-wrapper">
-						<div class="submit-input-title">*남은 개수</div>
-						<div class="text-output">
-							<p>15개</p>
-						</div>
+						<div class="submit-input-title">*총 개수</div>
+						<input class="text-input" type="text" placeholder="  함께 구매할 인원을 입력" name="file"/>
 					</div>
 					
 					<div class="input-content-wrapper">
 						<div class="submit-input-title">*내가 구매할 개수</div>
-						<input class="text-input" type="text" placeholder="  수량을 입력하세요" name="file"/>
-					</div>
-				</div>
-				<br>
-				
-				<div class="half-size-content-wrapper">
-					<div class="input-content-wrapper">
-						<div class="submit-input-title">*내 포인트</div>
-						<div class="text-output">
-							<p>3,000P</p>
-						</div>
+						<input class="text-input" type="text" placeholder="  함께 구매할 인원을 입력" name="file"/>
 					</div>
 				</div>
 				<br>

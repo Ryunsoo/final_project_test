@@ -27,79 +27,78 @@ body, html{
 }
 
 
+.wrap {
+	width: 1130px;
+	height: 100%;
+}
 
+.navbar {
+	width: 1130px;
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	flex-shrink: 0;
+}
 
-/* 우측 상단 상태(회원이름, 등급, 로그아웃, 마이페이지 */
+.nav_group {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
 
-#login-status-wrapper{
-	display:flex;
+.nav_info {
+	display: flex;
 	justify-content: flex-end;
-	font-weight: bold;
+	margin-right: 75px;
+	font-size: 17px;
 }
 
-#login-status{
-	width: 350px;
+.userName {
+	margin-right: 6px;
+	font-weight: bolder;
 }
 
-#login-status> #user-name{
-	color: #d35400;
+.nim {
+	margin-right: 10px;
+	font-size: 13px;
+	align-self: center;
+	margin-top: 4px;
+	font-weight: bolder;
 }
 
-#login-status> #user-grade{
-	color: #f1c40f;
+.medal {
+	margin-right: 20px;
+	align-self: center;
+	color: #e6bc14;
 }
 
-#login-status> #logout-button{
-	color: #e67e22;
+.mypage {
+	margin-right: 20px;
+	font-weight: bolder;
 }
 
-#login-status> #mypage-button{
-	color: #34495e;
+.logout {
+	font-weight: bolder;
+	color: #e67e00
 }
 
-
-
-
-
-
-/* logo & 메뉴 wrapper */
-#logo-and-menu-wrapper {
+.nav_title {
 	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bolder;
 }
 
-/* 로고 */
-#logo-image{
-	width: 300px;
+.help {
+	color: rgb(41, 128, 185);
 }
 
-/* 헤더 메뉴 */
-#header-menu{
-	display: flex;
-    width: 830px;
-    margin-top: 60px;
-    justify-content: space-around;
-    align-items: center;
-    font-weight: bold;
-    color: #404040;
-    font-size: 22px;
-    height: 25px;
-    
+/*로고*/
+.logo {
+	width: 200px;
+	align-self: center;
 }
-#header-menu>div{
-	width: 25%;
-	text-align: center;
-	transition: all 0.2s;
-	cursor: pointer;
-}
-/* 메뉴 호버이벤트 */
-#header-menu>div:hover{
-	color: #3498db;
-}
-
-
-/* 헤더 끝 */
-
-
 
 
 
@@ -107,7 +106,7 @@ body, html{
 
 .section{
 	height: 100%;
-	width: 100%;
+	width: 95%;
 }
 
 
@@ -342,44 +341,31 @@ input:checked + .slider:before {
 <!-- 최외각 Wrapper -->
 <div id="outermost-wrapper">
 
-	<!-- 헤더 시작 -->
-	<div class="header">
-	
-		<!-- 우측 상단 상태(회원이름, 등급, 로그아웃, 마이페이지 -->
-		<div id="login-status-wrapper">
-			<div id="login-status">
-				<span id="user-name">권구현</span>
-				&nbsp(
-				<span id="user-grade">GOLD</span>
-				)&nbsp&nbsp회원
-				&nbsp
-				<span id="logout-button">LOGOUT</span>
-				&nbsp
-				<span id="mypage-button">마이페이지</span>
-			</div>
-		</div>
-		
-		
-		<!-- 로고 & 메뉴 wrapper -->
-		<div id="logo-and-menu-wrapper">
-			<!-- 로고 -->
-			<div id="logo">
-				<a href="/">
-					<img id="logo-image" src = "../../../resources/image/main-logo.png">
-				</a>
-			</div>
-			
-			<!-- 헤더 메뉴창 -->
-			<div id="header-menu">
-				<div onclick="location.href='/'">해협신청</div>
-				<div onclick="location.href='/'">공구해협</div>
-				<div onclick="location.href='/'">관리해협</div>
-				<div onclick="location.href='/'">소통해협</div>
-			</div>
-		</div>
-		
-	</div>
-	<!-- 헤더 끝 -->
+	<!-- header -->
+		<header id="header">
+			<nav class="navbar">
+				<div class="logo">
+					<img src="../../../resources/image/main-logo.png" class="logo">
+				</div>
+				<div class="nav_group">
+					<div class="nav_info">
+						<div class="userName">해협</div>
+						<div class="nim">님</div>
+						<div class="medal">
+							<i class="fas fa-medal"></i>
+						</div>
+						<div class="mypage">마이페이지</div>
+						<div class="logout">LOGOUT</div>
+					</div>
+					<div class="nav_title">
+						<div class="help">해협신청</div>
+						<div class="together">공구해협</div>
+						<div class="manage">관리해협</div>
+						<div class="talk">소통해협</div>
+					</div>
+				</div>
+			</nav>
+		</header>
 	
 	
 	
