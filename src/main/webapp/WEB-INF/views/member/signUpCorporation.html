@@ -48,7 +48,7 @@ body {
 .rightBox {
 	float: left;
 	width: 750px;
-	background-color: lightblue;
+	background-color: rgb(210, 228, 249);
 	height: 780px;
 }
 
@@ -69,12 +69,28 @@ body {
 	border-radius: 30px;
 }
 
-.signUpProgressBar{
-	background-color:#FDD017;
-	margin-left:17%;
-	width: 65%;
-	animation: progressbar 2s ease-out;
+.progress_wrapper{
+	margin-top: 20px;
+	width: 100%;
+	display: flex;
+	justify-content: center;
 }
+
+.progress_bar{
+	height: 13px;
+	width: 400px;
+	background-color: #d9d9d9;
+	border-radius: 20px;
+}
+
+.progress{
+	width: 33%;
+	height: 100%;
+	background-color: rgb(243, 156, 18);
+	border-radius: 20px;
+}
+
+
 
 .form-signin-heading {
 	text-align: center;
@@ -95,16 +111,21 @@ body {
 /*  */
 @import "bourbon";
 
+.input_wrapper{
+	margin-left: 5px;
+}
+
+
 .wrapper {
 	/* margin-top: 80px; */
 	margin-bottom: 80px;
 }
 
 .form-signin {
-	box-shadow: 5px 5px 5px #F9D182;
+	box-shadow: 5px 5px 5px rgb(254, 227, 205);
 	border-radius: 20px;
 	height: 620px;
-	max-width: 530px;
+	width: 530px;
 	padding: 20px 70px 35px;
 	margin: 0 auto;
 	background-color: #fff;
@@ -114,25 +135,47 @@ body {
 .form-control_id {
 	margin:15px;
 	float: left;
-	outline-color: lightgray;
+	border: 1px solid lightgray;
+	outline-color: #d3d3d3;
 	border-radius: 5px;
 	position: relative;
 	font-size: 13px;
 	width: 280px;
 	height: 15px;
 	padding: 10px;
-	outline-color: lightgray;
-	@include
-	box-sizing(border-box);
-	&:focus{
-	z-index:2;
-	}
 }
 
 .form-control_all {
 	margin:15px;
 	float: left;
-	outline-color: lightgray;
+	border: 1px solid lightgray;
+	outline-color: #d3d3d3;
+	border-radius: 5px;
+	position: relative;
+	font-size: 13px;
+	width: 400px;
+	height: 15px;
+	padding: 10px;
+}
+
+.form-control-pw-top {
+	margin: 15px 15px 5px 15px;
+	float: left;
+	border: 1px solid lightgray;
+	outline-color: #d3d3d3;
+	border-radius: 5px;
+	position: relative;
+	font-size: 13px;
+	width: 400px;
+	height: 15px;
+	padding: 10px;
+}
+
+.form-control-pw-btm {
+	margin: 5px 15px 15px 15px;
+	float: left;
+	border: 1px solid lightgray;
+	outline-color: #d3d3d3;
 	border-radius: 5px;
 	position: relative;
 	font-size: 13px;
@@ -140,11 +183,6 @@ body {
 	height: 15px;
 	padding: 10px;
 	outline-color: lightgray;
-	@include
-	box-sizing(border-box);
-	&:focus{
-	z-index:2;
-	}
 }
 
 /* 중복 확인 버튼 CSS */
@@ -168,7 +206,7 @@ body {
 	flex-basis: 100%;
 	align-items: center;
 	color: rgba(0, 0, 0, 0.35);
-	font-size: 20px;
+	font-size: 17px;
 	margin: 8px 0px;
 }
 
@@ -201,32 +239,73 @@ body {
 }
 
 .passwordMargin{
-	height:160px;
+	height:140px;
 	margin: 5px;
 }
 
-.passwordfloat{
-	margin-right: 130px;
-	float: left;
+.pw_top{
+	display: flex;
+}
+
+.pw_validator_bar{
+	width: 130px;
+	height: 13px;
+	display: flex;
+	margin: 0 15px 0 15px;
+	align-self: center;
+	background-color: transparent;
+}
+
+.pw_validator_bar>div{
+	width: 33.3%;
+}
+
+.low{
+	height: 100%;
+	background-color: red;
+	border-radius: 20px 0 0 20px;
+}
+
+.middle{
+	height: 100%;
+	background-color: #FBB117;
+}
+
+.high{
+	height: 100%;
+	background-color: #4CC417;
+	border-radius: 0 20px 20px 0;
 }
 
 .level{
 	float: left;
 }
 
+.next{
+	height: 60px;
+	width: 100%;
+	display: flex;
+	justify-content: flex-end;
+}
+
 .button_next{
-	float:right;
 	border-radius: 12px;
-	background-color: #0C090A;
+	background-color: rgba(52, 73, 94, 0.98);
+	width: 130px;
+	height: 100%;
     border: none;
     color: white;
-    padding: 15px 32px;
     text-align: center;
     text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 15px 2px;
     cursor: pointer;
+}
+
+.button_next:hover{
+	background-color: #3f5973;
+	box-shadow: inset 0 0 5px 1px #243342;
 }
 
 .button_check{
@@ -250,11 +329,6 @@ body {
 	float: right;
 }
 
-
-
-.next{
-	float: right;
-}
 </style>
 
 
@@ -272,46 +346,53 @@ body {
 				<div class="loginTopBlank"></div>
 					<div>
 						<form class="form-signin">
-							<progress class="signUpProgressBar" value='33' max='100'></progress><br>
-							<label style="float: right; margin-right: 70px; margin-top: 5px;">33%</label><br>
-						<div class="hr-sect">전 문 &nbsp해 협</div>
-						
-						<div class="idMargin">
-							<label>* 아이디</label><br> 
-								<input type="text" class="form-control_id" name="username" 
-								placeholder="아이디를 입력해주세요." required="" autofocus="" />
-								
-								<div class="check">
-									<button class="button_check">중복확인</button>
+							<div class='progress_wrapper'>
+								<div class='progress_bar'>
+									<div class='progress'></div>
 								</div>
-						</div>
-						
-						<div class="passwordMargin">
-							<div class="passwordfloat">
-								<label>* 비밀번호</label>
 							</div>
-								<div class="level">
-									<label style="color: red; font-weight: 1000">낮음</label>
-									<label style="color: #FBB117; font-weight: 1000">보통</label>
-									<label style="color: #4CC417; font-weight: 1000">높음</label>
-								</div>
-									<input type="password" class="form-control_all" name="username" 
-									placeholder="비밀번호(영문 + 숫자 + 특수문자 8자 이상)" required="" autofocus="" />
+						<label style="float: right; margin-right: 40px; margin-top: 5px;">33%</label><br>
+						<div class="hr-sect">전 문 &nbsp해 협</div>
+						<div class='input_wrapper'>
+							<div class="idMargin">
+								<label>* 아이디</label><br> 
+									<input type="text" class="form-control_id" name="username" 
+									placeholder="아이디를 입력해주세요." required="" autofocus="" />
 									
-									<input type="password" class="form-control_all" name="password" 
-									placeholder="비밀번호 확인" required=""autofocus="" />
+									<div class="check">
+										<button class="button_check">중복확인</button>
+									</div>
+							</div>
+							
+							<div class="passwordMargin">
+								<div class='pw_top'>
+									<label>* 비밀번호</label>
+									<div class='pw_validator_bar'>
+										<div class='low'></div><div class='middle'></div><div class='high'></div>
+									</div>
+									<div class="level">
+										<label style="color: red; font-weight: 1000">낮음</label>
+										<label style="color: #FBB117; font-weight: 1000">보통</label>
+										<label style="color: #4CC417; font-weight: 1000">높음</label>
+									</div>
+								</div>
+								<input type="password" class="form-control-pw-top" name="username" 
+								placeholder="비밀번호(영문 + 숫자 + 특수문자 8자 이상)" required="" autofocus="" />
+								
+								<input type="password" class="form-control-pw-btm" name="password" 
+								placeholder="비밀번호 확인" required=""autofocus="" />
+							</div>
+							
+							<div class=nameMargin>
+								<label>* 이름</label><br>
+									<input type="text" class="form-control_all" name="username" placeholder="이름을 입력해주세요." required="" autofocus="" /><br><br>
+							</div>
+							
+							<div class=tellMargin>
+								<label>* 전화번호</label><br>
+									<input type="text" class="form-control_all" name="username" placeholder="010-1234-5678" required="" autofocus="" /><br>
+							</div>
 						</div>
-						
-						<div class=nameMargin>
-							<label>* 이름</label><br>
-								<input type="text" class="form-control_all" name="username" placeholder="이름을 입력해주세요." required="" autofocus="" /><br><br>
-						</div>
-						
-						<div class=tellMargin>
-							<label>* 전화번호</label><br>
-								<input type="text" class="form-control_all" name="username" placeholder="010-1234-5678" required="" autofocus="" /><br>
-						</div>
-						
 						
 						<div class="next">
 							<button class="button_next">다음 ></button>
