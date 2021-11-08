@@ -48,7 +48,7 @@ body {
 .rightBox {
 	float: left;
 	width: 750px;
-	background-color: lightblue;
+	background-color: rgb(210, 228, 249);
 	height: 780px;
 }
 
@@ -70,13 +70,26 @@ body {
 }
 
 .signUpProgressBar{
-	background-color:#FDD017;
-	margin-left:17%;
-	width: 65%;
+	background-color: white;
+	width: 400px;
 	animation: progressbar 2s ease-out;
 }
 
+progress::-webkit-progress-bar{
+	background-color: white;
+}
+
+progress::-webkit-progress-value{
+	background-color: rgb(243, 156, 18);
+	height: 13px;
+	border-radius: 500px;
+}
+
 .form-signin-heading {
+	text-align: center;
+}
+
+.form-signin{
 	text-align: center;
 }
 
@@ -101,7 +114,7 @@ body {
 }
 
 .form-signin {
-	box-shadow: 5px 5px 5px #F9D182;
+	box-shadow: 5px 5px 5px rgb(254, 227, 205);
 	border-radius: 20px;
 	height: 630px;
 	max-width: 530px;
@@ -114,14 +127,13 @@ body {
 .form-control_id {
 	margin:20px;
 	float: left;
-	outline-color: lightgray;
 	border-radius: 5px;
+	border-color: lightgrey;
 	position: relative;
 	font-size: 13px;
 	width: 280px;
 	height: 15px;
 	padding: 10px;
-	outline-color: lightgray;
 	@include
 	box-sizing(border-box);
 	&:focus{
@@ -174,14 +186,12 @@ body {
 	margin-top:15px;
 	margin-bottom:15px;
 	float: left;
-	outline-color: lightgray;
 	border-radius: 5px;
 	position: relative;
 	font-size: 13px;
 	width: 85px;
 	height: 15px;
 	padding: 10px;
-	outline-color: lightgray;
 	@include
 	box-sizing(border-box);
 	&:focus{
@@ -209,18 +219,14 @@ body {
 
 /* Join_us 버튼 css */
 .btn-1 {
-	margin-bottom:22px;
-	margin-left:5px;
-	margin-right:22px;
-	border-radius: 5px;
-	position: relative;
-	font-size: 20px;
-	padding: 10px;
-	width: 520px;
-	height: 45px;
-	background: #000;
+	margin-bottom: 10px;
+	border-radius: 10px;
+	font-size: 32px;
+	width: 500px;
+	height: 60px;
+	background: rgb(44, 62, 80);
 	color: #fff;
-	transition: all 0.3s ease;
+	font-weight: bold;
 }
 
 /* 제목 타이틀 */
@@ -253,6 +259,11 @@ body {
 
 .businessRegistration{
 	width:520px;
+	margin-bottom: 25px;
+	float: left;
+}
+
+.businessRegistration>label{
 	float: left;
 }
 
@@ -265,13 +276,20 @@ body {
 	width: 100px;
 }
 
+.select_form{
+	display: flex;
+	flex-direction: column;
+	text-align: left;
+	width: 480px;
+	margin-bottom: 40px;
+}
+
 .repair{
 	margin-bottom:13px;
-	margin-left:20px;
+	margin-left:19px;
 	margin-top:15px;
 	font-size:14px;
 	color:#FF5500;
-	font-weight:bold;
 }
 
 .interior,
@@ -280,18 +298,21 @@ body {
 	margin-left:20px;
 	font-size:14px;
 	color:#FF5500;
-	font-weight:bold;
 }
 
 .bathroom_check,
 .interior_check,
 .security_check{
-	margin-bottom:13px;
-	margin-left:50px;
-	margin-top:13px;
-	font-size:14px;
+	font-size:15px;
 	color:gray;
-	font-weight:bold;
+	margin-left: 40px;
+	margin-bottom: 10px;
+}
+
+.bathroom_check>label,
+.interior_check>label,
+.security_check>label{
+	margin-right: 10px;
 }
 
 .adressMargin{
@@ -313,18 +334,47 @@ body {
 	float: left;
 }
 
+.select_wrap{
+	display: flex;
+	justify-content: flex-start;
+}
+
+.next_select_wrap{
+	display:none;
+	width: 530px;
+	height: 263px;
+}
+
+#next_page{
+	color: rgb(44, 62, 80);
+	font-weight:bold;	
+	font-size: 60px;
+	width: 50px;
+	height: 50px;
+	margin-top: 80px;
+}
+
+#prev_page{
+	color: rgb(44, 62, 80);
+	font-weight:bold;	
+	font-size: 60px;
+	width: 50px;
+	height: 50px;
+	margin-top: 80px;
+}
+
 .button_next{
 	float:right;
 	border-radius: 12px;
-	background-color: #0C090A;
+	background-color: rgb(44, 62, 80);
+	width: 100px;
+	height: 50px;
+	margin: 0 0 0 15px;
     border: none;
     color: white;
-    padding: 15px 32px;
     text-align: center;
-    text-decoration: none;
     display: inline-block;
-    font-size: 16px;
-    margin: 4px 2px;
+    font-size: 20px;
     cursor: pointer;
 }
 
@@ -420,48 +470,73 @@ body {
 							<progress class="signUpProgressBar" value='100' max='100'></progress><br>
 							<label style="float: right; margin-right: 70px; margin-top: 5px;">100%</label><br>
 							
-							<div class="hr-sect">전 문 &nbsp해 협</div><br>
-							
-							<div class="field">
-								<label>* 전문 분야</label><br>
-							</div>
-							
-							<div class="repair">
-									<label>수리 | 보수</label><br>
-							</div>
-							
-							<div class="bathroom_check">
-									<label><input type="checkbox" name="bathroom" value="bathroom"> 욕 실</label>
-									<label><input type="checkbox" name="sink" value="sink"> 싱 크 대</label>
-									<label><input type="checkbox" name="product" value="product"> 제 품</label>							
+						<div class="hr-sect">전 문 &nbsp해 협</div><br>
+							<div class="select_wrap" id="onepage">
+								<div id="prev_page" style="cursor: pointer; visibility: hidden;"><</div>
+								<div class="select_form">
+									<div class="field">
+										<label style="font-size: 13px">* 전문 분야</label><br>
+									</div>
+									
+									<div class="repair">
+											<label>수리 | 보수</label>
+									</div>
+									
+									<div class="bathroom_check">
+										<label><input type="checkbox" name="bathroom" value="bathroom"> 욕실</label>
+										<label><input type="checkbox" name="sink" value="sink"> 싱크대</label>
+										<label><input type="checkbox" name="product" value="product"> 제품</label>							
+									</div>
+									
+									<div class="interior">
+											<label>인테리어</label>
+									</div>
+									
+									<div class="interior_check">
+											<label><input type="checkbox" name="tile" value="tile"> 타일</label>
+											<label><input type="checkbox" name="paint" value="paint"> 페인트</label>
+											<label><input type="checkbox" name="papering" value="papering"> 도배</label>
+											<label><input type="checkbox" name="dragon" value="dragon"> 용달</label>
+											<label><input type="checkbox" name="furnitureAssembly" value="furnitureAssembly"> 가구조립</label>
+									</div>
+									
+									<div class="security">
+											<label>보안 | 방충</label><br>
+									</div>
+									
+									<div class="security_check">
+											<label><input type="checkbox" name="closedCircuit" value="closedCircuit"> 폐쇄회로</label>
+											<label><input type="checkbox" name="doorLock" value="doorLock"> 도어락</label>
+											<label><input type="checkbox" name="insectScreen" value="insectScreen"> 방충</label>
+									</div>
 								</div>
-							<br>
-							
-							<div class="interior">
-									<label>인테리어</label><br>
+								<div id="next_page" style="cursor: pointer" onclick="next()">></div>
 							</div>
 							
-							<div class="interior_check">
-									<label><input type="checkbox" name="tile" value="tile"> 타 일</label>
-									<label><input type="checkbox" name="paint" value="paint"> 페 인 트</label>
-									<label><input type="checkbox" name="papering" value="papering"> 도 배</label>
-									<label><input type="checkbox" name="dragon" value="dragon"> 용 달</label>
-									<label><input type="checkbox" name="furnitureAssembly" value="furnitureAssembly"> 가 구 조 립</label>
-							</div><br>
-							
-							<div class="security">
-									<label>보안 | 방충</label><br>
+							<div class="next_select_wrap" id="twopage">
+								
+								<div id="prev_page" style="cursor: pointer" onclick="prev()"><</div>
+								<div class="select_form">
+								<div class="field">
+									<label style="font-size: 13px">* 전문 분야</label><br>
+								</div>
+								
+								<div class="repair">
+										<label>생활</label>
+								</div>
+								
+								<div class="bathroom_check">
+									<label><input type="checkbox" name="bathroom" value="bathroom">음식</label>
+									<label><input type="checkbox" name="sink" value="sink">청소</label>
+									<label><input type="checkbox" name="product" value="product">잡동사니</label>							
+								</div>
+								
 							</div>
-							
-							<div class="security_check">
-									<label><input type="checkbox" name="closedCircuit" value="closedCircuit"> 폐 쇄 회 로</label>
-									<label><input type="checkbox" name="doorLock" value="doorLock"> 도 어 락</label>
-									<label><input type="checkbox" name="insectScreen" value="insectScreen"> 방 충</label>
+							<div id="next_page" style="cursor: pointer; visibility: hidden;" >></div>
 							</div>
-							<br>
-							
+				
 							<div class="businessRegistration">
-							<label>* 사업자 등록증 및 자격증명서</label><br> 
+									<label style="font-size: 13px">* 사업자 등록증 및 자격증명서</label>
 									<div class="inputMargin">
 										<input type="text" class="form-control_id" name="username" 
 											placeholder="파일을 첨부해주세요" required="" autofocus="" />
@@ -469,24 +544,40 @@ body {
 									
 									<div>
 										<div class="check">
-											<form name="Attachments" action="" method="post" enctype="multipart/form-data">
-												<button class="button_adress_check">파일 첨부</button>
-											</form>
+											<button class="button_adress_check">파일 첨부</button>
 										</div>
 									</div>
-									
-									<div>
-										<button class="custom-btn btn-1">J O I N &nbsp U S</button>
-									</div>
-									
-									<div class="before_left">
-										<button class="button_next">< 이전</button>
-									</div>
 							</div>
+							
+							<div>
+								<div>
+									<button class="custom-btn btn-1">J O I N &nbsp U S</button>
+								</div>
+								<div class="before_left">
+									<button class="button_next">< 이전</button>
+								</div>
+							</div>
+							
 						</form>
 				</div>
 			</div>
 		</div>
 	</div>
 </body>
+
+<script type="text/javascript">
+
+	function next(){
+		document.getElementById("onepage").style.display = "none";
+		document.getElementById("twopage").style.display = "flex";
+	}
+	
+	function prev(){
+		document.getElementById("onepage").style.display = "flex";
+		document.getElementById("twopage").style.display = "none";
+	}
+	
+
+	
+</script>
 </html>
