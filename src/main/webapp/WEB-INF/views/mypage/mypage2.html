@@ -979,7 +979,7 @@ html, body {
 	border-color: #b67174;
 }
 
-#bg {
+#bg{
 	position: fixed;
 	width: 100%;
 	height: 100%;
@@ -1004,19 +1004,14 @@ html, body {
 	box-shadow: 0 0 5px 3px #999999;
 	z-index: 999;
 }
-.modal{
-	overflow: hidden;
-	height: 250px;
-}
-
-.modal_left_btn{
-	margin-bottom: 200px;
-}
-
 .bye{
 	text-align: center;
+	font-weight: bold;
 	font-size: 20px;
 }
+
+
+
 </style>
 </head>
 <body>
@@ -1261,7 +1256,7 @@ html, body {
 			</div>
 			<div class="delete_user_button">
 				<button class="cancel" >취소</button>
-				<button class="confirm" onclick="confirm1()">회원탈퇴</button>
+				<button class="confirm" onclick="real_delete_confirm()">회원탈퇴</button>
 			</div>
 		</div>
 	</div>
@@ -1345,7 +1340,7 @@ var chart = c3.generate({
 
 /* 송금하기-인증 전 모달 */
 let beforeSendModal = () => {
-	let modal = initModal('modal', 3);
+	let modal = initModal('modal', 1);
 	appendTitle(modal, '송금하기');
 	setButton(modal, '그만두기', '인증하기');
 	setContent(modal, true, true);
@@ -1385,7 +1380,7 @@ let afterSendModal = () => {
 	})
 }
 
-/* 송금하기-인증 후 모달 */
+/* 일반전환 */
 let changeNomal = () => {
 	let modal = initModal('modal', 2);
 	appendTitle(modal, '일반계정 등록');
@@ -1415,45 +1410,55 @@ let changeNomal = () => {
         const confirm = document.querySelector(".confirm");
         const wrap = document.querySelector(".wrap");
         
-        
+        /* 내정보 하위 버튼 */
         myInfo_btn.addEventListener("mouseover",function(){
         	modifyInfo_btn.classList.remove("hidden");
         	delete_user_btn.classList.remove("hidden");
         });
+        
+        /* 정보 수정 버튼 */
         modifyInfo_btn.addEventListener("click",function(){
         	modifyInfo_btn.classList.add("hidden");
         	delete_user_btn.classList.add("hidden");
         });
+        
+        /* div class wrap부분 누르면 하위 버튼들 사라짐 */
         wrap.addEventListener("click",function(){
         	modifyInfo_btn.classList.add("hidden");
         	delete_user_btn.classList.add("hidden");
         });
         
+        /* 탈퇴 버튼 */
         delete_user_btn.addEventListener("click",function(){
         	bg.classList.remove("hidden");
         	modifyInfo_btn.classList.add("hidden");
         	delete_user_btn.classList.add("hidden");
         	delete_user.classList.remove("hidden");
         });	
+        
+        /* 탈퇴취소 */
         cancel.addEventListener("click",function(){
         	bg.classList.add("hidden");
         	delete_user.classList.add("hidden");
         });	
+        
+        /* 탈퇴 가즈아 */
         confirm.addEventListener("click",function(){
         	bg.classList.add("hidden");
         	delete_user.classList.add("hidden");
         });	
         
-        let confirm1 = () => {
+        /* 탈퇴 완료 확인 모달 */
+        let real_delete_confirm = () => {
     		let modal = initModal('modal', 3);
     		appendTitle(modal, '회원탈퇴');
-    		setButton(modal,  '확인');
-    		setContent(modal, true);
+    		setButton(modal, '확인');
+    		setContent(modal, true,true);
     		
-    		let modalBody = $('<br><div class="bye">탈퇴되었습니다.<br><div>').height('1px')
+    		
+    		let modalBody = $('<div class="bye">탈퇴되었습니다.<div><br>')
     						.addClass('send_modal_content');
     		$('.modal_content').append(modalBody);
-    		
     		
     		
     		modalBlock();
