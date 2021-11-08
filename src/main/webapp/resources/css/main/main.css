@@ -599,7 +599,7 @@ html, body{
    position: fixed;
    height: 80px;
    width: 80px;
-   background-image: url("../../resources/image/chatting.png");
+   background-image: url("../../../resources/image/chatting.png");
    background-repeat: no-repeat;
    background-size: cover;
    background-position: center;
@@ -706,7 +706,7 @@ html, body{
    height: 250px;
    width: 1130px;
    display: flex;
-   background-image: url("../../resources/image/footer.png");
+   background-image: url("../../../resources/image/footer.png");
    background-repeat: no-repeat;
    background-size: 1130px 250px;
    background-position: center;
