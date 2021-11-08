@@ -9,7 +9,6 @@
 	display: none;
 }
 
-
 .modal{
 	display: none;
 	position: absolute;
@@ -68,6 +67,7 @@
 	
 }
 
+/* content css 작성부분 */
 
 
 
@@ -79,6 +79,34 @@
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* content css 작성부분 */
 
 .modal_btn_wrap{
 	display: flex;
@@ -103,24 +131,3 @@
 .modal_right_btn{
 	background-color: rgb(106, 176, 223);
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
