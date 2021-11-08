@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>업체 마이페이지</title>
 <link href="../../../resources/css/all.css" rel="stylesheet">
 <link href="../../../resources/css/reset.css" type="text/css" rel="stylesheet">
 <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
@@ -166,7 +166,7 @@ html, body {
 	margin-left: 10px;
 }
 
-#namebtn {
+#myInfo_btn,#modifyInfo_btn,#delete_user_btn {
 	margin-left: 10px;
 	width: 80px;
 	height: 30px;
@@ -770,9 +770,9 @@ html, body {
 }
 
 .balloon:after { 
- border-top:0px solid transparent; 
- border-left: 10px solid transparent; 
- border-right: 10px solid transparent; 
+ border-top:0px solid tranbsparent; 
+ border-left: 10px solid tranbsparent; 
+ border-right: 10px solid tranbsparent; 
  border-bottom: 10px solid #6CC3D5; 
  content:""; 
  position:absolute;
@@ -795,20 +795,233 @@ html, body {
 }
 
 .balloon2:after { 
- border-top:0px solid transparent; 
- border-left: 10px solid transparent; 
- border-right: 10px solid transparent; 
+ border-top:0px solid tranbsparent; 
+ border-left: 10px solid tranbsparent; 
+ border-right: 10px solid tranbsparent; 
  border-bottom: 10px solid gray; 
  content:""; 
  position:absolute;
  top:-10px;
  right:30px;  
 }
+
+.sendBefore{
+	color: red;
+	font-size: 25px;
+	font-weight: bold;
+	text-align: center;
+}
+
+.registration{
+	font-size: 15px;
+	font-weight: bold;
+	display: flex;
+	flex-direction: column;
+	margin-left: 28px;
+}
+
+.registration input{
+	width:350px;
+	font-size: 15px;
+	border: solid thin lightgray;
+	border-radius: 5px;
+	margin-top: 5px;
+	line-height: 2.5;
+}
+
+#namebtn2{
+	height: 30px;
+	position: absolute;
+	left: 360px;
+	top: 50px;
+	width: 80px;
+	font-size: 12px;
+	box-shadow: 3px 3px 3px lightgray;
+}
+.btn-info_wrap{
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	height: 100px;
+	position: absolute;
+	left: 260px;
+	top: 50px;
+}
+.btn-info_wrap>button{
+	border: thin;
+}
+
+.hidden{
+	display: none;
+}
+
+.delete_user{
+	position: absolute;
+	z-index: 10;
+	border: solid thin lightgray;
+	border-radius: 15px;
+	width: 800px;
+	height: 600px;
+	background-color: white;
+	display: flex;
+	flex-direction: column;
+	color: black;
+	font-weight: bold;
+	left:50%; 
+	transform:translateX(-50%);
+	top:10%; 
+	z-index: 2000;
+	position: fixed;
+}
+
+.delete_user_title{
+	font-weight: bold;
+	text-align: center;
+	font-size: 25px;
+	color: black;
+	margin-top: 15px;
+}
+.alert_wrap{
+	border: solid thin lightgray;
+	border-radius: 15px;
+	width: 730px;
+	height: 270px;
+	background-color: white;
+	margin-top: 20px;
+	align-self: center;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+.alert_wrap>div{
+	display: flex;
+	margin-left: 20px;
+}
+.alert_wrap>div>div{
+	color: red;
+}
+.check{
+	display: flex;
+	flex-direction: column;
+	align-self: flex-end;
+	margin-right: 50px;
+	margin-top: 20px;
+	font-size: 19px;
+	line-height: 2;
+}
+
+.check input{
+	width: 15px;
+	height: 15px;
+	margin-top: 5px;
+	margin-left: 15px;
+}
+
+.delete_user_button{
+	align-self: flex-end;
+	margin-right: 46px;
+	display: flex;
+	margin-top: 25px;
+}
+.delete_user_button>button{	
+	border-radius: 10px;
+	width: 100px;
+	height: 40px;
+	align-self: flex-end;
+	font-size: 17px;
+	margin-left: 20px;
+	font-weight: bold;
+	color: white;
+}
+
+
+.cancel{
+	background-color: rgb(41, 128, 185);
+}
+
+.confirm{
+	background-color: #de4434;
+}
+
+.cancel:focus{
+  color: white;
+  background-color: rgb(87, 153, 167);
+  border-color: rgb(87, 153, 167);
+  box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5);
+}
+
+.cancel:hover{
+  color: white;
+  background-color: rgb(87, 153, 167);
+  border-color: rgb(87, 153, 167);
+}
+
+.cancel:checked{
+  color: white;
+  background-color: rgb(87, 153, 167);
+  border-color: rgb(87, 153, 167);
+}
+
+.confirm:hover {
+	color: #fff;
+	background-color: #c2787b;
+	border-color: #b67174;
+}
+.confirm:focus {
+	color: #fff;
+	background-color: #cf8083;
+	border-color: #c2787b;
+	box-shadow: 0 0 0 0.25rem rgba(245, 166, 169, 0.5);
+}
+.confirm:checked {
+	color: #fff;
+	background-color: #c2787b;
+	border-color: #b67174;
+}
+
+#bg {
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+	background-color: rgb(0, 0, 0, 0.5);
+	z-index: 2000;
+}
+.hidden {
+	display: none;
+}
+
+.delete_modal{
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	border: 1px solid gray;
+	border-radius: 15px;
+	background-color: white;
+	box-shadow: 0 0 5px 3px #999999;
+	z-index: 999;
+}
+.modal{
+	overflow: hidden;
+	height: 250px;
+}
+
+.modal_left_btn{
+	margin-bottom: 200px;
+}
+
+.bye{
+	text-align: center;
+	font-size: 20px;
+}
 </style>
 </head>
 <body>
 <div id='modal'></div>
-
+<div id="bg" class="hidden"></div>
 <div class="wrap">
 
 
@@ -844,8 +1057,13 @@ html, body {
 				<div id="name">
 					<div id="nameicon"><i class="far fa-user"></i></div>
 					<div id="user_name">권구현님&nbsp(GuHyun)</div>
-					<div><button type="button" class="btn btn-info" id="namebtn">내정보&nbsp<i class="fas fa-chevron-down"></i></button></div>
-					<div><button type="button" class="btn btn-info" id="namebtn">일반전환</button></div>
+					<div class="btn-info_wrap">
+						<button type="button" class="btn btn-info open" id="myInfo_btn">내정보&nbsp<i class="fas fa-chevron-down"></i></button>
+						<button type="button" class="btn btn-info hidden" id="modifyInfo_btn" style="background-color: rgb(246, 199, 124); ">정보수정</button>
+						<button type="button" class="btn btn-info hidden" id="delete_user_btn" style="background-color: rgb(244, 166, 159); ">회원탈퇴</button>
+					
+					</div>
+					<div><button type="button" class="btn btn-info" id="namebtn2" onclick="changeNomal()">일반전환</button></div>
 				</div>
 				<div id="grade">
 					<div id="gold">GOLD</div>
@@ -931,7 +1149,7 @@ html, body {
 							<div class="accountbtntext" id="empty">충전하기</div>
 						</div>
 						<div id="send">
-							<div id="minusicon" type="button" onclick="createSendModal()"><i class="far fa-minus-square"></i></div>
+							<div id="minusicon" type="button" onclick="beforeSendModal()"><i class="far fa-minus-square"></i></div>
 							<div class="accountbtntext" id="basic">송금하기</div>
 						</div>
 					</div>
@@ -1027,6 +1245,25 @@ html, body {
 				</div>
 			</div>	
 		</div>
+		
+		<div class="delete_user hidden">
+			<div class="delete_user_title">회원탈퇴</div>
+			<div class="alert_wrap">
+				<div class="alert_title" style="font-size: 19px;">※ 회원 탈퇴 시 주의 사항</div>
+				<div class="alert_title">1. 회원 탈퇴 후 재 가입 시, <div>&nbsp회원 등급이 초기화&nbsp</div> 됩니다.</div>
+				<div class="alert_title">2. 회원 탈퇴 시, <div>&nbsp작성한 모든 게시 글 및 댓글이 유지&nbsp</div>됩니다.</div>
+				<div class="alert_title">3. 회원 탈퇴 시, <div>&nbsp현재 보유하고 있는 캐시가 소멸&nbsp</div>됩니다.</div>
+			</div>
+			<div class="check">
+				<label><a>※ 1번 항목에 동의 하십니까?</a><input type="checkbox"></label>
+				<label><a>※ 2번 항목에 동의 하십니까?</a><input type="checkbox"></label>
+				<label><a>※ 3번 항목에 동의 하십니까?</a><input type="checkbox"></label>
+			</div>
+			<div class="delete_user_button">
+				<button class="cancel" >취소</button>
+				<button class="confirm" onclick="confirm1()">회원탈퇴</button>
+			</div>
+		</div>
 	</div>
 
 
@@ -1106,14 +1343,15 @@ var chart = c3.generate({
     }
 });
 
-let createSendModal = () => {
-	let modal = initModal('modal', 1);
+/* 송금하기-인증 전 모달 */
+let beforeSendModal = () => {
+	let modal = initModal('modal', 3);
 	appendTitle(modal, '송금하기');
 	setButton(modal, '그만두기', '인증하기');
 	setContent(modal, true, true);
 	addPiggyBackground(modal);
 	
-	let modalBody = $('<div>"첫 송금이신가요?<br>계좌 인증을 진행해주세요!"<div>').height('130px')
+	let modalBody = $('<br><div class="sendBefore">"첫 송금이신가요?<br>계좌 인증을 진행해주세요!"<div>').height('10px')
 					.addClass('send_modal_content');
 	$('.modal_content').append(modalBody);
 	
@@ -1126,7 +1364,107 @@ let createSendModal = () => {
 	})
 }
 
+/* 송금하기-인증 후 모달 */
+let afterSendModal = () => {
+	let modal = initModal('modal', 2);
+	appendTitle(modal, '송금하기');
+	setButton(modal, '그만두기', '인증하기');
+	setContent(modal, true, true);
+	addPiggyBackground(modal);
+	
+	let modalBody = $('<br><div class="send">현재 보유 캐시<br>25,000 <i class="fas fa-coins"></i><div><br><div class="chargeMoney">인증 계좌 <input placeholder="&nbsp&nbsp 123-456789-5463"> <br><br>송금할 금액<input placeholder="&nbsp&nbsp금액을 입력해주세요. (최소 금액 : 천원)"><div>').height('10px')
+					.addClass('send_modal_content');
+	$('.modal_content').append(modalBody);
+	
+	
+	
+	modalBlock();
+	
+	$('.modal_left_btn').click(function() {
+		modalNone();
+	})
+}
 
+/* 송금하기-인증 후 모달 */
+let changeNomal = () => {
+	let modal = initModal('modal', 2);
+	appendTitle(modal, '일반계정 등록');
+	setButton(modal, '그만두기', '연결하기');
+	setContent(modal, true, true);
+	
+	let modalBody = $('<div class="registration"><br>아이디 <input  placeholder="&nbsp&nbsp연결할 일반회원 계정의 아이디를 입력하세요."><br> 비밀번호<input placeholder="&nbsp&nbsp연결할 일반회원 계정의 비밀번호를 입력하세요."> <br><br> 현재 계정 비밀번호 확인<input placeholder="&nbsp&nbsp현재 로그인된 업체 비밀번호를 입력하세요."><div>').height('100px')
+					.addClass('send_modal_content');
+	$('.modal_content').append(modalBody);
+	
+	
+	
+	modalBlock();
+	
+	$('.modal_left_btn').click(function() {
+		modalNone();
+	})
+}
+
+/* 내정보 하위 버튼 */
+     	const myInfo_btn = document.querySelector("#myInfo_btn");
+        const modifyInfo_btn = document.querySelector("#modifyInfo_btn");
+        const delete_user_btn = document.querySelector("#delete_user_btn");
+        const bg = document.querySelector("#bg");
+        const delete_user = document.querySelector(".delete_user");
+		const cancel = document.querySelector(".cancel");
+        const confirm = document.querySelector(".confirm");
+        const wrap = document.querySelector(".wrap");
+        
+        
+        myInfo_btn.addEventListener("mouseover",function(){
+        	modifyInfo_btn.classList.remove("hidden");
+        	delete_user_btn.classList.remove("hidden");
+        });
+        modifyInfo_btn.addEventListener("click",function(){
+        	modifyInfo_btn.classList.add("hidden");
+        	delete_user_btn.classList.add("hidden");
+        });
+        wrap.addEventListener("click",function(){
+        	modifyInfo_btn.classList.add("hidden");
+        	delete_user_btn.classList.add("hidden");
+        });
+        
+        delete_user_btn.addEventListener("click",function(){
+        	bg.classList.remove("hidden");
+        	modifyInfo_btn.classList.add("hidden");
+        	delete_user_btn.classList.add("hidden");
+        	delete_user.classList.remove("hidden");
+        });	
+        cancel.addEventListener("click",function(){
+        	bg.classList.add("hidden");
+        	delete_user.classList.add("hidden");
+        });	
+        confirm.addEventListener("click",function(){
+        	bg.classList.add("hidden");
+        	delete_user.classList.add("hidden");
+        });	
+        
+        let confirm1 = () => {
+    		let modal = initModal('modal', 3);
+    		appendTitle(modal, '회원탈퇴');
+    		setButton(modal,  '확인');
+    		setContent(modal, true);
+    		
+    		let modalBody = $('<br><div class="bye">탈퇴되었습니다.<br><div>').height('1px')
+    						.addClass('send_modal_content');
+    		$('.modal_content').append(modalBody);
+    		
+    		
+    		
+    		modalBlock();
+    		
+    		$('.modal_left_btn').click(function() {
+    			modalNone();
+    		})
+    	}
+    	
+      
+        
 </script>
 </body>
 </html>
