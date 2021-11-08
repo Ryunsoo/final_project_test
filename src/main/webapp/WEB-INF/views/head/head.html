@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>head</title>
+<link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p" crossorigin="anonymous"/>
+<link href="../../../resources/css/all.css" rel="stylesheet">
+<link href="../../../resources/css/reset.css" type="text/css" rel="stylesheet">
+<style type="text/css">
+
+html, body {
+	width: 100%;
+	height: 1700px;
+	min-width: 1130px;
+	display: flex;
+	justify-content: center;
+	min-width: 1130px;
+}
+
+.wrap {
+	width: 1130px;
+	height: 100%;
+}
+
+.navbar {
+	width: 1130px;
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	flex-shrink: 0;
+	position: relative;
+}
+
+.nav_group {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.nav_info {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 75px;
+	font-size: 17px;
+}
+
+.userName {
+	margin-right: 6px;
+	font-weight: bolder;
+}
+
+.nim {
+	margin-right: 10px;
+	font-size: 13px;
+	align-self: center;
+	margin-top: 4px;
+	font-weight: bolder;
+}
+
+.medal {
+	margin-right: 20px;
+	align-self: center;
+	color: #e6bc14;
+}
+
+.mypage {
+	margin-right: 20px;
+	font-weight: bolder;
+}
+
+.logout {
+	font-weight: bolder;
+	color: #e67e00
+}
+
+.nav_title {
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.nav_title>a>div {
+	width: 90px;
+}
+
+.nav_title div:hover {
+	color:  rgb(41, 128, 185);
+}
+
+/*로고*/
+.logo {
+	width: 200px;
+	align-self: center;
+}
+
+/* 상단 메뉴바 css */
+.gnb__sub-category-wrap {
+    display: none;
+    font-size: 0;
+    position: absolute;
+    width: 1130px;
+    height: 200px;
+    left: 0;
+    bottom: -200px;
+    z-index: 11;
+}
+
+.gnb__sub-category-wrap>div {
+	display: flex;
+}
+
+.gnb__sub-category-img-wrap {
+    display: inline-block;
+    padding-top: 20px;
+    width: 200px;
+    height: 200px;
+    max-height: 100%;
+	background-color: white;
+}
+
+.gnb__sub-category-img {
+    width: 100%;
+    height: 180px;
+}
+
+.bee1 {
+	width: 100%;
+	height: 180px;
+}
+
+.gnb__2depth-wrap {
+    width: 930px;
+    height: 210px;
+    padding-top: 10px;
+    display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bolder;
+	background-color: white;
+}
+
+.gnb-2depth {
+    display: inline-block;
+    padding-right: 4px;
+    height: 100%;
+    font-size: 13px;
+    line-height: 1.3;
+    vertical-align: top;
+}
+
+.gnb-2depth__list {
+    padding-bottom: 10px;
+}
+
+.gnb-2depth__item {
+    padding: 10px 0;
+    width: 90px;
+}
+.gnb-2depth__item a {
+	font-size: 15px;
+	flex-shrink: 0;
+    color: gray;
+}
+
+.gnb-2depth__item a:hover {
+    color: black;
+    font-weight: bolder;
+}
+</style>
+</head>
+<body>
+	<div class="wrap">
+	
+		<!-- header -->
+		<header id="header">
+			<nav class="navbar">
+				<!-- 상단 메뉴바 시작-->
+					<div id="mouse_off">
+						<div class="gnb__sub-category-wrap">
+							<div>
+								<div class="gnb__sub-category-img-wrap">
+									<div class="gnb__sub-category-img">
+										<img src="../../../resources/image/bee1.png" class="bee1">
+									</div>
+								</div>
+								
+								<ul class="gnb__2depth-wrap">
+									<li class="gnb-2depth">
+										<ul class="gnb-2depth__list">
+											<li class="gnb-2depth__item">
+												<a href="https://www.naver.com/">카테고리</a>
+											</li>
+											<li class="gnb-2depth__item">
+												<a href="https://www.naver.com/">신청서 작성</a>
+											</li>
+											<li class="gnb-2depth__item">
+												<a href="https://www.naver.com/">마이해협</a>
+											</li>
+											<li class="gnb-2depth__item">
+												<a href="https://www.naver.com/">리뷰해협</a>
+											</li>
+										</ul>
+									</li>
+									<li class="gnb-2depth">
+										<ul class="gnb-2depth__list">
+											<li class="gnb-2depth__item">
+												<a href="https://www.naver.com/">구매해협</a>
+											</li>
+											<li class="gnb-2depth__item">
+												<a href="https://www.naver.com/">작성해협</a>
+											</li>
+											<li class="gnb-2depth__item">
+												<a href="https://www.naver.com/">마이공구</a>
+											</li>
+										</ul>
+									</li>
+									<li class="gnb-2depth">
+										<ul class="gnb-2depth__list">
+											<li class="gnb-2depth__item">
+												<a href="https://www.naver.com/">나의 냉장고</a>
+											</li>
+											<li class="gnb-2depth__item">
+												<a href="https://www.naver.com/">나의 가계부</a>
+											</li>
+										</ul>
+									</li>
+									<li class="gnb-2depth">
+										<ul class="gnb-2depth__list">
+											<li class="gnb-2depth__item">
+												<a href="https://www.naver.com/"><div>소통해협</div></a>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>	
+						</div>
+					</div>	
+					<!-- 상단 메뉴바 끝 -->
+				<div class="logo">
+					<a href=""><img src="../../../resources/image/main-logo.png" class="logo"></a>
+				</div>
+				<div class="nav_group">
+					<div class="nav_info">
+						<div class="userName">해협</div>
+						<div class="nim">님</div>
+						<div class="medal">
+							<i class="fas fa-medal"></i>
+						</div>
+						<a href=""><div class="mypage">마이페이지</div></a>
+						<a href=""><div class="logout" type="button">LOGOUT</div></a>
+					</div>
+					<div class="nav_title">
+						<a href=""><div class="help">해협신청</div></a>
+						<a href=""><div class="together">공구해협</div></a>
+						<a href=""><div class="manage">관리해협</div></a>
+						<a href=""><div class="talk">소통해협</div></a>
+					</div>
+				</div>
+			</nav>
+		</header>
+
+	</div>
+
+</body>
+<script type="text/javascript">
+document.querySelector(".nav_title").addEventListener('mouseover', e => {
+	document.querySelector(".gnb__sub-category-wrap").style.display = 'block';
+})
+document.querySelector("#mouse_off").addEventListener('mouseleave', e => {
+	document.querySelector(".gnb__sub-category-wrap").style.display = 'none';
+})
+document.querySelector(".nav_info").addEventListener('mouseover', e => {
+	document.querySelector(".gnb__sub-category-wrap").style.display = 'none';
+})
+document.querySelector(".logo").addEventListener('mouseover', e => {
+	document.querySelector(".gnb__sub-category-wrap").style.display = 'none';
+})
+</script>
+
+</html>
