@@ -8,6 +8,9 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="../../../resources/css/management/jquery-ui.min.css">
+<link rel="stylesheet" href="../../../resources/css/include/modal/modal.css">
+<script type="text/javascript" src="../../../resources/js/include/modal/init-modal.js"></script>
+
 <style type="text/css">
 /* nav,div,ul,li,a,span {
 	border: solid thin lightgray;
@@ -34,6 +37,7 @@ html, body {
     min-width: 1130px;
     display: flex;
     justify-content: center;
+    position: relative;
 }
 
 .wrap {
@@ -562,9 +566,51 @@ html, body {
 	font-size: 13px;
 }
 
+
+
+/* 팝업창 */
+.modal{
+	box-shadow:none;
+	border-radius: 5px;
+	background-color: #ededed;
+	position: fixed;
+	
+}
+
+#modal{
+	height: 1285px;
+}
+
+
+/* 팝업창제목 */
+.modal_tit{
+	font-size: 15px;
+}
+
+/* 팝업창 크기 */
+.simple_modal{
+	height: 150px;
+	width: 400px;
+}
+
+/* 팝업창 버튼 색 */
+.modal_left_btn {
+	background-color: #bebebe;
+	border: none;
+}
+
+.modal_right_btn {
+	background-color: #6297d5;
+	border: none;
+}
+
+
+
+
 </style>
 </head>
 <body>
+	<div id='modal'></div>
 <div id="bg" class="hidden"></div>
 	<div class="wrap">
 		<header id="header">
@@ -828,6 +874,30 @@ html, body {
             bg.classList.add("hidden");
             popup.classList.add("hidden");
         });
+        
+        
+        $('.fa-times-circle').click(function() {
+        	let createModal = () => {
+            	let sendModal = initModal('modal', 3);
+            	appendTitle(sendModal, '최근 소진 목록에 추가하시겠습니까?', true);
+            	setButton(sendModal, '삭제', '추가');
+            	setContent(sendModal, true, true);
+            	//addPiggyBackground(sendModal);
+            	modalBlock();
+            	
+            	$('.modal_left_btn').click(function() {
+            		modalNone();
+            	})
+            }
+        	createModal();
+    	})
+        
+        
+       
+		
+	        
+        
+        
     </script>
 </body>
 </html>
