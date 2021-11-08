@@ -1,0 +1,170 @@
+/*공용 css임 절대 수정하면 안됨 */
+nav, ul, li, a, span {
+	border: solid thin lightgray;
+	/*border: none;*/
+	display: flex;
+}
+
+div {
+	border: none;
+}
+
+#header {
+	background-color: white;
+	display: flex;
+	border: none;
+}
+
+#header div {
+	display: flex;
+}
+
+#search_case {
+	display: flex;
+	height: 65px;
+	border: none;
+}
+
+#search_case div {
+	display: flex;
+}
+
+#form_inner_top {
+	display: flex;
+}
+
+#form_inner_top div {
+	display: flex;
+}
+
+html, body {
+	width: 100%;
+	height: 100%;
+	min-width: 1130px;
+	display: flex;
+	justify-content: center;
+}
+
+#header {
+	height: 100px;
+}
+
+
+
+#search_case div {
+	border: none;
+}
+
+#search_case_inner_div_1 {
+	width: 200px;
+	margin-left: 100px;
+	margin-right: 330px;
+	font-family: '나눔스퀘어_ac';
+	font-weight: bolder;
+	color: black;
+}
+
+#search_case_inner_div_2 input {
+	width: 130px;
+	font-size: 20px;
+	height: 30px;
+	position: relative;
+	top: 30px;
+}
+
+#search_case_inner_div_3 {
+	margin-right: 70px;
+	height: 35px;
+	position: relative;
+	top: 30px;
+	left: 30px;
+}
+
+#search_case_inner_div_4 {
+	height: 35px;
+	position: relative;
+	top: 30px;
+}
+
+#search_case select {
+	font-size: 20px;
+}
+
+#write_form {
+}
+
+.wrap {
+	display: block;
+	width: 1130px;
+	height: 1300px;
+	background-color: #d2e4f9;
+	opacity: 0.7;
+}
+
+.navbar {
+	width: 1130px;
+	height: 100px;
+	display: flex;
+	justify-content: space-around;
+	flex-shrink: 0;
+}
+
+.nav_group {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+}
+
+.nav_info {
+	display: flex;
+	justify-content: flex-end;
+	margin-right: 75px;
+	font-size: 17px;
+}
+
+.userName {
+	margin-right: 6px;
+	font-weight: bolder;
+}
+
+.nim {
+	margin-right: 10px;
+	font-size: 13px;
+	align-self: center;
+	margin-top: 4px;
+	font-weight: bolder;
+}
+
+.medal {
+	margin-right: 20px;
+	align-self: center;
+	color: #e6bc14;
+}
+
+.mypage {
+	margin-right: 20px;
+	font-weight: bolder;
+}
+
+.logout {
+	font-weight: bolder;
+	color: #e67e00
+}
+
+.nav_title {
+	display: flex;
+	justify-content: space-around;
+	font-size: 20px;
+	font-weight: bolder;
+}
+
+.talk {
+	color: rgb(41, 128, 185);
+}
+
+/*로고*/
+.logo {
+	width: 200px;
+	align-self: center;
+}

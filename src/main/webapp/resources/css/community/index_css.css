@@ -1,0 +1,160 @@
+#index_body_container {
+	width: 1130px;
+	height: 75%;
+	/*background-color:yellow;*/
+	border: solid transparent;
+}
+
+#index_body_container table {
+	margin: auto;
+	/*background-color:black;*/
+	width: 80%;
+	/* height: 75%; */
+	border-spacing: 0 20px;
+}
+
+#index_body_container table tr td {
+	background-color: white;
+	/* border-top-left-radius: 10px; */
+	border-radius: 1rem;
+}
+
+/*footer는 view_board.html도 공용으로 사용할것*/
+#footer {
+	width: 1230px;
+	height: 110px;
+	/*background-color:green;*/
+}
+
+#footer p {
+	text-align: center;
+	margin: 0 auto;
+	font-size: 24px;
+}
+
+#footer_inner_one {
+	height: 50px;
+}
+
+#footer_inner_two {
+	height: 50px;
+}
+/*
+#footer_inner_div{
+    text-align:center;
+    margin-top:50px;
+    margin:0 auto;
+    width:80%;
+    height:50px;
+}
+*/
+.tr_inner_container {
+	width: 900px;
+	height: 70px;
+	margin: 0 auto;
+	display: block;
+	border-radius: 1rem;
+	border: solid transparent;
+}
+
+.tr_inner_up_div {
+	display: block;
+	width: 840px;
+	border-bottom: 1px solid gray;
+	margin: 0 auto;
+	height: 30px;
+	background-color: white;
+}
+
+.tr_inner_under_div {
+	display: block;
+	width: 840px;
+	height: 37px;
+	margin: 0 auto;
+}
+
+.board_kinds {
+	margin-right: 30px;
+	width: 50px;
+	height: 30px;
+}
+
+.board_title {
+	width: 250px;
+	height: 30px;
+	margin-right: 330px;
+	color: navy;
+}
+
+.board_writer {
+	width: 60px;
+	height: 30px;
+}
+
+.board_date {
+	width: 90px;
+	height: 30px;
+}
+
+.board_view_cnt {
+	width: 30px;
+	height: 30px;
+}
+
+.tr_inner_under_div_contents {
+	height: 37px;
+}
+
+.board_title, .board_writer, .board_date, .board_view_cnt {
+	border: solid transparent;
+}
+
+.board_kinds, .board_title, .board_writer, .board_date, .board_view_cnt
+	{
+	font-family: '나눔스퀘어_ac';
+	font-weight: bold;
+}
+
+#footer {
+	display: flex;
+	justify-content: center;
+	border: solid transparent;
+}
+
+.page{
+	width: 300px;
+	height: 50px;
+	display: flex;
+	justify-content: space-around;
+	align-items: center;
+	font-weight: bold;
+	font-size: 30px;
+	border: solid transparent;
+}
+
+.page>i{
+	font-size: 30px;
+	color: black;
+}
+
+.page>i:hover{
+	color: #b3b3b3;
+	cursor: pointer;
+}
+
+.page>div{
+	display: flex;
+	width: 150px;
+	justify-content: space-around;
+	border: solid transparent;
+}
+
+.page>div>span:hover{
+	color: #bfbfbf;
+	cursor: pointer;
+	border: solid transparent;
+}
+
+.page>footer_logo {
+	margin-right: 20px;
+}
