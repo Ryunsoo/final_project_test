@@ -8,6 +8,11 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
 <link rel="stylesheet" href="../../../resources/css/management/jquery-ui.min.css">
+<link rel="stylesheet" href="../../../resources/css/include/modal/modal.css">
+<script type="text/javascript" src="../../../resources/js/include/modal/init-modal.js"></script>
+
+
+
 <style type="text/css">
 /* nav,div,ul,li,a,span {
 	border: solid thin lightgray;
@@ -571,11 +576,17 @@ html, body {
 	border-color: rgb(87, 153, 167);
 	box-shadow: 0 0 0 0.25rem rgba(211, 212, 213, 0.5);
 }
-
+.add{
+	text-align: center;
+	font-weight: bold;
+	font-size: 18px;
+	margin-bottom: 10px;
+}
 
 </style>
 </head>
 <body>
+<div id='modal'></div>
 <div id="bg" class="hidden"></div>
 	<div class="wrap">
 		<header id="header">
@@ -858,6 +869,29 @@ html, body {
             bg.classList.add("hidden");
             popup.classList.add("hidden");
         });
+        
+        
+        
+        $('.cancel').click(function() {
+        	let createModal = () => {
+            	let sendModal = initModal('modal', 3);
+            	appendTitle(sendModal, '');
+            	setButton(sendModal, '삭제', '추가');
+            	setContent(sendModal, true, true);
+            	//addPiggyBackground(sendModal);
+            	modalBlock();
+            	
+            	let modalBody = $('<div class="add">최근 소진 목록에 추가하시겠습니까?<div><br>')
+				.addClass('send_modal_content');
+				$('.modal_content').append(modalBody);
+            	
+            	$('.modal_left_btn').click(function() {
+            		modalNone();
+            	})
+            }
+        	createModal();
+    	})
+        
     </script>
 </body>
 </html>
