@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>소통해협 - 메인페이지</title>
 <link rel="stylesheet"
    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
@@ -42,16 +42,20 @@
     <div id="search_case">
         <div id="search_case_inner_div_1"><h3>소통해협</h3></div>
         <div id="search_case_inner_div_3">
-        <SELECT NAME=sltSample SIZE=1>
-        <OPTION VALUE=1 SELECTED>[음식]</OPTION>
-        <OPTION VALUE=2>[잡담]</OPTION>
-        <OPTION VALUE=3>3번</OPTION>
-        <OPTION VALUE=4>4번 보기</OPTION>
-        </SELECT>
+           <SELECT NAME=sltSample SIZE=1>
+              <option value="" disabled selected hidden>카테고리 선택</option>
+              <OPTION VALUE=1>[음식]</OPTION>
+              <OPTION VALUE=2>[잡담]</OPTION>
+              <OPTION VALUE=3>3번 보기</OPTION>
+              <OPTION VALUE=4>4번 보기</OPTION>
+           </SELECT>
+           <input type="text">
+           <i id="search" class="far fa-search"></i>
         </div>
-        <div id="search_case_inner_div_2"><input type="text"></div>
-        <div id="search_case_inner_div_4"><img onclick="" src="../../../resources/image/search_glass.png"/></div>
     </div>
+    
+    <div class="write_body">
+    
     <!--index페이지 body작업시작-->
     <div id="index_body_container">
         <table>
@@ -319,7 +323,7 @@
 
         </table>
     </div>
-    
+   </div>
 
     <!--footer은 글쓰기 페이지엔 존재하지 않으니 index, view_board에만 사용-->
     <footer>
@@ -329,11 +333,10 @@
 						<div><span>1</span>&nbsp;<span>2</span>&nbsp;<span>3</span>&nbsp;<span>4</span>&nbsp;<span>5</span>&nbsp;<span>6</span>&nbsp;<span>7</span></div>&nbsp;
 						<i class="fas fa-caret-right"></i>
 				</div>
-                <img width="100px" height="100px" src="../../../resources/image/chatting.png" name="footer_logo">
+                <img width="100px" height="80px" src="../../../resources/image/chatting.png" name="footer_logo">
+                
         </div>
-        
     </footer>
-
    </div>
    <!--wrap == container 끝-->
   

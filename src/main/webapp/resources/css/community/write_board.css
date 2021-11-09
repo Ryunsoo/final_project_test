@@ -1,24 +1,32 @@
 #write_body_container{
     width:1000px;
     height:1000px;
-    /* background-color:rgba(20,20,20,0.1);    */
+    /* background-color:rgba(20,20,20,0.1); */
     margin:0 auto;
     display:block;
+}
+
+.write_body{
+    background-color: rgba(127, 127, 127, 0.06);
 }
 
 #exp_of_write{
     width:1000px;
     height:40px;
-    margin:0 auto;
+    /* margin:0 auto; */
+    position: relative;
+    top: 20px;
+    right: 5px;
     text-align:center;
 }
+
 #exp_of_write p {
     font-size:30px;
     margin:0 auto;
     text-align:center;
     font-family: '나눔스퀘어_ac';
 	font-weight: bold;
-	color: navy;
+	color: black;
 }
 
 #write_form{
@@ -29,10 +37,9 @@
 }
 
 #form_inner_top{
-    width:940px;
+    width:1000px;
     height:50px;
-    margin-top:30px;
-    margin-left:30px;
+    margin-top:40px;
     background-color:white;
 }
 
@@ -67,8 +74,8 @@ form{
 }
 
 #cover_form{
-    margin-top:20px;
+    margin-top:5px;
     width:1000px;
-    height:800px;
+    height:600px;
     background-color:white;
 }

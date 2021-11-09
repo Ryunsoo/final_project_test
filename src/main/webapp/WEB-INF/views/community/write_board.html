@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>소통해협 - 게시글 작성</title>
 <link rel="stylesheet"
    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
@@ -64,20 +64,25 @@
     <div id="search_case">
         <div id="search_case_inner_div_1"><h3>소통해협</h3></div>
         <div id="search_case_inner_div_3">
-        <SELECT NAME=sltSample SIZE=1>
-        <OPTION VALUE=1 SELECTED>[음식]</OPTION>
-        <OPTION VALUE=2>[잡담]</OPTION>
-        <OPTION VALUE=3>3번 보기</OPTION>
-        <OPTION VALUE=4>4번 보기</OPTION>
-        </SELECT>
+           <SELECT NAME=sltSample SIZE=1>
+              <option value="" disabled selected hidden>카테고리 선택</option>
+              <OPTION VALUE=1>[음식]</OPTION>
+              <OPTION VALUE=2>[잡담]</OPTION>
+              <OPTION VALUE=3>3번 보기</OPTION>
+              <OPTION VALUE=4>4번 보기</OPTION>
+           </SELECT>
+           <input type="text">
+           <i id="search" class="far fa-search"></i>
         </div>
-        <div id="search_case_inner_div_2"><input type="text"></div>
-        <div id="search_case_inner_div_4"><img src="../../../resources/image/search_glass.png"/></div>
     </div>
+    
+    <div class="write_body">
+    
+    
     <!--index페이지 body작업시작-->
     <div id="write_body_container">
          <div id="exp_of_write">
-            <p>게시글 등록하기</p>
+            <p>------ 게시글 등록하기 ---------------------------------------------------------</p>
          </div>
          
          <div id="write_form">
@@ -107,11 +112,10 @@
                   <div style="background-color:black; display:inline-flex important!;">
                      <textarea name="board_content" id="content"></textarea>
                   </div>
-                  <div align="center">
+                  <div align="right">
                      <input type="hidden" name="section" value="${ param.section }">
                      <input type="hidden" name="id" value="${ id }">
-                     <input style="width:100px; height:55px; border:1px solid thin black;"type="submit" value="확인" class="w3-button w3-white w3-round-small"> &nbsp;
-                     <input style="width:100px; height:55px; border:1px solid thin black;" type="button" value="취소" class="w3-button w3-white w3-round-small" onclick="history.go(-1)">
+                     <input type="button" id="bt" value="게시글 등록" onclick="history.go(-1)">
                   </div>
                   
 
@@ -123,6 +127,7 @@
          
     </div>
     <!--//index페이지 body작업 끝-->
+    </div>
    </div>
    <!--wrap == container 끝-->
   

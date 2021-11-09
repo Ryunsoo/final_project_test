@@ -1,7 +1,7 @@
 /*공용 css임 절대 수정하면 안됨 */
 nav, ul, li, a, span {
 	border: solid thin lightgray;
-	/*border: none;*/
+	border: none;
 	display: flex;
 }
 
@@ -25,10 +25,6 @@ div {
 	border: none;
 }
 
-#search_case div {
-	display: flex;
-}
-
 #form_inner_top {
 	display: flex;
 }
@@ -47,58 +43,66 @@ html, body {
 
 #header {
 	height: 100px;
+	/* background-color: white;
+	display: flex;
+	border: none; */
 }
 
-
-
-#search_case div {
-	border: none;
+#search_case {
+   width: 1130px;
+   height: 65px;
+   margin: 20px 0 20px 0;
+   display: flex;
+   justify-content: space-between;
 }
 
 #search_case_inner_div_1 {
-	width: 200px;
-	margin-left: 100px;
-	margin-right: 330px;
-	font-family: '나눔스퀘어_ac';
-	font-weight: bolder;
-	color: black;
+   width: 200px;
+   margin-left: 50px;
 }
 
-#search_case_inner_div_2 input {
-	width: 130px;
+search_case_inner_div_1 > h3 {
 	font-size: 20px;
-	height: 30px;
-	position: relative;
-	top: 30px;
+	font-weight: bold;
+	margin-top: 20px;
 }
 
 #search_case_inner_div_3 {
-	margin-right: 70px;
-	height: 35px;
-	position: relative;
-	top: 30px;
-	left: 30px;
+   width: 500px;
+   display: flex;
+   position: relative;
+   margin: 20px;
 }
 
-#search_case_inner_div_4 {
-	height: 35px;
-	position: relative;
-	top: 30px;
+#search_case_inner_div_3 select{
+   width: 110px;
+   height: 35px;
+   font-size: 13px;
+   border-radius: 4px;
+   margin: 0 10px 0 100px;
 }
 
-#search_case select {
-	font-size: 20px;
+#search_case_inner_div_3 input{
+   width: 250px;
+   height: 30px;
+   font-size: 13px;
+   border-radius: 4px;
 }
 
-#write_form {
+#search{
+   position: absolute;
+   left: 450px;
+   top: 10px;
 }
 
 .wrap {
 	display: block;
 	width: 1130px;
 	height: 1300px;
-	background-color: #d2e4f9;
-	opacity: 0.7;
+	background-color: white;
+	/* 상단 바 맞추기 */
+	position: relative;
+	top: 13px;
 }
 
 .navbar {
@@ -167,4 +171,12 @@ html, body {
 .logo {
 	width: 200px;
 	align-self: center;
+}
+
+#bt {
+	width: 200px;
+	height:45px;
+	color: white;
+	background-color: #808080;
+	border-radius: 6px;
 }

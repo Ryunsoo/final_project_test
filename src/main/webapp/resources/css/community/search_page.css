@@ -1,21 +1,10 @@
 #index_body_container {
 	width: 1130px;
-	height: 75%;
-	/*background-color:yellow;*/
-	border: solid transparent;
-}
-
-#index_body_container table {
-	margin: auto;
-	/*background-color:black;*/
-	width: 80%;
-	/*height:100%;*/
-	border-spacing: 0 20px;
-}
-
-#index_body_container table tr td {
-	background-color: white;
-	border-radius: 1rem;
+	background-color: rgba(127, 127, 127, 0.06);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-top: 50px;
 }
 
 /*footer는 view_board.html도 공용으로 사용할것*/
@@ -38,100 +27,96 @@
 #footer_inner_two {
 	height: 50px;
 }
-/*
-#footer_inner_div{
-    text-align:center;
-    margin-top:50px;
-    margin:0 auto;
-    width:80%;
-    height:50px;
-}
-*/
+
 .tr_inner_container {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
 	width: 900px;
-	height: 70px;
-	margin: 0 auto;
-	display: block;
-	border-radius: 1rem;
-	border: solid transparent;
+	height: 120px;
+	border: 1px solid gray;
+	background-color: white;
+	border-radius: 7px;
+	margin-bottom: 20px;
 }
 
 .tr_inner_up_div {
-	display: block;
+	display: flex;
 	width: 840px;
+	height: 60px;
 	border-bottom: 1px solid gray;
-	margin: 0 auto;
-	height: 30px;
-	background-color: white;
+	margin-top: 10px;
 }
 
 .tr_inner_under_div {
-	display: block;
+	display: flex;
+	justify-content: center;
 	width: 840px;
-	height: 37px;
-	margin: 0 auto;
+	height: 60px;
+	margin: 10px 0 0 10px;
 }
 
 .board_kinds {
-	margin-right: 30px;
-	width: 50px;
-	height: 30px;
+	margin: 10px 10px 0 10px;
 }
 
 .board_title {
-	width: 250px;
-	height: 30px;
-	margin-right: 330px;
+	width: 555px;
+	margin: 5px 20px 0 10px; 
+	font-size: 25px;
 	color: navy;
 }
 
 .board_writer {
-	width: 60px;
-	height: 30px;
+	margin: 10px 10px 0 10px; 
 }
 
 .board_date {
-	width: 90px;
-	height: 30px;
+	margin: 10px 10px 0 10px;
 }
 
 .board_view_cnt {
-	width: 30px;
-	height: 30px;
+	margin: 10px 10px 0 10px;
 }
 
 .tr_inner_under_div_contents {
-	height: 37px;
-	font-family: '나눔스퀘어_ac';
-	font-weight: bold;
+	display: block;
+	width: 840px;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	
 }
 
 #result_letter {
 	width: 900px;
-	height: 100px;
-	background-color: white;
-	border-radius: 1rem;
-	color: navy;
-	border: solid transparent;
+	height: 50px;
+	color: rgb(51, 51, 51);
+	margin-top: 20px;
 }
 
 #result_letter p {
-	font-size: 25px;
-	margin: 0 auto;
+	font-size: 20px;
+	font-weight: bold;
 	text-align: center;
-	font-family: '나눔스퀘어_ac';
-	font-weight: bold;
+	width: 700px;
+	margin: 0 10px 10px 15px;
 }
 
-.board_title, .board_writer, .board_date, .board_view_cnt {
-	border: solid transparent;
+#title_line{
+	width: 100px;
+	height: 0px;
+	margin: 15px 0 0 0;
+	border: 1px solid silver;
 }
 
-.board_kinds, .board_title, .board_writer, .board_date, .board_view_cnt
-	{
-	font-family: '나눔스퀘어_ac';
-	font-weight: bold;
+#title_line_two{
+	width: 100px;
+	height: 0px;
+	margin: 15px 0 0 0;
+	border: 1px solid silver;
 }
+
 
 #footer {
 	display: flex;

@@ -43,137 +43,77 @@
     <div id="search_case">
         <div id="search_case_inner_div_1"><h3>소통해협</h3></div>
         <div id="search_case_inner_div_3">
-        <SELECT NAME=sltSample SIZE=1>
-        <OPTION VALUE=1 SELECTED>[음식]</OPTION>
-        <OPTION VALUE=2>[잡담]</OPTION>
-        <OPTION VALUE=3>3번 보기</OPTION>
-        <OPTION VALUE=4>4번 보기</OPTION>
-        </SELECT>
+	        <SELECT NAME=sltSample SIZE=1>
+	        	<option value="" disabled selected hidden>카테고리 선택</option>
+		        <OPTION VALUE=1>[음식]</OPTION>
+		        <OPTION VALUE=2>[잡담]</OPTION>
+		        <OPTION VALUE=3>3번 보기</OPTION>
+		        <OPTION VALUE=4>4번 보기</OPTION>
+	        </SELECT>
+	        <input type="text">
+        	<i id="search" class="far fa-search"></i>
         </div>
-        <div id="search_case_inner_div_2"><input type="text"></div>
-        <div id="search_case_inner_div_4"><img src="../../../resources/image/search_glass.png"/></div>
     </div>
     <!--index페이지 body작업시작-->
     <div id="index_body_container">
-        
-        <table>
-        <!--결과물을 보여줘야하니 spring사용할때 채워넣어야함-->
-        <tr>
-            <td>
-                <div id="result_letter">
-                    <!--spring으로 작성시 전부 div로 갈아끼워야함 ex) [카테고리명] = [{인자값}]-->
-                    <p>카테고리 : [카테고리명] | "<검색어>"에 대한 검색 결과 [숫자]</p>
-                </div>
-            </td>
-        </tr>
-    
-            <!--여기에 나중에 spring로 forEach문 돌려야함-->
-            <!-- tr 샘플따기 시작 -->
-            <tr>
-                <td>
-                    <div class="tr_inner_container" style="display:block;">
-                        
-                        <div class="tr_inner_up_div" style="display:flex;">
-                        <!--이안에 인제 위에꺼들 채우기-->
-                        <div class="board_kinds">[음식]</div>
-                        <div class="board_title">제목</div>
-                        <div class="board_writer">작성자</div>
-                        <div class="board_date">21-11-04</div>
-                        <div class="board_view_cnt">101</div>
-                        </div>
-
-                        <div class="tr_inner_under_div">
-                            <!--이안에 contents 미리보기-->
-                            <div class="tr_inner_under_div_contents">
-                                미리보기
-                            </div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <!-- tr 샘플따기 끝 -->
-            
-
-            <!-- tr 샘플따기 시작 -->
-            <tr>
-                <td>
-                    <div class="tr_inner_container" style="display:block;">
-                        
-                        <div class="tr_inner_up_div" style="display:flex;">
-                        <!--이안에 인제 위에꺼들 채우기-->
-                        <div class="board_kinds">[음식]</div>
-                        <div class="board_title">제목</div>
-                        <div class="board_writer">작성자</div>
-                        <div class="board_date">21-11-04</div>
-                        <div class="board_view_cnt">101</div>
-                        </div>
-
-                        <div class="tr_inner_under_div">
-                            <!--이안에 contents 미리보기-->
-                            <div class="tr_inner_under_div_contents">
-                                미리보기
-                            </div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <!-- tr 샘플따기 끝 -->
-            
-
-            <!-- tr 샘플따기 시작 -->
-            <tr>
-                <td>
-                    <div class="tr_inner_container" style="display:block;">
-                        
-                        <div class="tr_inner_up_div" style="display:flex;">
-                        <!--이안에 인제 위에꺼들 채우기-->
-                        <div class="board_kinds">[음식]</div>
-                        <div class="board_title">제목</div>
-                        <div class="board_writer">작성자</div>
-                        <div class="board_date">21-11-04</div>
-                        <div class="board_view_cnt">101</div>
-                        </div>
-
-                        <div class="tr_inner_under_div">
-                            <!--이안에 contents 미리보기-->
-                            <div class="tr_inner_under_div_contents">
-                                미리보기
-                            </div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <!-- tr 샘플따기 끝 -->
-
-            
-            <!-- tr 샘플따기 시작 -->
-            <tr>
-                <td>
-                    <div class="tr_inner_container" style="display:block;">
-                        
-                        <div class="tr_inner_up_div" style="display:flex;">
-                        <!--이안에 인제 위에꺼들 채우기-->
-                        <div class="board_kinds">[음식]</div>
-                        <div class="board_title">제목</div>
-                        <div class="board_writer">작성자</div>
-                        <div class="board_date">21-11-04</div>
-                        <div class="board_view_cnt">101</div>
-                        </div>
-
-                        <div class="tr_inner_under_div">
-                            <!--이안에 contents 미리보기-->
-                            <div class="tr_inner_under_div_contents">
-                                미리보기
-                            </div>
-                        </div>
-                    </div>
-                </td>
-            </tr>
-            <!-- tr 샘플따기 끝 -->
-            
-            
-
-        </table>
+	    <div id="result_letter">
+            <!--spring으로 작성시 전부 div로 갈아끼워야함 ex) [카테고리명] = [{인자값}]-->
+            <div id="title_line"></div>
+            <p>카테고리 : [카테고리] | "<검색어>"에 대한 검색 결과 [숫자]</p>
+            <div id="title_line_two"></div>
+	    </div>
+	    
+    	<div class="tr_inner_container">
+    		<div class="tr_inner_up_div">
+    			<div class="board_kinds">음식</div>
+                <div class="board_title"><strong style="margin-right: 10px;">스프링</strong> 공부 내용 [2]</div>
+                <div class="board_writer">작성자</div>
+                <div class="board_date">21-11-04</div>
+                <div class="board_view_cnt">101</div>
+    		</div>
+    		<div class="tr_inner_under_div">
+    			<div class="tr_inner_under_div_contents">피다 청춘의 피가 뜨거운지라 인간의 동산에는 사랑의 풀이 돋고 이상의 꽃이 피고 희망의 놀이 뜨고 열락의 새가 운다사랑의 ...피다 청춘의 피가 뜨거운지라 인간의 동산에는 사랑의 풀이 돋고 이상의 꽃이 피고 희망의 놀이 뜨고 열락의 새가 운다사랑의 ...피다 청춘의 피가 뜨거운지라 인간의 동산에는 사랑의 풀이 돋고 이상의 꽃이 피고 희망의 놀이 뜨고 열락의 새가 운다사랑의 ...</div>
+    		</div>
+    	</div>
+    	
+    	<div class="tr_inner_container">
+    		<div class="tr_inner_up_div">
+    			<div class="board_kinds">음식</div>
+                <div class="board_title"><strong style="margin-right: 10px;">스프링</strong> 공부 내용 [2]</div>
+                <div class="board_writer">작성자</div>
+                <div class="board_date">21-11-04</div>
+                <div class="board_view_cnt">101</div>
+    		</div>
+    		<div class="tr_inner_under_div">
+    			<div class="tr_inner_under_div_contents">피다 청춘의 피가 뜨거운지라 인간의 동산에는 사랑의 풀이 돋고 이상의 꽃이 피고 희망의 놀이 뜨고 열락의 새가 운다사랑의 ...</div>
+    		</div>
+    	</div>
+    	
+    	<div class="tr_inner_container">
+    		<div class="tr_inner_up_div">
+    			<div class="board_kinds">음식</div>
+                <div class="board_title"><strong style="margin-right: 10px;">스프링</strong> 공부 내용 [2]</div>
+                <div class="board_writer">작성자</div>
+                <div class="board_date">21-11-04</div>
+                <div class="board_view_cnt">101</div>
+    		</div>
+    		<div class="tr_inner_under_div">
+    			<div class="tr_inner_under_div_contents">열락의 새가 운다사랑의 ...</div>
+    		</div>
+    	</div>
+    	
+    	<div class="tr_inner_container">
+    		<div class="tr_inner_up_div">
+    			<div class="board_kinds">음식</div>
+                <div class="board_title"><strong style="margin-right: 10px;">스프링</strong> 공부 내용 [2]</div>
+                <div class="board_writer">작성자</div>
+                <div class="board_date">21-11-04</div>
+                <div class="board_view_cnt">101</div>
+    		</div>
+    		<div class="tr_inner_under_div">
+    			<div class="tr_inner_under_div_contents">피다 청춘의 피가 뜨거운지라 인간의 동산에는 사랑의 풀이 돋고 이상의 꽃이 피고 희망의 놀이 뜨고 열락의 새가 운다사랑의 ...피다 청춘의 피가 뜨거운지라 인간의 동산에는 사랑의 풀이 돋고 이상의 꽃이 피고 희망의 놀이 뜨고 열락의 새가 운다사랑의 ...피다 청춘의 피가 뜨거운지라 인간의 동산에는 사랑의 풀이 돋고 이상의 꽃이 피고 희망의 놀이 뜨고 열락의 새가 운다사랑의 ...</div>
+    		</div>
+    	</div>
     </div>
     
 
@@ -185,7 +125,6 @@
 						<div><span>1</span>&nbsp;<span>2</span>&nbsp;<span>3</span>&nbsp;<span>4</span>&nbsp;<span>5</span>&nbsp;<span>6</span>&nbsp;<span>7</span></div>&nbsp;
 						<i class="fas fa-caret-right"></i>
 				</div>
-                <img width="100px" height="100px" src="../../../resources/image/chatting.png" name="footer_logo">
         </div>
         
     </footer>

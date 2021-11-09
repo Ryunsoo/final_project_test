@@ -1,72 +1,95 @@
+.view_body{
+	background-color: rgba(127, 127, 127, 0.06);
+	display: flex;
+	justify-content: center;
+}
+
 #view_body_container {
 	width: 900px;
-	height: 1100px;
+	padding-bottom: 50px;
+	margin: 20px 0 0 0;
+}
+
+#view_content{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin: 20px 0 10px 0;
+	border: 2px solid silver;
+	border-radius: 8px;
 	background-color: white;
-	margin: 0 auto;
 }
 
 #view_page_top_user_info {
-	width: 900px;
-	margin: 0 auto;
+	display: flex;
+	justify-content: space-between;
+	width: 850px;
 	border-bottom: 1px solid gray;
-	height: 30px;
 	background-color: white;
+	margin-top: 10px;
+}
+
+#view_page_top_user_info>div{
+	margin-bottom: 10px;
+}
+
+#content_info{
+	display: flex;
+	justify-content: space-around;
+	width: 300px;
+	margin-right: 10px;
+}
+
+#content_info>div{
+	margin: 5px 0 0 0;
+	font-size: 15px;
 }
 
 #medal_img {
-	width: 50px;
-	margin-right: 20px;
+	margin: 5px 20px 0 0;
 }
 
 #title_box {
-	width: 250px;
-	margin-right: 85px;
-	border: none;
+	font-size: 23px;
+	font-weight: bold;
 	color: navy;
 }
 
-#username {
-	margin-right: 20px;
-	border: none;
-}
-
-#dib {
-	margin-right: 20px;
-	border: none;
-}
-
-#date {
-	margin-right: 5px;
-	border: none;
-}
-
-#view_cnt {
-	margin-right: 20px;
-	border: none;
-}
-
-#modify {
-	margin-right: 20px;
-	border: none;
-}
-
-#delete {
-	margin-right: 20px;
-	border: none;
-}
-
 #view_contents {
-	font-family: '나눔스퀘어_ac';
+	display: block;
+	width: 850px;
+	margin-top: 50px;
+}
+
+#comment_wrap{
+	display: flex;
+	flex-direction: column;
+}
+
+#com_line{
+	width: 50px;
+	height: 0px;
+	margin: 15px 15px 0 0;
+	border: 1px solid silver;
+}
+
+#com_line_two{
+	width: 760px;
+	height: 0px;
+	margin: 15px 0 0 0;
+	border: 1px solid silver;
+}
+
+#comment_cnt{
+	width: 100px;
+	font-size: 22px;
 	font-weight: bold;
+	color: rgb(51, 51, 51);
 }
 
 #view_comment_notice {
-	width: 800px;
+	display: flex;
 	height: 60px;
-	background-color: white;
-	margin: 0 auto;
-	font-family: '나눔스퀘어_ac';
-	font-weight: bold;
 }
 
 #view_comment_notice p {
@@ -74,106 +97,119 @@
 }
 
 #view_comments {
-	width: 800px;
-	height: 400px;
+	width: 900px;
+	display: block;
+}
+
+#comment_item{
+	display: flex;
+	width: 900px;
+	height: 75px;
+	margin-bottom: 15px;
+	border: 1px thin silver;
+	border-radius: 5px;
+	box-shadow: 0 0 1px 0;
 	background-color: white;
-	margin: 0 auto;
 }
 
-#view_conmments_table {
-	width: 800px;
-	height: 400px;
+#comment_item>div{
+	font-size: 18px;
 }
 
-#view_comments_table_tr {
-	width: 800px;
-	height: 50px;
-	background-color: pink;
-}
-
-#cover_each_td_div {
-	justify-content: center;
-	align-items: center;
-	border: none;
-	border-top: 1px solid gray;
-	width: 795px;
-	height: 60px;
-}
-
-#view_comments_table_tr_n {
-	border: none;
-	width: 100px;
+#comment_user{
+	width: 80px;
+	margin-top: 25px;
+	margin-right: 10px;
 	margin-left: 20px;
-	margin-right: 20px;
 }
 
-#v_c_name {
-	border: none;
-	width: 100px;
-	font-family: '나눔스퀘어_ac';
-	font-weight: bold;
+#item_line{
+	width: 0px;
+	height: 30px;
+	border: 1px solid silver;
+	margin-top: 25px;
+	margin-right: 15px;
 }
 
-#vcdib {
-	border: none;
-	width: 100px;
-	margin-right: 20px;
+#comment_content{
+	width: 600px;
+	margin-top: 25px;
+	margin-right: 10px;
 }
 
-#vcdib {
-	text-align: center;
+#comment_date{
+	margin-top: 25px;
+	margin-right: 10px;
 }
 
-#view_comments_table_tr_c {
-	border: none;
-	width: 100px;
-	margin-right: 300px;
+#comment_edit{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	margin-bottom: 10px;
+	margin-top: 10px;
 }
 
-#v_c_contents {
-	border: none;
-	width: 100px;
-	font-family: '나눔스퀘어_ac';
-	font-weight: bold;
+#edit_item{
+	display: flex;
+	width: 137px;
+	margin-top: 10px;
+	justify-content: space-around;
 }
 
-#view_comments_table_tr_d_and_mc {
-	border: none;
-	width: 170px;
+#edit_item>div{
+	cursor: pointer;
 }
 
-#v_c_contents_d_and_mc {
-	border: none;
-	width: 170px;
+#reply_item{
+	display: flex;
+	width: 850px;
+	height: 75px;
+	float: right;
+	margin-bottom: 15px;
+	border: 1px thin silver;
+	border-radius: 5px;
+	box-shadow: 0 0 1px 0;
+	background-color: white;
 }
 
-#v_c_contents_d_and_mc_one {
-	border: none;
-	width: 170px;
-	height: 25px;
-	font-family: '나눔스퀘어_ac';
-	font-weight: bold;
+#reply_item>div{
+	font-size: 18px;
 }
 
-#v_c_contents_d_and_mc_two {
-	border: none;
-	width: 170px;
-	height: 25px;
+#reply_item #comment_content{
+	width: 550px;
 }
 
-#modify {
-	border: none;
-	width: 30px;
-	height: 25px;
+#write_comment_notice{
+	margin-top: 20px;
 }
 
-#delete {
-	border: none;
-	width: 30px;
-	height: 25px;
+#write_comment_notice #com_line_two{
+	width: 740px;
+	margin-left: 10px;
 }
 
-#medal_img, #title_box, #username, #dib, #date, #view_cnt {
-	font-family: '나눔스퀘어_ac';
-	font-weight: bold;
+#write_comment{
+	margin-top: 20px;
+	height: 70px;
+	resize: none;
+	font-size: 18px;
 }
+
+#submit_wrap{
+	display: flex;
+	justify-content: flex-end;
+}
+
+#submit_comment{
+	width: 60px;
+	height: 27px;
+	border-radius: 4px;
+	background-color: rgb(127, 127, 127);
+	margin-top: 20px;
+	color: white;
+	float: right;
+}
+
+
