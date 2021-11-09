@@ -212,4 +212,38 @@
 	float: right;
 }
 
+.modal{
+	box-shadow:none;
+	border-radius: 5px;
+	background-color: #ededed;
+	position: fixed;
+	
+}
+
+#modal{
+	height: 1285px;
+}
+
+
+/* 팝업창제목 */
+.modal_tit{
+	font-size: 15px;
+}
+
+/* 팝업창 크기 */
+.simple_modal{
+	height: 150px;
+	width: 400px;
+}
+
+/* 팝업창 버튼 색 */
+.modal_left_btn {
+	background-color: #bebebe;
+	border: none;
+}
+
+.modal_right_btn {
+	background-color: #6297d5;
+	border: none;
+}
 

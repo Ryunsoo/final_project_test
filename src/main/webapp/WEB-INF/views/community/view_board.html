@@ -7,11 +7,19 @@
    href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css"
    integrity="sha384-AYmEC3Yw5cVb3ZcuHtOA93w35dYTsvhLPVnYs9eStHfGJvOvKxVfELGroGkvsg+p"
    crossorigin="anonymous" />
-
 <link rel="stylesheet" href="../../../resources/css/community/style.css"/>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<link rel="stylesheet" href="../../../resources/css/include/modal/modal.css">
 <link rel="stylesheet" href="../../../resources/css/community/view_board.css"/>
+<script type="text/javascript" src="../../../resources/js/include/modal/init-modal.js"></script>
+<style type="text/css">
+/* 팝업창 */
+
+</style>
 </head>
 <body>
+<div id="modal"></div>
+
     <!--헤더자리-->
     <div class="wrap">
       <header id="header">
@@ -74,7 +82,7 @@
 			    <div id="view_cnt">32</div>
 			    <div id="dib">|</div>
 			    <div id="modify">수정</div>
-			    <div id="delete">삭제</div> 
+			    <div id="delete" onclick="deleteModal()">삭제</div> 
     		</div>
 	    </div>
 	    <!--view 페이지 맨위 사용자 정보끝-->
@@ -193,5 +201,20 @@
    </div>
    <!--wrap == container 끝-->
   
+  <script type="text/javascript">
+  deleteModal = () => {
+      let sendModal = initModal('modal', 3);
+      appendTitle(sendModal, '게시글을 삭제하시겠습니까?', true);
+      setButton(sendModal, '취소', '삭제');
+      setContent(sendModal, true, true);
+      modalBlock();
+      	
+      $('.modal_left_btn').click(function() {
+      modalNone();
+      	})
+      
+  }
+  
+  </script>
 </body>
 </html>
