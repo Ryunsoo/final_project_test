@@ -708,15 +708,60 @@ html, body {
 .modal_content {
    display: flex;
    flex-wrap: wrap;
-   flex-direction: column;
-   padding: 20px 30px;
+   justify-content: space-between;
+   padding: 0 30px;
 }
 
-.add_modal_content {
-   display: flex;
-   height: 30px;
-   width: 100px; 
+.do_div{
+	height: 100%;
+	width: 151px;
+	margin-left: 22px;
+	display: flex;
+	flex-wrap: wrap;
+	border-right: 1.5px solid gray;
 }
+
+.do_text{
+	width: 65px;
+	height: 29px;
+}
+
+.gu_div{
+	height: 100%;
+	width: 367px;
+	display: flex;
+	flex-wrap: wrap;
+	padding-left: 26px;
+	overflow: auto;
+}
+
+.gu_text{
+	width: 108px;
+	height: 28px;
+}
+
+.dong_div{
+	height: 100%;
+	width: 100%;
+	display: flex;
+	margin-left: 30px;
+	flex-wrap: wrap;
+	overflow: auto;
+}
+
+.dong_text{
+	width: 108px;
+	height: 29px;
+	padding-top: 2px;
+	margin-right: 25px;
+	border-radius: 5px;
+	color: white;
+	font-weight: bold;
+	background-color: rgb(243, 156, 18);;
+	text-align: center;
+}
+
+
 </style>
 </head>
 <body>
@@ -865,7 +910,7 @@ html, body {
                   <div id="towninfotext">탐색할 동네를 선택하세요<br>(최대 3개)</div>
                   <div id="addtown_wrap">
                      <div id="basic">동네 추가하기</div>
-                     <div id="addtown" type="button" onclick="createAddressModal()"><i class="fal fa-plus-circle"></i></div>
+                     <div id="addtown" type="button" onclick="createAddressFirstModal()"><i class="fal fa-plus-circle"></i></div>
                   </div>
                </div>
                <div id="townlist">
@@ -890,7 +935,6 @@ html, body {
 
 
 <script type="text/javascript">
-
 /* 이웃리스트 추가  */
 document.querySelector("#title2").addEventListener('click', e => {
    /* 새로운 이웃wrap */
@@ -1021,47 +1065,82 @@ let createChargeModal = () => {
    })
 }
 
+
+let doArr = ['강원', '전북', '서울', '대전', '대구', '부산', '전남', '제주', '충북', '세종', '인천', '충남', '경북', '경기', '경남', '광주', '울산'];
+let guArr = ['강남구', '중구', '관악구', '종로구', '강동구', '중랑구', '강서구', '동작구', '송파구', '구로구', '마포구', '성동구', '영등포구', '양천구', '강북구', '은평구', '성북구', '서초구', '금천구', '노원구', '광진구', '서대문구', '용산구', '동대문구', '도봉구'];
+let dongArr = ['개포1동', '개포2동', '개포4동', '논현1동', '논현2동', '대치1동', '대치2동', '대치4동', '도곡1동', '도곡2동', '삼성1동', '삼성2동', '세곡동', '수서동', '신사동', '압구정동', '역삼1동', '역삼2동', '일원1동', '일원2동', '일원본동', '청담동'];
+
+doArr.sort();
+guArr.sort();
+dongArr.sort();
+
 /* 시/도 모달 */
-let createAddressModal = () => {
+let createAddressFirstModal = () => {
    let addressModal = initModal('modal', 4);
    appendTitle(addressModal, '시/도');
-   setButton(addressModal, '뒤로가기', '다 음');
+   setButton(addressModal, '그만두기', '다 음');
    setContent(addressModal, true, true);
    modalBlock();
+   
+   /* 구역 나누기 (시/도 -> 시) */
+   let doDiv = $('<div>').addClass('do_div');
+   $('.modal_content').append(doDiv);
+   
+   for(let i = 0; i < doArr.length; i++) {
+	   let doTextDiv = $('<div>').addClass('do_text');
+	   doTextDiv.text(doArr[i]);
+	   doDiv.append(doTextDiv);
+   }
+   
+   let guDiv = $('<div>').addClass('gu_div');
+   $('.modal_content').append(guDiv);
+   
+   for(let i = 0; i < guArr.length; i++) {
+	   let guTextDiv = $('<div>').addClass('gu_text');
+	   guTextDiv.text(guArr[i]);
+	   guDiv.append(guTextDiv);
+   }
    
    /* 취소 */
    $('.modal_left_btn').click(function() {
       modalNone();
    })
-   
-   /* 시/도까지 결정 */
+   /* 구까지 결정 */
    $('.modal_right_btn').click(function() {
       modalNone();
-      let addressModal2 = initModal('modal', 4);
-      appendTitle(addressModal2, '구');
-      setButton(addressModal2, '뒤로가기', '다  음');
-      setContent(addressModal2, true, true);
-      
-      /* 주소 찍기 */
-      let modalRadioWrap = $('<div></div>').addClass('address_modal_content');
-      $('.modal_content').append(modalRadioWrap);
-      let modalText = $('<label>');
-      let modalRadio = $('<input/>', {type: 'radio', name: 'address2', value:'강남구'});
-      modalText.append(modalRadio);
-      modalText.append(' 강남구');
-      modalRadioWrap.append(modalText);
-      
-      modalBlock();
-      /* 취소 */
-      $('.modal_left_btn').click(function() {
-         modalNone();
-      })
-      /* 구까지 결정 */
-      $('.modal_right_btn').click(function() {
-         modalNone();
-      })
+      createAddressSecondModal();
    })
 }
+
+let createAddressSecondModal = () => {
+	let secondModal = initModal('modal', 4);
+	appendTitle(secondModal, '동');
+    setButton(secondModal, '이 전', '결정하기');
+    setContent(secondModal, true, true);
+    modalBlock();
+	
+    let dongDiv = $('<div>').addClass('dong_div');
+    $('.modal_content').append(dongDiv);
+    
+    for(let i = 0; i < doArr.length; i++) {
+ 	   let dongTextDiv = $('<div>').addClass('dong_text');
+ 	   dongTextDiv.text(dongArr[i]);
+ 	   dongDiv.append(dongTextDiv);
+    }
+    
+    
+    
+    $('.modal_left_btn').click(function() {
+        modalNone();
+        createAddressFirstModal();
+     })
+     
+    $('.modal_right_btn').click(function() {
+       modalNone();
+    })
+    
+}
+
 </script>
 </body>
 </html>

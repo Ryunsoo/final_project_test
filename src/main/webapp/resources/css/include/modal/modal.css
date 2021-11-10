@@ -37,6 +37,11 @@
 	width: 350px;
 }
 
+.address_modal{
+	height: 400px;
+	width: 630px;
+}
+
 .piggy_modal{
 	background-color: white;
 	border-radius: 15px;

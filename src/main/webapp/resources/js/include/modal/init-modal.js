@@ -7,6 +7,8 @@ let initModal = function(id, num) {
 		modal.addClass('height_modal');
 	}else if(num == 3) {
 		modal.addClass('simple_modal');
+	}else if(num == 4) {
+		modal.addClass('address_modal');
 	}
 	
 	let parent = '#' + id;
