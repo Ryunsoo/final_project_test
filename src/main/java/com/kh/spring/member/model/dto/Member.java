@@ -1,11 +1,12 @@
 package com.kh.spring.member.model.dto;
 
+import java.nio.file.attribute.UserPrincipal;
 import java.sql.Date;
 
 import lombok.Data;
 
 @Data
-public class Member {
+public class Member{
 
 	private String userId;
 	private String password;

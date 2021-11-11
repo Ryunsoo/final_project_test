@@ -38,6 +38,7 @@ public class BoardController {
 			@RequestParam List<MultipartFile> files, //게시글 작성 시 파일 첨부를 하지 않아도 MultipartFile 객체가 넘어오게 된다.
 			@SessionAttribute("authentication") Member member
 			) {
+		logger.debug("게시글 내용 : " + board.getContent().toString());
 		
 		logger.debug("files : " + files.size());
 		logger.debug("files.0 : " + files.get(0));

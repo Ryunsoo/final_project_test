@@ -47,8 +47,13 @@
 		</dependency>
 		<dependency>
 		    <groupId>org.springframework.security</groupId>
-		    <artifactId>spring-security-crypto</artifactId>
+		    <artifactId>spring-security-core</artifactId>
 		    <version>5.5.2</version>
+		</dependency>
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-websocket</artifactId>
+		    <version>5.3.10</version>
 		</dependency>
 				
 		<!-- AspectJ -->
@@ -61,6 +66,13 @@
 		    <groupId>org.aspectj</groupId>
 		    <artifactId>aspectjweaver</artifactId>
 		    <version>1.9.7</version>
+		</dependency>
+		
+		<!-- Firebase -->
+		<dependency>
+		    <groupId>com.google.firebase</groupId>
+		    <artifactId>firebase-admin</artifactId>
+		    <version>8.1.0</version>
 		</dependency>
 		
 		<!-- Logging -->
